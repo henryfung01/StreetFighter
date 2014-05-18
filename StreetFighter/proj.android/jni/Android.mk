@@ -17,7 +17,7 @@ ALLFILES = $(call walk, $(LOCAL_PATH)/../../Classes)
 FILE_LIST := hellocpp/main.cpp
 FILE_LIST += $(filter %.cpp, $(ALLFILES))
  
-FILE_INCLUDES := $(shell find $(LOCAL_PATH)/../../Classes -type d)
+#FILE_INCLUDES := $(shell find $(LOCAL_PATH)/../../Classes -type d)
  
 #source file will be compiled
 LOCAL_SRC_FILES := $(FILE_LIST:$(LOCAL_PATH)/%=%)
