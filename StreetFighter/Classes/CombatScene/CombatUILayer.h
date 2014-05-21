@@ -2,7 +2,7 @@
 #define __COMBATUI_LAYER_H__
 
 #include "cocos2d.h"
-
+#include "ui/CocosGUI.h"
 class CCombatUILayer : public cocos2d::Layer
 {
 public:
@@ -11,6 +11,8 @@ public:
     
     // a selector callback
     void menuCloseCallback(cocos2d::Ref* pSender);
+
+	void touchEvent(Ref *pSender, cocos2d::ui::TouchEventType type);
     
     // implement the "static create()" method manually
     CREATE_FUNC(CCombatUILayer);

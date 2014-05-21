@@ -1,7 +1,7 @@
 #include "CombatUILayer.h"
-
+#include "ui\UIButton.h"
 USING_NS_CC;
-
+using namespace ui;
 
 // on "init" you need to initialize your instance
 bool CCombatUILayer::init()
@@ -57,7 +57,13 @@ bool CCombatUILayer::init()
 
     // add the sprite as a child to this layer
     this->addChild(sprite, 0);
-    
+    //add a test button
+	ui::Button* button = ui::Button::create("cocosui/animationbuttonnormal.png",
+		"cocosui/animationbuttonpressed.png");
+	button->setPosition(Point(origin.x + button->getContentSize().width/2 ,
+                                origin.y + button->getContentSize().height/2));
+	button->addTouchEventListener(this, toucheventselector(CCombatUILayer::touchEvent));
+	this->addChild(button);
     return true;
 }
 
@@ -74,4 +80,29 @@ void CCombatUILayer::menuCloseCallback(Ref* pSender)
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     exit(0);
 #endif
+}
+
+void CCombatUILayer::touchEvent(Ref *pSender, TouchEventType type)
+{
+    switch (type)
+    {
+        case TOUCH_EVENT_BEGAN:
+          //  _displayValueLabel->setText("Touch Down");
+            break;
+            
+        case TOUCH_EVENT_MOVED:
+          //  _displayValueLabel->setText("Touch Moved");
+            break;
+            
+        case TOUCH_EVENT_ENDED:
+         //   _displayValueLabel->setText("Touch Ended");
+            break;
+            
+        case TOUCH_EVENT_CANCELED:
+        //    _displayValueLabel->setText("Touch Canceled");
+            break;
+            
+        default:
+            break;
+    }
 }
