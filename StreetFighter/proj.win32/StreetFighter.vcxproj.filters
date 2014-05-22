@@ -36,6 +36,9 @@
     <ClCompile Include="..\Classes\CombatScene\CombatUILayer.cpp">
       <Filter>Classes\CombatScene</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\CombatScene\CombatInputHandler.cpp">
+      <Filter>Classes\CombatScene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -66,6 +69,9 @@
       <Filter>Classes\CombatScene</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\CombatScene\CombatUILayer.h">
+      <Filter>Classes\CombatScene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CombatScene\CombatInputHandler.h">
       <Filter>Classes\CombatScene</Filter>
     </ClInclude>
   </ItemGroup>

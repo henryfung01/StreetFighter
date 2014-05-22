@@ -1,3 +1,4 @@
+#include "CombatInputHandler.h"
 #include "CombatUILayer.h"
 #include "ui\UIButton.h"
 USING_NS_CC;
@@ -35,20 +36,6 @@ bool CCombatUILayer::init()
     this->addChild(menu, 1);
 
     /////////////////////////////
-    // 3. add your codes below...
-
-    // add a label shows "Hello World"
-    // create and initialize a label
-    
-    auto label = LabelTTF::create("Combat!!!", "Arial", 24);
-    
-    // position the label on the center of the screen
-    label->setPosition(Point(origin.x + visibleSize.width/2,
-                            origin.y + visibleSize.height - label->getContentSize().height));
-
-    // add the label as a child to this layer
-    this->addChild(label, 1);
-
     // add "HelloWorld" splash screen"
     auto sprite = Sprite::create("HelloWorld.png");
 
@@ -62,7 +49,9 @@ bool CCombatUILayer::init()
 		"cocosui/animationbuttonpressed.png");
 	button->setPosition(Point(origin.x + button->getContentSize().width/2 ,
                                 origin.y + button->getContentSize().height/2));
-	button->addTouchEventListener(this, toucheventselector(CCombatUILayer::touchEvent));
+	m_pCombatInputHandler = new CCombatInputHandler();
+	m_pCombatInputHandler->Init();
+	button->addTouchEventListener(this, toucheventselector(CCombatInputHandler::OnTouchEvent));
 	this->addChild(button);
     return true;
 }
@@ -82,27 +71,10 @@ void CCombatUILayer::menuCloseCallback(Ref* pSender)
 #endif
 }
 
-void CCombatUILayer::touchEvent(Ref *pSender, TouchEventType type)
+void CCombatUILayer::OnTouchEvent(Ref *pSender, TouchEventType type)
 {
-    switch (type)
-    {
-        case TOUCH_EVENT_BEGAN:
-          //  _displayValueLabel->setText("Touch Down");
-            break;
-            
-        case TOUCH_EVENT_MOVED:
-          //  _displayValueLabel->setText("Touch Moved");
-            break;
-            
-        case TOUCH_EVENT_ENDED:
-         //   _displayValueLabel->setText("Touch Ended");
-            break;
-            
-        case TOUCH_EVENT_CANCELED:
-        //    _displayValueLabel->setText("Touch Canceled");
-            break;
-            
-        default:
-            break;
-    }
+	if(m_pCombatInputHandler)
+	{
+		m_pCombatInputHandler->OnTouchEvent(pSender,type);
+	}
 }
