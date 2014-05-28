@@ -19,15 +19,25 @@ void CCombatInputHandler::OnTouchEvent(Ref *pSender, TouchEventType type)
 		break;
 
 	case TOUCH_EVENT_MOVED:
-		//  _displayValueLabel->setText("Touch Moved");
+		if(m_bCatchingInput)
+		{
+			Point point = pUIWidget->getTouchMovePos();
+			Point2D pathPoint(point.x,point.y);
+			m_InputPath.push_back(pathPoint);
+		}
 		break;
 
 	case TOUCH_EVENT_ENDED:
-		m_GemertricRecognizer->recognize(m_InputPath);
+		{
+			RecognitionResult result = m_GemertricRecognizer->recognize(m_InputPath);
+			m_bCatchingInput = false;
+		}
+		
 		break;
 
 	case TOUCH_EVENT_CANCELED:
-		//    _displayValueLabel->setText("Touch Canceled");
+		m_bCatchingInput = false;
+		m_InputPath.clear();
 		break;
 
 	default:

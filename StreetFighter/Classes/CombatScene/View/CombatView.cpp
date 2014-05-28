@@ -1,11 +1,11 @@
 #include "CombatInputHandler.h"
-#include "CombatUILayer.h"
+#include "CombatView.h"
 #include "ui\UIButton.h"
 USING_NS_CC;
 using namespace ui;
 
 // on "init" you need to initialize your instance
-bool CCombatUILayer::init()
+bool CCombatView::init()
 {
     //////////////////////////////
     // 1. super init first
@@ -57,7 +57,7 @@ bool CCombatUILayer::init()
 }
 
 
-void CCombatUILayer::menuCloseCallback(Ref* pSender)
+void CCombatView::menuCloseCallback(Ref* pSender)
 {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WP8) || (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
 	MessageBox("You pressed the close button. Windows Store Apps do not implement a close button.","Alert");
@@ -71,7 +71,7 @@ void CCombatUILayer::menuCloseCallback(Ref* pSender)
 #endif
 }
 
-void CCombatUILayer::OnTouchEvent(Ref *pSender, TouchEventType type)
+void CCombatView::OnTouchEvent(Ref *pSender, TouchEventType type)
 {
 	if(m_pCombatInputHandler)
 	{
