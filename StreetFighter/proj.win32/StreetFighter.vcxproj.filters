@@ -16,6 +16,9 @@
     <Filter Include="Classes\CombatScene">
       <UniqueIdentifier>{61da5b2e-c3ee-441b-b42b-30bce75bf4df}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\CombatScene\View">
+      <UniqueIdentifier>{9d499ade-5f9a-4e4e-ad6d-f5d95f224955}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -38,6 +41,9 @@
     </ClCompile>
     <ClCompile Include="..\Classes\CombatScene\CombatInputHandler.cpp">
       <Filter>Classes\CombatScene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CombatScene\View\CombatView.cpp">
+      <Filter>Classes\CombatScene\View</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -73,6 +79,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\CombatScene\CombatInputHandler.h">
       <Filter>Classes\CombatScene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CombatScene\View\CombatView.h">
+      <Filter>Classes\CombatScene\View</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
