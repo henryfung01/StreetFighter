@@ -1,9 +1,10 @@
-#include "CombatInputHandler.h"
+#include "SpecialTouchHandler.h"
 USING_NS_CC;
-#include "../Recognizer/GeometricRecognizer.h"
+#include "Recognizer/GeometricRecognizer.h"
+#include "CombatController.h"
 using namespace ui;
 using namespace DollarRecognizer;
-void CCombatInputHandler::OnTouchEvent(Ref *pSender, TouchEventType type)
+void CSpTouchHandler::OnTouchEvent(Ref *pSender, TouchEventType type)
 {
 	Widget* pUIWidget = static_cast<Widget*>(pSender);
 	switch (type)
@@ -45,21 +46,23 @@ void CCombatInputHandler::OnTouchEvent(Ref *pSender, TouchEventType type)
 	}
 }
 
-CCombatInputHandler::CCombatInputHandler():
+CSpTouchHandler::CSpTouchHandler(CCombatController* pOwner):
 m_GemertricRecognizer(NULL),
-m_bCatchingInput(false)
+m_bCatchingInput(false),
+m_pOwner(pOwner)
 {
 
 }
 
-CCombatInputHandler::~CCombatInputHandler()
+CSpTouchHandler::~CSpTouchHandler()
 {
-
+	CC_SAFE_DELETE(m_GemertricRecognizer);
 }
 
-bool CCombatInputHandler::Init()
+bool CSpTouchHandler::Init()
 {
 	//加载模板
+	//创建的对象实例会在析构函数释放
 	m_GemertricRecognizer=new GeometricRecognizer();
 	m_GemertricRecognizer->loadTemplates();
 	return true;

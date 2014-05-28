@@ -1,26 +1,41 @@
 #include "CombatScene.h"
-#include "CombatUILayer.h"
+#include "View\CombatView.h"
+#include "Controller\CombatController.h"
 USING_NS_CC;
-
-cocos2d::Scene* CCombatScene::createCombatScene(bool usePhysics)
+#include "../Common/CommonDef.h"
+cocos2d::Scene* CCombatScene::create(bool usePhysics)
 {
-	Scene* combatScene = NULL;
+	CCombatScene* combatScene = NULL;
 	if(usePhysics)
 	{
-		combatScene = Scene::create();
+		combatScene = new CCombatScene();
+		if (combatScene && combatScene->initWithPhysics())
+		{
+			 combatScene->autorelease();
+		}
+		else
+		{
+			CC_SAFE_DELETE(combatScene);
+			return nullptr;
+		}
 	}
 	else
 	{
-		combatScene = Scene::createWithPhysics();
+		combatScene = CCombatScene::create();
 	}
 	if(combatScene)
 	{
-		// 'layer' is an autorelease object
-		auto layer = CCombatUILayer::create();
-
-		// add layer as a child to scene
-		combatScene->addChild(layer);
+		combatScene->_InitCombatScene();
 		return combatScene;
 	}
 	return NULL;
+}
+void CCombatScene::_InitCombatScene()
+{
+	setTag(SceneType_Combat);
+	m_pCombatView = CCombatView::create();
+	addChild(m_pCombatView);
+	m_pCombatView->CreateUILayer();
+	m_pCombatController = CCombatController::create();
+	addChild(m_pCombatController);
 }

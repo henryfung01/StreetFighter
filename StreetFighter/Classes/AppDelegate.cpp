@@ -27,7 +27,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     director->setAnimationInterval(1.0 / 60);
 
     // create a scene. it's an autorelease object
-    auto scene = CCombatScene::createCombatScene(false);
+    auto scene = CCombatScene::create(false);
 
     // run
     director->runWithScene(scene);

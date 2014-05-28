@@ -10,14 +10,20 @@
     <Filter Include="resource">
       <UniqueIdentifier>{715254bc-d70b-4ec5-bf29-467dd3ace079}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Classes\Recognizer">
-      <UniqueIdentifier>{2df84356-9ad7-478e-b411-f6599c97ecbd}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Classes\CombatScene">
       <UniqueIdentifier>{61da5b2e-c3ee-441b-b42b-30bce75bf4df}</UniqueIdentifier>
     </Filter>
     <Filter Include="Classes\CombatScene\View">
       <UniqueIdentifier>{9d499ade-5f9a-4e4e-ad6d-f5d95f224955}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Common">
+      <UniqueIdentifier>{3e05a606-85c2-43dd-98a6-0d9b44b6e3dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\CombatScene\Controller">
+      <UniqueIdentifier>{29339f0b-7cc9-4af5-991c-3fcf6bebac2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\CombatScene\Controller\Recognizer">
+      <UniqueIdentifier>{69f73e77-6d61-4ed5-b3db-98b2ede67061}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -30,20 +36,20 @@
     <ClCompile Include="..\Classes\HelloWorldScene.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Recognizer\GeometricRecognizer.cpp">
-      <Filter>Classes\Recognizer</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\CombatScene\CombatScene.cpp">
-      <Filter>Classes\CombatScene</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\CombatScene\CombatUILayer.cpp">
-      <Filter>Classes\CombatScene</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\CombatScene\CombatInputHandler.cpp">
       <Filter>Classes\CombatScene</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\CombatScene\View\CombatView.cpp">
       <Filter>Classes\CombatScene\View</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CombatScene\Controller\CombatController.cpp">
+      <Filter>Classes\CombatScene\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CombatScene\Controller\SpecialTouchHandler.cpp">
+      <Filter>Classes\CombatScene\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\CombatScene\Controller\Recognizer\GeometricRecognizer.cpp">
+      <Filter>Classes\CombatScene\Controller\Recognizer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -56,32 +62,35 @@
     <ClInclude Include="..\Classes\HelloWorldScene.h">
       <Filter>Classes</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Recognizer\GeometricRecognizer.h">
-      <Filter>Classes\Recognizer</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Recognizer\GeometricRecognizerTypes.h">
-      <Filter>Classes\Recognizer</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Recognizer\GestureTemplate.h">
-      <Filter>Classes\Recognizer</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Recognizer\PathWriter.h">
-      <Filter>Classes\Recognizer</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Recognizer\SampleGestures.h">
-      <Filter>Classes\Recognizer</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\CombatScene\CombatScene.h">
-      <Filter>Classes\CombatScene</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\CombatScene\CombatUILayer.h">
-      <Filter>Classes\CombatScene</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\CombatScene\CombatInputHandler.h">
       <Filter>Classes\CombatScene</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\CombatScene\View\CombatView.h">
       <Filter>Classes\CombatScene\View</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Common\CommonDef.h">
+      <Filter>Classes\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CombatScene\Controller\CombatController.h">
+      <Filter>Classes\CombatScene\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CombatScene\Controller\SpecialTouchHandler.h">
+      <Filter>Classes\CombatScene\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CombatScene\Controller\Recognizer\GeometricRecognizer.h">
+      <Filter>Classes\CombatScene\Controller\Recognizer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CombatScene\Controller\Recognizer\GeometricRecognizerTypes.h">
+      <Filter>Classes\CombatScene\Controller\Recognizer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CombatScene\Controller\Recognizer\GestureTemplate.h">
+      <Filter>Classes\CombatScene\Controller\Recognizer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CombatScene\Controller\Recognizer\PathWriter.h">
+      <Filter>Classes\CombatScene\Controller\Recognizer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CombatScene\Controller\Recognizer\SampleGestures.h">
+      <Filter>Classes\CombatScene\Controller\Recognizer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
