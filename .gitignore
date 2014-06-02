@@ -1,4 +1,5 @@
 *.pch
+*.ipch
 *.o
 *.a
 *.so
@@ -19,3 +20,4 @@
 
 assets/
 debug.win32/
+UIAsset/*/Backup/

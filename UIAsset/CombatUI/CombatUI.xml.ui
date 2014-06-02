@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<UIProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ProjectDir>E:\MyProjects\Street\UIAsset\CombatUI</ProjectDir>
+  <Version>1.4.0.0</Version>
+  <Resources>E:\MyProjects\Street\UIAsset\CombatUI\Resources</Resources>
+  <Name>CombatUI</Name>
+  <JsonFileName>CombatUI.json</JsonFileName>
+  <JsonFolder>E:\MyProjects\Street\UIAsset\CombatUI\Json</JsonFolder>
+  <JsonList>
+    <string>CombatUI_1.json</string>
+  </JsonList>
+  <CanvasSize>
+    <Width>960</Width>
+    <Height>640</Height>
+  </CanvasSize>
+  <filePath>E:\MyProjects\Street\UIAsset\CombatUI\CombatUI.xml.ui</filePath>
+  <ProjectType>UIProject</ProjectType>
+  <ResRelativePath />
+  <imageFileList>
+    <string>CombatUI0.plist</string>
+  </imageFileList>
+  <imagePngList>
+    <string>CombatUI0.png</string>
+  </imagePngList>
+  <JsonSuffix>.json</JsonSuffix>
+  <CurrentUIJson>CombatUI_1.json</CurrentUIJson>
+</UIProject>
