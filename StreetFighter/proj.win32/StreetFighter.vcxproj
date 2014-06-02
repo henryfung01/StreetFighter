@@ -139,6 +139,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\CombatScene\Controller\Recognizer\GeometricRecognizer.cpp" />
     <ClCompile Include="..\Classes\CombatScene\Controller\SpecialTouchHandler.cpp" />
     <ClCompile Include="..\Classes\CombatScene\View\CombatView.cpp" />
+    <ClCompile Include="..\Classes\Common\CommonView.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -153,7 +154,9 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\CombatScene\Controller\Recognizer\SampleGestures.h" />
     <ClInclude Include="..\Classes\CombatScene\Controller\SpecialTouchHandler.h" />
     <ClInclude Include="..\Classes\CombatScene\View\CombatView.h" />
+    <ClInclude Include="..\Classes\CombatScene\View\CombatViewNames.h" />
     <ClInclude Include="..\Classes\Common\CommonDef.h" />
+    <ClInclude Include="..\Classes\Common\CommonView.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>

@@ -61,7 +61,7 @@ _opacity(255),
 _flippedX(false),
 _flippedY(false)
 {
-
+	m_NodeType =NodeType_Widget;
 }
 
 Widget::~Widget()

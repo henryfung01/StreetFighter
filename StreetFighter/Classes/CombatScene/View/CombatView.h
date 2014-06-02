@@ -3,8 +3,9 @@
 
 #include "cocos2d.h"
 #include "ui/CocosGUI.h"
+#include "Common/CommonView.h"
 class CCombatScene;
-class CCombatView : public cocos2d::Node
+class CCombatView : public CCommonView
 {
 public:
     virtual bool init();  
@@ -15,7 +16,6 @@ public:
     CREATE_FUNC(CCombatView);
 	void CreateUILayer();
 private:
-	cocos2d::Layer* m_pUILayer;
 	CCombatScene* _GetCombatScene();
 };
 

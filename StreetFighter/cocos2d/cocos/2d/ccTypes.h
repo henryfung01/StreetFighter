@@ -474,7 +474,12 @@ public:
 
 extern const std::string STD_STRING_EMPTY;
 extern const ssize_t CC_INVALID_INDEX;
-
+enum NodeType
+{
+	NodeType_None = 0,
+	NodeType_Widget,
+	NodeType_Count,
+};
 NS_CC_END
 
 #endif //__CCTYPES_H__

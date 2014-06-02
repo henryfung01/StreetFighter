@@ -51,6 +51,9 @@
     <ClCompile Include="..\Classes\CombatScene\Controller\Recognizer\GeometricRecognizer.cpp">
       <Filter>Classes\CombatScene\Controller\Recognizer</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\Common\CommonView.cpp">
+      <Filter>Classes\Common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -91,6 +94,12 @@
     </ClInclude>
     <ClInclude Include="..\Classes\CombatScene\Controller\Recognizer\SampleGestures.h">
       <Filter>Classes\CombatScene\Controller\Recognizer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CombatScene\View\CombatViewNames.h">
+      <Filter>Classes\CombatScene\View</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Common\CommonView.h">
+      <Filter>Classes\Common</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

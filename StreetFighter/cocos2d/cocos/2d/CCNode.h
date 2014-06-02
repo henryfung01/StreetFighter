@@ -241,7 +241,7 @@ public:
      */
     virtual float getScaleZ() const;
 
-
+	int getNodeType(){return m_NodeType;}
     /**
      * Sets the scale (x,y,z) of the node.
      *
@@ -1367,7 +1367,8 @@ protected:
 
     float _rotationX;               ///< rotation on the X-axis
     float _rotationY;               ///< rotation on the Y-axis
-
+	//自己做个简单的nodeType来管理widget，总是用dynamiccast真是不上流
+	int m_NodeType;
     // rotation Z is decomposed in 2 to simulate Skew for Flash animations
     float _rotationZ_X;             ///< rotation angle on Z-axis, component X
     float _rotationZ_Y;             ///< rotation angle on Z-axis, component Y

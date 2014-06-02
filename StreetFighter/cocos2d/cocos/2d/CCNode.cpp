@@ -77,6 +77,7 @@ int Node::s_globalOrderOfArrival = 1;
 Node::Node(void)
 : _rotationX(0.0f)
 , _rotationY(0.0f)
+, m_NodeType(NodeType_None)
 , _rotationZ_X(0.0f)
 , _rotationZ_Y(0.0f)
 , _scaleX(1.0f)
