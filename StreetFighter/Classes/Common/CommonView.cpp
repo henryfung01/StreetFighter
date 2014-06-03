@@ -52,9 +52,10 @@ Widget* CCommonView::_GetChildByName(Node*pNode,const char* name,int childDepth)
 			Widget* widgetChild = _CastToWidget(child);
 			if (widgetChild)
 			{
-				if (_GetChildByName(widgetChild,name,childDepth) != NULL)
+				Widget* pResult = _GetChildByName(widgetChild,name,childDepth);
+				if (pResult!= NULL)
 				{
-					return widgetChild;
+					return pResult;
 				}
 			}
 		}

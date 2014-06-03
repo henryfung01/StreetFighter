@@ -15,8 +15,10 @@ public:
     // implement the "static create()" method manually
     CREATE_FUNC(CCombatView);
 	void CreateUILayer();
+	void SetStatusLabel(const char* status);
 private:
 	CCombatScene* _GetCombatScene();
+	cocos2d::ui::Text* m_pStatusLabel;
 };
 
 #endif // __COMBAT_VIEW_H__

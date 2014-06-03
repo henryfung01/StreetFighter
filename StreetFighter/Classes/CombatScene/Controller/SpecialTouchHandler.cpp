@@ -31,6 +31,10 @@ void CSpTouchHandler::OnTouchEvent(Ref *pSender, TouchEventType type)
 	case TOUCH_EVENT_ENDED:
 		{
 			RecognitionResult result = m_GemertricRecognizer->recognize(m_InputPath);
+			if(result.name != "Unknown")
+			{
+				m_pOwner->OnSpecialInput(result.name.c_str());
+			}
 			m_bCatchingInput = false;
 		}
 		

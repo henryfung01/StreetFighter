@@ -3,6 +3,8 @@
 #include "../../Common/CommonDef.h"
 #include "../Controller/CombatController.h"
 #include "../CombatScene.h"
+#include "editor-support/cocostudio/CCSGUIReader.h"
+#include "CombatViewNames.h"
 USING_NS_CC;
 using namespace ui;
 
@@ -52,17 +54,36 @@ void CCombatView::CreateUILayer()
 	m_pUILayer = Layer::create();
 	Scene* ownerScene = getScene();
 	ownerScene->addChild(m_pUILayer);
-
     Size visibleSize = Director::getInstance()->getVisibleSize();
     Point origin = Director::getInstance()->getVisibleOrigin();
-
+	Layout*  _widget = dynamic_cast<Layout*>(cocostudio::GUIReader::getInstance()->widgetFromJsonFile("UI/CombatUI/CombatUI_1.ExportJson"));
+	if(_widget)
+	{
+		m_pUILayer->addChild(_widget);
+	}
+	//获得这些控件然后注册事件回调等操作
+	Widget* pWidget = GetChildByNameRecursive(SpecialTouchArea,3);
+	if(pWidget)
+	{
+		pWidget->setTouchEnabled(true);
+		pWidget->addTouchEventListener(this, toucheventselector(CCombatView::OnTouchEvent));
+	}
+	pWidget = GetChildByNameRecursive(ResultDisplay,3);
+	if(pWidget)
+	{
+		std::string& description = pWidget->getDescription();
+		if(description == "Label") //is real a text
+		{
+			m_pStatusLabel = static_cast<Text*>(pWidget);
+		}
+	}
     /////////////////////////////
     // 2. add a menu item with "X" image, which is clicked to quit the program
     //    you may modify it.
 
     // add a "close" icon to exit the progress. it's an autorelease object
 	
-    auto closeItem = MenuItemImage::create(
+   /* auto closeItem = MenuItemImage::create(
                                            "CloseNormal.png",
                                            "CloseSelected.png",
                                            CC_CALLBACK_1(CCombatView::menuCloseCallback, this));
@@ -91,4 +112,13 @@ void CCombatView::CreateUILayer()
                                 origin.y + button->getContentSize().height/2));
 	button->addTouchEventListener(this, toucheventselector(CCombatView::OnTouchEvent));
 	m_pUILayer->addChild(button);
+	*/
+}
+
+void CCombatView::SetStatusLabel( const char* status )
+{
+	if(status && m_pStatusLabel)
+	{
+		m_pStatusLabel->setText(status);
+	}
 }
