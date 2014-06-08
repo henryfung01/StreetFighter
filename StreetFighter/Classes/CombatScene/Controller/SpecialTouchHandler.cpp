@@ -1,7 +1,9 @@
+#include "TemplateRecorder.h"
 #include "SpecialTouchHandler.h"
 USING_NS_CC;
 #include "Recognizer/GeometricRecognizer.h"
 #include "CombatController.h"
+#include "../CombatCommonDefine.h"
 using namespace ui;
 using namespace DollarRecognizer;
 void CSpTouchHandler::OnTouchEvent(Ref *pSender, TouchEventType type)
@@ -68,6 +70,17 @@ bool CSpTouchHandler::Init()
 	//加载模板
 	//创建的对象实例会在析构函数释放
 	m_GemertricRecognizer=new GeometricRecognizer();
-	m_GemertricRecognizer->loadTemplates();
+	m_GemertricRecognizer->SetMaxGesturePoints(MAX_RECONGNIZE_SIZE);
+	m_GemertricRecognizer->addTemplate("Rect",CTemplateRecorder::OutputRectange());
+	m_GemertricRecognizer->addTemplate("RectCC",CTemplateRecorder::OutputRectangeCC());
+	m_GemertricRecognizer->addTemplate("Circle",CTemplateRecorder::OutputCircle());
+	m_GemertricRecognizer->addTemplate("CircleCC",CTemplateRecorder::OutputCircleCC());
+	m_GemertricRecognizer->addTemplate("Triangle",CTemplateRecorder::OutputTriangle());
+	m_GemertricRecognizer->addTemplate("TriangleCC",CTemplateRecorder::OutputTriangleCC());
+	m_allGesture.resize(QTEGestureType_Count);
+	m_allGesture[QTEGestureType_Rect] = m_GemertricRecognizer->normalizePath(CTemplateRecorder::OutputRectange());
+	m_allGesture[QTEGestureType_RectCC] =  m_GemertricRecognizer->normalizePath(CTemplateRecorder::OutputRectangeCC());
+	m_allGesture[QTEGestureType_Circle] =  m_GemertricRecognizer->normalizePath(CTemplateRecorder::OutputCircle());
+	m_allGesture[QTEGestureType_CircleCC] =  m_GemertricRecognizer->normalizePath(CTemplateRecorder::OutputCircleCC());
 	return true;
 }

@@ -32,7 +32,8 @@ namespace DollarRecognizer
 
 	void GeometricRecognizer::loadTemplates()
 	{
-		SampleGestures samples;
+		//whitebai 2014.6.8 not use default templates
+	/*	SampleGestures samples;
 
 		addTemplate("Arrow", samples.getGestureArrow());
 		addTemplate("Caret", samples.getGestureCaret());
@@ -56,7 +57,7 @@ namespace DollarRecognizer
 		addTemplate("Star", samples.getGestureStar());
 		addTemplate("Triangle", samples.getGestureTriangle());
 		addTemplate("V", samples.getGestureV());
-		addTemplate("X", samples.getGestureX());
+		addTemplate("X", samples.getGestureX());  */
 	}
 
 	int GeometricRecognizer::addTemplate(string name, Path2D points)

@@ -71,7 +71,7 @@ void CCombatView::CreateUILayer()
 	pWidget = GetChildByNameRecursive(ResultDisplay,3);
 	if(pWidget)
 	{
-		std::string& description = pWidget->getDescription();
+		std::string description = pWidget->getDescription();
 		if(description == "Label") //is real a text
 		{
 			m_pStatusLabel = static_cast<Text*>(pWidget);

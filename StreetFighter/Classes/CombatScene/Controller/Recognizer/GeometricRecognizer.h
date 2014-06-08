@@ -54,6 +54,8 @@ namespace DollarRecognizer
 		Path2D translateToOrigin(Path2D points);
 
 		void loadTemplates();
+		//add by whitebai 2014.6.8
+		void SetMaxGesturePoints(int maxNum) { numPointsInGesture = maxNum;}
 	};
-}
+};
 #endif

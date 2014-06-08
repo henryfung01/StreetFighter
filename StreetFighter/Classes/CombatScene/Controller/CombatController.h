@@ -4,8 +4,6 @@
 #include "cocos2d.h"
 #include "ui/CocosGUI.h"
 #include "SpecialTouchHandler.h"
-//设置最大的缓存touch点的数目，之所以提前处理，为了防止反复resize缓存vector造成低效
-#define MAX_TOUCH_POINT 128
 class CCombatScene;
 class CCombatController:public cocos2d::Node
 {

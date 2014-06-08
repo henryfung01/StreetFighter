@@ -54,8 +54,8 @@
     <ClCompile Include="..\Classes\Common\CommonView.cpp">
       <Filter>Classes\Common</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\CombatScene\View\TemplateRecorder.cpp">
-      <Filter>Classes\CombatScene\View</Filter>
+    <ClCompile Include="..\Classes\CombatScene\Controller\TemplateRecorder.cpp">
+      <Filter>Classes\CombatScene\Controller</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -104,8 +104,11 @@
     <ClInclude Include="..\Classes\Common\CommonView.h">
       <Filter>Classes\Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\CombatScene\View\TemplateRecorder.h">
-      <Filter>Classes\CombatScene\View</Filter>
+    <ClInclude Include="..\Classes\CombatScene\Controller\TemplateRecorder.h">
+      <Filter>Classes\CombatScene\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CombatScene\CombatCommonDefine.h">
+      <Filter>Classes\CombatScene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

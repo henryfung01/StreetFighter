@@ -6,17 +6,17 @@
 class CTemplateRecorder
 {
 public:
-    virtual bool init();  
-    // a selector callback
 	//clockwise
-   DollarRecognizer::Path2D OutputRectange();
+   static DollarRecognizer::Path2D OutputRectange();
    //counterclockwise
-   DollarRecognizer::Path2D OutputRectangeCC();
+   static DollarRecognizer::Path2D OutputRectangeCC();
    //clockwise
-   DollarRecognizer::Path2D OutputCircle();
+   static DollarRecognizer::Path2D OutputCircle();
    //counterclockwise 
-    DollarRecognizer::Path2D OutputCircleCC();
+    static DollarRecognizer::Path2D OutputCircleCC();
     // implement the "static create()" method manually
+	static DollarRecognizer::Path2D OutputTriangle();
+	static DollarRecognizer::Path2D OutputTriangleCC();
 };
 
 #endif // __TEMPLATE_RECORDER_H__

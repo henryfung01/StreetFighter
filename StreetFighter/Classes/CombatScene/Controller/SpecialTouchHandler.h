@@ -4,9 +4,10 @@
 #include "cocos2d.h"
 #include "ui/CocosGUI.h"
 #include "Recognizer/GeometricRecognizer.h"
+class CTemplateRecorder;
 class CCombatController;
-//设置最大的缓存touch点的数目，之所以提前处理，为了防止反复resize缓存vector造成低效
-#define MAX_TOUCH_POINT 128
+
+typedef std::vector<DollarRecognizer::Path2D> GestureVec;
 class CSpTouchHandler
 {
 public:
@@ -19,6 +20,7 @@ private:
 	DollarRecognizer::GeometricRecognizer* m_GemertricRecognizer;
 	bool m_bCatchingInput;
 	CCombatController* m_pOwner;
+	GestureVec m_allGesture;
 };
 
 #endif // __SPECIAL_TOUCH_HANDLER_H__
