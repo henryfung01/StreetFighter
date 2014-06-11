@@ -57,6 +57,9 @@
     <ClCompile Include="..\Classes\CombatScene\Controller\TemplateRecorder.cpp">
       <Filter>Classes\CombatScene\Controller</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\CombatScene\View\SuperAttackDisplayer.cpp">
+      <Filter>Classes\CombatScene\View</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -109,6 +112,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\CombatScene\CombatCommonDefine.h">
       <Filter>Classes\CombatScene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\CombatScene\View\SuperAttackDisplayer.h">
+      <Filter>Classes\CombatScene\View</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

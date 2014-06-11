@@ -5,6 +5,7 @@
 #include "../CombatScene.h"
 #include "editor-support/cocostudio/CCSGUIReader.h"
 #include "CombatViewNames.h"
+#include "SuperAttackDisplayer.h"
 USING_NS_CC;
 using namespace ui;
 
@@ -77,42 +78,9 @@ void CCombatView::CreateUILayer()
 			m_pStatusLabel = static_cast<Text*>(pWidget);
 		}
 	}
-    /////////////////////////////
-    // 2. add a menu item with "X" image, which is clicked to quit the program
-    //    you may modify it.
-
-    // add a "close" icon to exit the progress. it's an autorelease object
-	
-   /* auto closeItem = MenuItemImage::create(
-                                           "CloseNormal.png",
-                                           "CloseSelected.png",
-                                           CC_CALLBACK_1(CCombatView::menuCloseCallback, this));
-    
-	closeItem->setPosition(Point(origin.x + visibleSize.width - closeItem->getContentSize().width/2 ,
-                                origin.y + closeItem->getContentSize().height/2));
-
-    // create menu, it's an autorelease object
-    auto menu = Menu::create(closeItem, NULL);
-    menu->setPosition(Point::ZERO);
-    m_pUILayer->addChild(menu, 1);
-
-    /////////////////////////////
-    // add "HelloWorld" splash screen"
-    auto sprite = Sprite::create("HelloWorld.png");
-
-    // position the sprite on the center of the screen
-    sprite->setPosition(Point(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
-
-    // add the sprite as a child to this layer
-    m_pUILayer->addChild(sprite, 0);
-    //add a test button
-	ui::Button* button = ui::Button::create("cocosui/animationbuttonnormal.png",
-		"cocosui/animationbuttonpressed.png");
-	button->setPosition(Point(origin.x + button->getContentSize().width/2 ,
-                                origin.y + button->getContentSize().height/2));
-	button->addTouchEventListener(this, toucheventselector(CCombatView::OnTouchEvent));
-	m_pUILayer->addChild(button);
-	*/
+    m_pSuperAttackDisplayer = CSuperAttackDisplayer::create();
+	m_pUILayer->addChild(m_pSuperAttackDisplayer);
+	m_pSuperAttackDisplayer->PostInit();
 }
 
 void CCombatView::SetStatusLabel( const char* status )

@@ -5,6 +5,7 @@
 #include "ui/CocosGUI.h"
 #include "Common/CommonView.h"
 class CCombatScene;
+class CSuperAttackDisplayer;
 class CCombatView : public CCommonView
 {
 public:
@@ -19,6 +20,7 @@ public:
 private:
 	CCombatScene* _GetCombatScene();
 	cocos2d::ui::Text* m_pStatusLabel;
+	CSuperAttackDisplayer* m_pSuperAttackDisplayer;
 };
 
 #endif // __COMBAT_VIEW_H__
