@@ -84,3 +84,12 @@ bool CSpTouchHandler::Init()
 	m_allGesture[QTEGestureType_CircleCC] =  m_GemertricRecognizer->normalizePath(CTemplateRecorder::OutputCircleCC());
 	return true;
 }
+
+const DollarRecognizer::Path2D* CSpTouchHandler::GetGesturePath( int gestureType )
+{
+	if(gestureType>= 0 && gestureType < QTEGestureType_Count)
+	{
+		return &m_allGesture[gestureType];
+	}
+	return nullptr;
+}

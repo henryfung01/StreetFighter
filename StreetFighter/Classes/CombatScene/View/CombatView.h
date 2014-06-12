@@ -17,10 +17,12 @@ public:
     CREATE_FUNC(CCombatView);
 	void CreateUILayer();
 	void SetStatusLabel(const char* status);
+	void SetDrawGestureType(int gestureType);
 private:
 	CCombatScene* _GetCombatScene();
 	cocos2d::ui::Text* m_pStatusLabel;
 	CSuperAttackDisplayer* m_pSuperAttackDisplayer;
+	int m_iGestureType;
 };
 
 #endif // __COMBAT_VIEW_H__

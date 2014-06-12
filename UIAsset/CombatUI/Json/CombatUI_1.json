@@ -12,9 +12,7 @@
   "textures": [
     "CombatUI0.plist"
   ],
-  "texturesPng": [
-    "CombatUI0.png"
-  ],
+  "texturesPng": [],
   "version": "1.4.0.0",
   "widgetTree": {
     "classname": "Panel",

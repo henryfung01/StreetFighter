@@ -23,25 +23,6 @@
 				<key>offsetY</key>
 				<real>0</real>
 			</dict>
-			<key>BLOOD-RED.png</key>
-			<dict>
-				<key>width</key>
-				<integer>289</integer>
-				<key>height</key>
-				<integer>25</integer>
-				<key>originalWidth</key>
-				<integer>289</integer>
-				<key>originalHeight</key>
-				<integer>25</integer>
-				<key>x</key>
-				<integer>0</integer>
-				<key>y</key>
-				<integer>121</integer>
-				<key>offsetX</key>
-				<real>0</real>
-				<key>offsetY</key>
-				<real>0</real>
-			</dict>
 			<key>BLOOD-BLUE.png</key>
 			<dict>
 				<key>width</key>
@@ -55,7 +36,140 @@
 				<key>x</key>
 				<integer>0</integer>
 				<key>y</key>
-				<integer>148</integer>
+				<integer>121</integer>
+				<key>offsetX</key>
+				<real>0</real>
+				<key>offsetY</key>
+				<real>0</real>
+			</dict>
+			<key>BLOOD-RED.png</key>
+			<dict>
+				<key>width</key>
+				<integer>289</integer>
+				<key>height</key>
+				<integer>25</integer>
+				<key>originalWidth</key>
+				<integer>289</integer>
+				<key>originalHeight</key>
+				<integer>25</integer>
+				<key>x</key>
+				<integer>0</integer>
+				<key>y</key>
+				<integer>142</integer>
+				<key>offsetX</key>
+				<real>0</real>
+				<key>offsetY</key>
+				<real>0</real>
+			</dict>
+			<key>btn-a-0.png</key>
+			<dict>
+				<key>width</key>
+				<integer>16</integer>
+				<key>height</key>
+				<integer>16</integer>
+				<key>originalWidth</key>
+				<integer>16</integer>
+				<key>originalHeight</key>
+				<integer>16</integer>
+				<key>x</key>
+				<integer>0</integer>
+				<key>y</key>
+				<integer>169</integer>
+				<key>offsetX</key>
+				<real>0</real>
+				<key>offsetY</key>
+				<real>0</real>
+			</dict>
+			<key>btn-a-1.png</key>
+			<dict>
+				<key>width</key>
+				<integer>16</integer>
+				<key>height</key>
+				<integer>16</integer>
+				<key>originalWidth</key>
+				<integer>16</integer>
+				<key>originalHeight</key>
+				<integer>16</integer>
+				<key>x</key>
+				<integer>0</integer>
+				<key>y</key>
+				<integer>187</integer>
+				<key>offsetX</key>
+				<real>0</real>
+				<key>offsetY</key>
+				<real>0</real>
+			</dict>
+			<key>btn-a-2.png</key>
+			<dict>
+				<key>width</key>
+				<integer>16</integer>
+				<key>height</key>
+				<integer>16</integer>
+				<key>originalWidth</key>
+				<integer>16</integer>
+				<key>originalHeight</key>
+				<integer>16</integer>
+				<key>x</key>
+				<integer>18</integer>
+				<key>y</key>
+				<integer>169</integer>
+				<key>offsetX</key>
+				<real>0</real>
+				<key>offsetY</key>
+				<real>0</real>
+			</dict>
+			<key>btn-b-0.png</key>
+			<dict>
+				<key>width</key>
+				<integer>16</integer>
+				<key>height</key>
+				<integer>16</integer>
+				<key>originalWidth</key>
+				<integer>16</integer>
+				<key>originalHeight</key>
+				<integer>16</integer>
+				<key>x</key>
+				<integer>36</integer>
+				<key>y</key>
+				<integer>169</integer>
+				<key>offsetX</key>
+				<real>0</real>
+				<key>offsetY</key>
+				<real>0</real>
+			</dict>
+			<key>btn-b-1.png</key>
+			<dict>
+				<key>width</key>
+				<integer>16</integer>
+				<key>height</key>
+				<integer>16</integer>
+				<key>originalWidth</key>
+				<integer>16</integer>
+				<key>originalHeight</key>
+				<integer>16</integer>
+				<key>x</key>
+				<integer>0</integer>
+				<key>y</key>
+				<integer>205</integer>
+				<key>offsetX</key>
+				<real>0</real>
+				<key>offsetY</key>
+				<real>0</real>
+			</dict>
+			<key>btn-b-2.png</key>
+			<dict>
+				<key>width</key>
+				<integer>16</integer>
+				<key>height</key>
+				<integer>16</integer>
+				<key>originalWidth</key>
+				<integer>16</integer>
+				<key>originalHeight</key>
+				<integer>16</integer>
+				<key>x</key>
+				<integer>18</integer>
+				<key>y</key>
+				<integer>187</integer>
 				<key>offsetX</key>
 				<real>0</real>
 				<key>offsetY</key>
@@ -72,7 +186,7 @@
 				<key>originalHeight</key>
 				<integer>74</integer>
 				<key>x</key>
-				<integer>0</integer>
+				<integer>54</integer>
 				<key>y</key>
 				<integer>169</integer>
 				<key>offsetX</key>

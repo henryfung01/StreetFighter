@@ -14,6 +14,7 @@ public:
    bool init();
    CREATE_FUNC(CCombatController);
    void OnSpecialInput(const char* input);
+   const DollarRecognizer::Path2D* GetGesturePath(int gestureType) { return m_SpTouchHandler.GetGesturePath(gestureType);}
 private:
 	CSpTouchHandler m_SpTouchHandler;
 	CCombatScene* _GetCombatScene();

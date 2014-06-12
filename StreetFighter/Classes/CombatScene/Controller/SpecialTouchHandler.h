@@ -15,6 +15,7 @@ public:
 	virtual ~CSpTouchHandler();
    void OnTouchEvent(cocos2d::Ref *pSender, cocos2d::ui::TouchEventType type);
    bool Init();
+   const DollarRecognizer::Path2D* GetGesturePath(int gestureType);
 private:
 	DollarRecognizer::Path2D m_InputPath;
 	DollarRecognizer::GeometricRecognizer* m_GemertricRecognizer;

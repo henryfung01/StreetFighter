@@ -1,11 +1,11 @@
 #include "CombatView.h"
-#include "ui\UIButton.h"
 #include "../../Common/CommonDef.h"
 #include "../Controller/CombatController.h"
 #include "../CombatScene.h"
 #include "editor-support/cocostudio/CCSGUIReader.h"
 #include "CombatViewNames.h"
 #include "SuperAttackDisplayer.h"
+#include "../CombatCommonDefine.h"
 USING_NS_CC;
 using namespace ui;
 
@@ -79,6 +79,8 @@ void CCombatView::CreateUILayer()
 		}
 	}
     m_pSuperAttackDisplayer = CSuperAttackDisplayer::create();
+	const Size& winSize = Director::getInstance()->getWinSize();
+	m_pSuperAttackDisplayer->setPosition(winSize.width/2,winSize.height/2);
 	m_pUILayer->addChild(m_pSuperAttackDisplayer);
 	m_pSuperAttackDisplayer->PostInit();
 }
@@ -88,5 +90,19 @@ void CCombatView::SetStatusLabel( const char* status )
 	if(status && m_pStatusLabel)
 	{
 		m_pStatusLabel->setText(status);
+	}
+}
+
+void CCombatView::SetDrawGestureType( int gestureType )
+{
+	m_iGestureType = gestureType;
+	if(m_iGestureType == QTEGestureType_None)
+	{
+		m_pSuperAttackDisplayer->setVisible(false);
+	}
+	else
+	{
+		m_pSuperAttackDisplayer->setVisible(true);
+		m_pSuperAttackDisplayer->SetDrawPath(_GetCombatScene()->GetController()->GetGesturePath(m_iGestureType));
 	}
 }

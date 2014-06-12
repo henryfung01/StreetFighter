@@ -6,6 +6,7 @@
 
 enum QTEGestureType
 {
+	QTEGestureType_None = -1,
 	QTEGestureType_Rect = 0,
 	QTEGestureType_RectCC,
 	QTEGestureType_Circle,

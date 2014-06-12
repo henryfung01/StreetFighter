@@ -48,3 +48,4 @@ CCombatScene* CCombatController::_GetCombatScene()
 	}
 	return nullptr;
 }
+
