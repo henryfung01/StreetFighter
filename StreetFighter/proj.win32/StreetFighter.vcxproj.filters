@@ -25,6 +25,9 @@
     <Filter Include="Classes\CombatScene\Controller\Recognizer">
       <UniqueIdentifier>{69f73e77-6d61-4ed5-b3db-98b2ede67061}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Game">
+      <UniqueIdentifier>{54361681-f363-43e9-b578-8be348997153}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -59,6 +62,9 @@
     </ClCompile>
     <ClCompile Include="..\Classes\CombatScene\View\SuperAttackDisplayer.cpp">
       <Filter>Classes\CombatScene\View</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Game\Game.cpp">
+      <Filter>Classes\Game</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -115,6 +121,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\CombatScene\View\SuperAttackDisplayer.h">
       <Filter>Classes\CombatScene\View</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\Game.h">
+      <Filter>Classes\Game</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
