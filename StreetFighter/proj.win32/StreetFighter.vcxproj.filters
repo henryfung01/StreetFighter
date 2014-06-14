@@ -66,6 +66,12 @@
     <ClCompile Include="..\Classes\Game\Game.cpp">
       <Filter>Classes\Game</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\Game\GameStateBase.cpp">
+      <Filter>Classes\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Game\GameStateManager.cpp">
+      <Filter>Classes\Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -123,6 +129,12 @@
       <Filter>Classes\CombatScene\View</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Game\Game.h">
+      <Filter>Classes\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\GameStateBase.h">
+      <Filter>Classes\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\GameStateManager.h">
       <Filter>Classes\Game</Filter>
     </ClInclude>
   </ItemGroup>

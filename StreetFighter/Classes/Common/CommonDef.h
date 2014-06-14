@@ -6,4 +6,15 @@ enum SceneType
 	SceneType_Town = 1,
 	SceneType_Combat = 2,
 };
+
+enum GameStateType
+{
+	GameStateType_None = -1,
+	GameStateType_Slash = 0,
+	GameStateType_Login,
+	GameStateType_ActorSelect,
+	GameStateType_Town,
+	GameStateType_Combat,
+	GameStateType_Count,
+};
 #endif
