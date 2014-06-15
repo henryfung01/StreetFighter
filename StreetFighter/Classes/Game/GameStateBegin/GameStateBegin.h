@@ -9,9 +9,9 @@ public:
 	CGameStateBase ();
 	virtual ~CGameStateBase(){}
 	int GetType() {return m_iType;}
-	virtual bool OnEnterState(){ return true;};
-	virtual bool OnLeaveState(){ return true;};
-protected:
+	virtual bool OnEnter(){ return true;};
+	virtual bool OnLeave(){ return true;};
+private:
 	int m_iType;
 };
 

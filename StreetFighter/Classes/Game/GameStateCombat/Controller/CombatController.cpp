@@ -2,9 +2,11 @@
 #include "CombatController.h"
 USING_NS_CC;
 #include "Recognizer/GeometricRecognizer.h"
-#include "../../Common/CommonDef.h"
-#include "../CombatScene.h"
-#include "../View/CombatView.h"
+#include "../../../Common/CommonDef.h"
+#include "../Scene/CombatScene.h"
+#include "../UI/CombatUI.h"
+#include "../GameStateCombat.h"
+#include "../../Game.h"
 using namespace ui;
 using namespace DollarRecognizer;
 void CCombatController::OnSpecialTouchEvent(Ref *pSender, TouchEventType type)
@@ -31,21 +33,16 @@ bool CCombatController::init()
 
 void CCombatController::OnSpecialInput( const char* input )
 {
-	CCombatScene* pScene = _GetCombatScene();
-	if(pScene)
+	CGameStateCombat* pState = _GetCombatState();
+	if(pState)
 	{
-		pScene->GetView()->SetStatusLabel(input);
+		pState->GetUI()->SetStatusLabel(input);
 	}
 }
 
-CCombatScene* CCombatController::_GetCombatScene()
+CGameStateCombat* CCombatController::_GetCombatState()
 {
-	Scene* pOwner = getScene();
-	//确保是一个combat scene
-	if(pOwner && pOwner->getTag() == SceneType_Combat)
-	{
-		return static_cast<CCombatScene*>(pOwner);
-	}
-	return nullptr;
+	CGameStateBase* pState = CGame::GetInstance()->GetGameState(GameStateType_Combat);
+	return static_cast<CGameStateCombat*>(pState);
 }
 

@@ -3,12 +3,16 @@
 #ifndef __GAME_H__
 #define __GAME_H__
 class CGameStateManager;
+class CGameStateBase;
 class CGame
 {    
+public:
+	static CGame* GetInstance();
+	CGameStateBase* GetGameState(int gameState);
 protected:
 	virtual ~CGame(){}
-	CGame* GetInstance();
 	virtual bool Init();
+	CGameStateManager* GetGameStateManager() { return m_pGameStateManager;}
 private:
 	CGame(){}
 	static CGame* pStaticGame;

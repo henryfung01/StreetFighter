@@ -42,7 +42,7 @@ bool CGameStateManager::RegisterGameState( int gameStateType,CGameStateBase* pGa
 
 bool CGameStateManager::_CheckTypeValid( int gameStateType )
 {
-	return gameStateType >= GameStateType_Slash && gameStateType < GameStateType_Count;
+	return gameStateType >= GameStateType_Begin && gameStateType < GameStateType_Count;
 }
 
 CGameStateManager::~CGameStateManager()
@@ -64,9 +64,18 @@ void CGameStateManager::GotoGameState( int gameState )
 	{
 		if(m_iCurrentType != GameStateType_None)
 		{
-			m_allGameStates[m_iCurrentType]->OnLeave();
+			m_allGameStates[m_iCurrentType]->OnLeaveState();
 		}
-		m_allGameStates[gameState]->OnEnter();
+		m_allGameStates[gameState]->OnEnterState();
 		m_iCurrentType = gameState;
 	}
+}
+
+CGameStateBase* CGameStateManager::GetGameState( int gameState )
+{
+	if(_CheckTypeValid(gameState))
+	{
+		return m_allGameStates[gameState];
+	}
+	return nullptr;
 }

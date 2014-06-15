@@ -12,6 +12,7 @@ public:
 	static CGameStateManager* Create();
 	virtual ~CGameStateManager();
 	virtual void GotoGameState(int gameState);
+	CGameStateBase* GetGameState(int gameState);
 	//this function will call pGameState->Retain(),so,the refcount should be zero
 	virtual bool RegisterGameState(int gameStateType,CGameStateBase* pGameState);
 private:

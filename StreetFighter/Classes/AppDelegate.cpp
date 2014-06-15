@@ -1,5 +1,4 @@
 #include "AppDelegate.h"
-#include "CombatScene/CombatScene.h"
 
 USING_NS_CC;
 
@@ -27,10 +26,6 @@ bool AppDelegate::applicationDidFinishLaunching() {
     director->setAnimationInterval(1.0 / 60);
 
     // create a scene. it's an autorelease object
-    auto scene = CCombatScene::create(false);
-
-    // run
-    director->runWithScene(scene);
 
     return true;
 }

@@ -10,23 +10,29 @@
     <Filter Include="resource">
       <UniqueIdentifier>{715254bc-d70b-4ec5-bf29-467dd3ace079}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Classes\CombatScene">
-      <UniqueIdentifier>{61da5b2e-c3ee-441b-b42b-30bce75bf4df}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Classes\CombatScene\View">
-      <UniqueIdentifier>{9d499ade-5f9a-4e4e-ad6d-f5d95f224955}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Classes\Common">
       <UniqueIdentifier>{3e05a606-85c2-43dd-98a6-0d9b44b6e3dd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Classes\CombatScene\Controller">
-      <UniqueIdentifier>{29339f0b-7cc9-4af5-991c-3fcf6bebac2f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Classes\CombatScene\Controller\Recognizer">
-      <UniqueIdentifier>{69f73e77-6d61-4ed5-b3db-98b2ede67061}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Classes\Game">
       <UniqueIdentifier>{54361681-f363-43e9-b578-8be348997153}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Game\GameStateBegin">
+      <UniqueIdentifier>{407ccf89-8341-49f3-90d5-438c85f71d67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Game\GameStateCombat">
+      <UniqueIdentifier>{9ad4038e-881b-48af-b5df-c41e4d250188}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Game\GameStateCombat\Scene">
+      <UniqueIdentifier>{17628025-01db-4a84-9f69-904b2fc5ee16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Game\GameStateCombat\Controller">
+      <UniqueIdentifier>{d50056e8-57cc-46cf-9f4a-8028be122072}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Game\GameStateCombat\Controller\Recognizer">
+      <UniqueIdentifier>{ed3cb3ce-69e3-4ba6-8e56-5f3fe1987d9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Game\GameStateCombat\UI">
+      <UniqueIdentifier>{b08c05a0-25aa-405b-80b4-a61efb84ed1a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -39,29 +45,8 @@
     <ClCompile Include="..\Classes\HelloWorldScene.cpp">
       <Filter>Classes</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\CombatScene\CombatScene.cpp">
-      <Filter>Classes\CombatScene</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\CombatScene\View\CombatView.cpp">
-      <Filter>Classes\CombatScene\View</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\CombatScene\Controller\CombatController.cpp">
-      <Filter>Classes\CombatScene\Controller</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\CombatScene\Controller\SpecialTouchHandler.cpp">
-      <Filter>Classes\CombatScene\Controller</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\CombatScene\Controller\Recognizer\GeometricRecognizer.cpp">
-      <Filter>Classes\CombatScene\Controller\Recognizer</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\Common\CommonView.cpp">
       <Filter>Classes\Common</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\CombatScene\Controller\TemplateRecorder.cpp">
-      <Filter>Classes\CombatScene\Controller</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\CombatScene\View\SuperAttackDisplayer.cpp">
-      <Filter>Classes\CombatScene\View</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Game\Game.cpp">
       <Filter>Classes\Game</Filter>
@@ -71,6 +56,30 @@
     </ClCompile>
     <ClCompile Include="..\Classes\Game\GameStateManager.cpp">
       <Filter>Classes\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Game\GameStateCombat\Controller\CombatController.cpp">
+      <Filter>Classes\Game\GameStateCombat\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Game\GameStateCombat\Controller\SpecialTouchHandler.cpp">
+      <Filter>Classes\Game\GameStateCombat\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Game\GameStateCombat\Controller\TemplateRecorder.cpp">
+      <Filter>Classes\Game\GameStateCombat\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Game\GameStateCombat\Controller\Recognizer\GeometricRecognizer.cpp">
+      <Filter>Classes\Game\GameStateCombat\Controller\Recognizer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Game\GameStateCombat\Scene\CombatScene.cpp">
+      <Filter>Classes\Game\GameStateCombat\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Game\GameStateCombat\UI\CombatUI.cpp">
+      <Filter>Classes\Game\GameStateCombat\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Game\GameStateCombat\UI\SuperAttackDisplayer.cpp">
+      <Filter>Classes\Game\GameStateCombat\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Game\GameStateCombat\GameStateCombat.cpp">
+      <Filter>Classes\Game\GameStateCombat</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -83,50 +92,11 @@
     <ClInclude Include="..\Classes\HelloWorldScene.h">
       <Filter>Classes</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\CombatScene\CombatScene.h">
-      <Filter>Classes\CombatScene</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\CombatScene\View\CombatView.h">
-      <Filter>Classes\CombatScene\View</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\Common\CommonDef.h">
       <Filter>Classes\Common</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\CombatScene\Controller\CombatController.h">
-      <Filter>Classes\CombatScene\Controller</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\CombatScene\Controller\SpecialTouchHandler.h">
-      <Filter>Classes\CombatScene\Controller</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\CombatScene\Controller\Recognizer\GeometricRecognizer.h">
-      <Filter>Classes\CombatScene\Controller\Recognizer</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\CombatScene\Controller\Recognizer\GeometricRecognizerTypes.h">
-      <Filter>Classes\CombatScene\Controller\Recognizer</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\CombatScene\Controller\Recognizer\GestureTemplate.h">
-      <Filter>Classes\CombatScene\Controller\Recognizer</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\CombatScene\Controller\Recognizer\PathWriter.h">
-      <Filter>Classes\CombatScene\Controller\Recognizer</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\CombatScene\Controller\Recognizer\SampleGestures.h">
-      <Filter>Classes\CombatScene\Controller\Recognizer</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\CombatScene\View\CombatViewNames.h">
-      <Filter>Classes\CombatScene\View</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\Common\CommonView.h">
       <Filter>Classes\Common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\CombatScene\Controller\TemplateRecorder.h">
-      <Filter>Classes\CombatScene\Controller</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\CombatScene\CombatCommonDefine.h">
-      <Filter>Classes\CombatScene</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\CombatScene\View\SuperAttackDisplayer.h">
-      <Filter>Classes\CombatScene\View</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Game\Game.h">
       <Filter>Classes\Game</Filter>
@@ -136,6 +106,48 @@
     </ClInclude>
     <ClInclude Include="..\Classes\Game\GameStateManager.h">
       <Filter>Classes\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\GameStateCombat\CombatCommonDefine.h">
+      <Filter>Classes\Game\GameStateCombat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\GameStateCombat\Controller\CombatController.h">
+      <Filter>Classes\Game\GameStateCombat\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\GameStateCombat\Controller\SpecialTouchHandler.h">
+      <Filter>Classes\Game\GameStateCombat\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\GameStateCombat\Controller\TemplateRecorder.h">
+      <Filter>Classes\Game\GameStateCombat\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\GameStateCombat\Controller\Recognizer\GeometricRecognizer.h">
+      <Filter>Classes\Game\GameStateCombat\Controller\Recognizer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\GameStateCombat\Controller\Recognizer\GeometricRecognizerTypes.h">
+      <Filter>Classes\Game\GameStateCombat\Controller\Recognizer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\GameStateCombat\Controller\Recognizer\GestureTemplate.h">
+      <Filter>Classes\Game\GameStateCombat\Controller\Recognizer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\GameStateCombat\Controller\Recognizer\PathWriter.h">
+      <Filter>Classes\Game\GameStateCombat\Controller\Recognizer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\GameStateCombat\Controller\Recognizer\SampleGestures.h">
+      <Filter>Classes\Game\GameStateCombat\Controller\Recognizer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\GameStateCombat\Scene\CombatScene.h">
+      <Filter>Classes\Game\GameStateCombat\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\GameStateCombat\UI\CombatUI.h">
+      <Filter>Classes\Game\GameStateCombat\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\GameStateCombat\UI\CombatUINames.h">
+      <Filter>Classes\Game\GameStateCombat\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\GameStateCombat\UI\SuperAttackDisplayer.h">
+      <Filter>Classes\Game\GameStateCombat\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\GameStateCombat\GameStateCombat.h">
+      <Filter>Classes\Game\GameStateCombat</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

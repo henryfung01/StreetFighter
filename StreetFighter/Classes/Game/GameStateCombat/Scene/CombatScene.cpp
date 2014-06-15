@@ -1,8 +1,8 @@
 #include "CombatScene.h"
-#include "View\CombatView.h"
-#include "Controller\CombatController.h"
+#include "../UI/CombatUI.h"
+#include "../Controller/CombatController.h"
 USING_NS_CC;
-#include "../Common/CommonDef.h"
+#include "../../../Common/CommonDef.h"
 cocos2d::Scene* CCombatScene::create(bool usePhysics)
 {
 	CCombatScene* combatScene = NULL;
@@ -33,9 +33,4 @@ cocos2d::Scene* CCombatScene::create(bool usePhysics)
 void CCombatScene::_InitCombatScene()
 {
 	setTag(SceneType_Combat);
-	m_pCombatView = CCombatView::create();
-	addChild(m_pCombatView);
-	m_pCombatView->CreateUILayer();
-	m_pCombatController = CCombatController::create();
-	addChild(m_pCombatController);
 }

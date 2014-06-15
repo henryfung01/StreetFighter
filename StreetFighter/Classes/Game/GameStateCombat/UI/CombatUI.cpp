@@ -1,22 +1,24 @@
-#include "CombatView.h"
-#include "../../Common/CommonDef.h"
+#include "CombatUI.h"
+#include "../../../Common/CommonDef.h"
 #include "../Controller/CombatController.h"
-#include "../CombatScene.h"
+#include "../Scene/CombatScene.h"
 #include "editor-support/cocostudio/CCSGUIReader.h"
-#include "CombatViewNames.h"
+#include "CombatUINames.h"
 #include "SuperAttackDisplayer.h"
 #include "../CombatCommonDefine.h"
+#include "../../Game.h"
+#include "../GameStateCombat.h"
 USING_NS_CC;
 using namespace ui;
 
 // on "init" you need to initialize your instance
-bool CCombatView::init()
+bool CCombatUI::init()
 {
 	return true;
 }
 
 
-void CCombatView::menuCloseCallback(Ref* pSender)
+void CCombatUI::menuCloseCallback(Ref* pSender)
 {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WP8) || (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
 	MessageBox("You pressed the close button. Windows Store Apps do not implement a close button.","Alert");
@@ -29,27 +31,18 @@ void CCombatView::menuCloseCallback(Ref* pSender)
     exit(0);
 #endif
 }
-CCombatScene* CCombatView::_GetCombatScene()
+CGameStateCombat* CCombatUI::_GetCombatState()
 {
-	Scene* pOwner = getScene();
-	//确保是一个combat scene
-	if(pOwner && pOwner->getTag() == SceneType_Combat)
-	{
-		return static_cast<CCombatScene*>(pOwner);
-	}
-	return nullptr;
+	CGameStateBase* pState = CGame::GetInstance()->GetGameState(GameStateType_Combat);
+	return static_cast<CGameStateCombat*>(pState);
 }
-void CCombatView::OnTouchEvent(Ref *pSender, TouchEventType type)
+void CCombatUI::OnTouchEvent(Ref *pSender, TouchEventType type)
 {
-	CCombatScene* combatScene = _GetCombatScene();
-	if(combatScene)
-	{
-		CCombatController* pCombatController = combatScene->GetController();
-		pCombatController->OnSpecialTouchEvent(pSender,type);
-	}
+	CCombatController* pCombatController = _GetCombatState()->GetController();
+	pCombatController->OnSpecialTouchEvent(pSender,type);
 }
 
-void CCombatView::CreateUILayer()
+void CCombatUI::CreateUILayer()
 {
 	//因为在addchild内部会retain，所以m_pUILayer不用管引用计数
 	m_pUILayer = Layer::create();
@@ -67,7 +60,7 @@ void CCombatView::CreateUILayer()
 	if(pWidget)
 	{
 		pWidget->setTouchEnabled(true);
-		pWidget->addTouchEventListener(this, toucheventselector(CCombatView::OnTouchEvent));
+		pWidget->addTouchEventListener(this, toucheventselector(CCombatUI::OnTouchEvent));
 	}
 	pWidget = GetChildByNameRecursive(ResultDisplay,3);
 	if(pWidget)
@@ -85,7 +78,7 @@ void CCombatView::CreateUILayer()
 	m_pSuperAttackDisplayer->PostInit();
 }
 
-void CCombatView::SetStatusLabel( const char* status )
+void CCombatUI::SetStatusLabel( const char* status )
 {
 	if(status && m_pStatusLabel)
 	{
@@ -93,7 +86,7 @@ void CCombatView::SetStatusLabel( const char* status )
 	}
 }
 
-void CCombatView::SetDrawGestureType( int gestureType )
+void CCombatUI::SetDrawGestureType( int gestureType )
 {
 	m_iGestureType = gestureType;
 	if(m_iGestureType == QTEGestureType_None)
@@ -103,6 +96,6 @@ void CCombatView::SetDrawGestureType( int gestureType )
 	else
 	{
 		m_pSuperAttackDisplayer->setVisible(true);
-		m_pSuperAttackDisplayer->SetDrawPath(_GetCombatScene()->GetController()->GetGesturePath(m_iGestureType));
+		m_pSuperAttackDisplayer->SetDrawPath(_GetCombatState()->GetController()->GetGesturePath(m_iGestureType));
 	}
 }

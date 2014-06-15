@@ -10,7 +10,7 @@ enum SceneType
 enum GameStateType
 {
 	GameStateType_None = -1,
-	GameStateType_Slash = 0,
+	GameStateType_Begin = 0,
 	GameStateType_Login,
 	GameStateType_ActorSelect,
 	GameStateType_Town,

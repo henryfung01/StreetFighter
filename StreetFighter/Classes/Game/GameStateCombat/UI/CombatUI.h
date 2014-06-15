@@ -1,12 +1,12 @@
-#ifndef __COMBAT_VIEW_H__
-#define __COMBAT_VIEW_H__
+#ifndef __COMBAT_UI_H__
+#define __COMBAT_UI_H__
 
 #include "cocos2d.h"
 #include "ui/CocosGUI.h"
 #include "Common/CommonView.h"
-class CCombatScene;
+class CGameStateCombat;
 class CSuperAttackDisplayer;
-class CCombatView : public CCommonView
+class CCombatUI : public CCommonView
 {
 public:
     virtual bool init();  
@@ -14,15 +14,15 @@ public:
     void menuCloseCallback(cocos2d::Ref* pSender);
     void OnTouchEvent(cocos2d::Ref *pSender, cocos2d::ui::TouchEventType type);
     // implement the "static create()" method manually
-    CREATE_FUNC(CCombatView);
+    CREATE_FUNC(CCombatUI);
 	void CreateUILayer();
 	void SetStatusLabel(const char* status);
 	void SetDrawGestureType(int gestureType);
 private:
-	CCombatScene* _GetCombatScene();
+	CGameStateCombat* _GetCombatState();
 	cocos2d::ui::Text* m_pStatusLabel;
 	CSuperAttackDisplayer* m_pSuperAttackDisplayer;
 	int m_iGestureType;
 };
 
-#endif // __COMBAT_VIEW_H__
+#endif // __COMBAT_UI_H__
