@@ -81,6 +81,9 @@
     <ClCompile Include="..\Classes\Game\GameStateCombat\GameStateCombat.cpp">
       <Filter>Classes\Game\GameStateCombat</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\Game\GameStateBegin\GameStateBegin.cpp">
+      <Filter>Classes\Game\GameStateBegin</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -148,6 +151,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\Game\GameStateCombat\GameStateCombat.h">
       <Filter>Classes\Game\GameStateCombat</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\GameStateBegin\GameStateBegin.h">
+      <Filter>Classes\Game\GameStateBegin</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
