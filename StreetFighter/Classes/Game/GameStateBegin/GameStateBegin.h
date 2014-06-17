@@ -10,7 +10,7 @@ public:
 	virtual ~CGameStateBegin(){}
 	virtual bool init();
 	virtual bool OnEnterState();
-	virtual bool OnLeaveState(){ return true;};
+	virtual bool OnLeaveState();
 	cocos2d::Scene* GetScene() { return m_pBeginScene;}
 	CREATE_FUNC(CGameStateBegin);
 private:

@@ -90,6 +90,9 @@
     <ClCompile Include="..\Classes\Game\GameStateBegin\UI\BeginUI.cpp">
       <Filter>Classes\Game\GameStateBegin\UI</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\Game\LoadingScene.cpp">
+      <Filter>Classes\Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -163,6 +166,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\Game\GameStateBegin\UI\BeginUI.h">
       <Filter>Classes\Game\GameStateBegin\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\LoadingScene.h">
+      <Filter>Classes\Game</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
