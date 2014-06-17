@@ -34,6 +34,9 @@
     <Filter Include="Classes\Game\GameStateCombat\UI">
       <UniqueIdentifier>{b08c05a0-25aa-405b-80b4-a61efb84ed1a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Game\GameStateBegin\UI">
+      <UniqueIdentifier>{abc0656d-f1a1-41f7-bea8-e8f715ef3f09}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -83,6 +86,9 @@
     </ClCompile>
     <ClCompile Include="..\Classes\Game\GameStateBegin\GameStateBegin.cpp">
       <Filter>Classes\Game\GameStateBegin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Game\GameStateBegin\UI\BeginUI.cpp">
+      <Filter>Classes\Game\GameStateBegin\UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +160,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\Game\GameStateBegin\GameStateBegin.h">
       <Filter>Classes\Game\GameStateBegin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\GameStateBegin\UI\BeginUI.h">
+      <Filter>Classes\Game\GameStateBegin\UI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

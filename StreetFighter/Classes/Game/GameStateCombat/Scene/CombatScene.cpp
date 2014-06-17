@@ -2,7 +2,7 @@
 #include "../UI/CombatUI.h"
 #include "../Controller/CombatController.h"
 USING_NS_CC;
-#include "../../../Common/CommonDef.h"
+#include "Common/CommonDef.h"
 cocos2d::Scene* CCombatScene::create(bool usePhysics)
 {
 	CCombatScene* combatScene = NULL;

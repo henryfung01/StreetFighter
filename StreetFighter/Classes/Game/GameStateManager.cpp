@@ -31,11 +31,11 @@ bool CGameStateManager::RegisterGameState( int gameStateType,CGameStateBase* pGa
 			//not use delete but call release function
 			//this can support the pGameState point from another module such as a DLL
 			m_allGameStates[gameStateType]->release();
-			//ref ++,the ref should be 0
-			pGameState->retain();
-			m_allGameStates[gameStateType] = pGameState;
-			return true;
 		}
+		//ref ++,the ref should be 0
+		pGameState->retain();
+		m_allGameStates[gameStateType] = pGameState;
+		return true;
 	}
 	return false;
 }

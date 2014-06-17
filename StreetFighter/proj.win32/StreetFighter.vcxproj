@@ -138,6 +138,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\Game\Game.cpp" />
     <ClCompile Include="..\Classes\Game\GameStateBase.cpp" />
     <ClCompile Include="..\Classes\Game\GameStateBegin\GameStateBegin.cpp" />
+    <ClCompile Include="..\Classes\Game\GameStateBegin\UI\BeginUI.cpp" />
     <ClCompile Include="..\Classes\Game\GameStateCombat\Controller\CombatController.cpp" />
     <ClCompile Include="..\Classes\Game\GameStateCombat\Controller\Recognizer\GeometricRecognizer.cpp" />
     <ClCompile Include="..\Classes\Game\GameStateCombat\Controller\SpecialTouchHandler.cpp" />
@@ -157,6 +158,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\Game\Game.h" />
     <ClInclude Include="..\Classes\Game\GameStateBase.h" />
     <ClInclude Include="..\Classes\Game\GameStateBegin\GameStateBegin.h" />
+    <ClInclude Include="..\Classes\Game\GameStateBegin\UI\BeginUI.h" />
     <ClInclude Include="..\Classes\Game\GameStateCombat\CombatCommonDefine.h" />
     <ClInclude Include="..\Classes\Game\GameStateCombat\Controller\CombatController.h" />
     <ClInclude Include="..\Classes\Game\GameStateCombat\Controller\Recognizer\GeometricRecognizer.h" />

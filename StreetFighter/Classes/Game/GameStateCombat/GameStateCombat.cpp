@@ -1,5 +1,5 @@
 #include "GameStateCombat.h"
-#include "../../Common/CommonDef.h"
+#include "Common/CommonDef.h"
 #include "Controller/CombatController.h"
 CGameStateCombat::CGameStateCombat():
 m_pCombatUI(nullptr),

@@ -1,6 +1,6 @@
 #include "TemplateRecorder.h"
 #include "ui\UIButton.h"
-#include "../../../Common/CommonDef.h"
+#include "Common/CommonDef.h"
 #include "../Controller/Recognizer/GeometricRecognizer.h"
 USING_NS_CC;
 using namespace DollarRecognizer;

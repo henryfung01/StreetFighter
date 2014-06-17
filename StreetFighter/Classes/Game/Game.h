@@ -9,10 +9,10 @@ class CGame
 public:
 	static CGame* GetInstance();
 	CGameStateBase* GetGameState(int gameState);
+	CGameStateManager* GetGameStateManager() { return m_pGameStateManager;}
 protected:
 	virtual ~CGame(){}
 	virtual bool Init();
-	CGameStateManager* GetGameStateManager() { return m_pGameStateManager;}
 private:
 	CGame(){}
 	static CGame* pStaticGame;

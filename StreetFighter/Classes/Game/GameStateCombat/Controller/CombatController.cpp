@@ -2,11 +2,11 @@
 #include "CombatController.h"
 USING_NS_CC;
 #include "Recognizer/GeometricRecognizer.h"
-#include "../../../Common/CommonDef.h"
+#include "Common/CommonDef.h"
 #include "../Scene/CombatScene.h"
 #include "../UI/CombatUI.h"
 #include "../GameStateCombat.h"
-#include "../../Game.h"
+#include "Game/Game.h"
 using namespace ui;
 using namespace DollarRecognizer;
 void CCombatController::OnSpecialTouchEvent(Ref *pSender, TouchEventType type)

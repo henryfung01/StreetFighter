@@ -1,12 +1,12 @@
 #include "CombatUI.h"
-#include "../../../Common/CommonDef.h"
+#include "Common/CommonDef.h"
 #include "../Controller/CombatController.h"
 #include "../Scene/CombatScene.h"
 #include "editor-support/cocostudio/CCSGUIReader.h"
 #include "CombatUINames.h"
 #include "SuperAttackDisplayer.h"
 #include "../CombatCommonDefine.h"
-#include "../../Game.h"
+#include "Game/Game.h"
 #include "../GameStateCombat.h"
 USING_NS_CC;
 using namespace ui;

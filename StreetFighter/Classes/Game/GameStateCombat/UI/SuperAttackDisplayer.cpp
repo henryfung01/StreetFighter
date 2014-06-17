@@ -1,6 +1,6 @@
 #include "SuperAttackDisplayer.h"
 #include "ui\UIButton.h"
-#include "../../../Common/CommonDef.h"
+#include "Common/CommonDef.h"
 #include "../Controller/CombatController.h"
 #include "../Scene/CombatScene.h"
 #include "editor-support/cocostudio/CCSGUIReader.h"
