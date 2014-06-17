@@ -32,11 +32,11 @@ void CBeginUI::OnTintOver()
 	auto label1 = LabelBMFont::create("whitebai", "fonts/futura-48.fnt");
 	m_colorLayer->addChild(label1);
 	Size s = m_colorLayer->getContentSize();
-	label1->setPosition(Point(s.width/2, s.height/2));
-	auto fadein = FadeIn::create(2);
+	label1->setPosition(Point(-100, s.height/2));
+	auto moveto = MoveTo::create(2,Point(s.width/2,s.height/2));
 	auto pCallback = CallFunc::create(CC_CALLBACK_0(CBeginUI::OnNameFadeIn,this));
-	auto pSequence = Sequence::create(fadein, pCallback, NULL);
-	m_colorLayer->runAction(pSequence);
+	auto pSequence = Sequence::create(moveto, pCallback, NULL);
+	label1->runAction(pSequence);
 }
 
 void CBeginUI::OnNameFadeIn()
