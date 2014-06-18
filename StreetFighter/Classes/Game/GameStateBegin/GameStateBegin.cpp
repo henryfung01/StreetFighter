@@ -29,5 +29,5 @@ bool CGameStateBegin::init()
 
 bool CGameStateBegin::OnLeaveState()
 {
-
+	return true;
 }
