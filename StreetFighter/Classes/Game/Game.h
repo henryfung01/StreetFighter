@@ -4,12 +4,14 @@
 #define __GAME_H__
 class CGameStateManager;
 class CGameStateBase;
+class CLoadingScene;
 class CGame
 {    
 public:
 	static CGame* GetInstance();
 	CGameStateBase* GetGameState(int gameState);
 	CGameStateManager* GetGameStateManager() { return m_pGameStateManager;}
+	CLoadingScene* GetLoadingScene() { return m_pLoadingScene;}
 protected:
 	virtual ~CGame(){}
 	virtual bool Init();
@@ -17,6 +19,7 @@ private:
 	CGame(){}
 	static CGame* pStaticGame;
 	CGameStateManager* m_pGameStateManager;
+	CLoadingScene* m_pLoadingScene;
 };
 
 #endif // __GAME_H__

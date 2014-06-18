@@ -29,7 +29,7 @@ CGameStateBegin* CBeginUI::_GetState()
 
 void CBeginUI::OnTintOver()
 {
-	auto label1 = LabelBMFont::create("whitebai", "fonts/futura-48.fnt");
+	auto label1 = Label::createWithBMFont("fonts/futura-48.fnt","whitebai");
 	m_colorLayer->addChild(label1);
 	Size s = m_colorLayer->getContentSize();
 	label1->setPosition(Point(-100, s.height/2));

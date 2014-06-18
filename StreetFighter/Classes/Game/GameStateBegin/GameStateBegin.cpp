@@ -1,6 +1,8 @@
 #include "GameStateBegin.h"
 #include "Common/CommonDef.h"
 #include "UI/BeginUI.h"
+#include "Game/Game.h"
+#include "Game/LoadingScene.h"
 USING_NS_CC;
 CGameStateBegin::CGameStateBegin()
 {
@@ -16,7 +18,7 @@ bool CGameStateBegin::OnEnterState()
 	//begin ui init function will add the object to the scene
 	m_pBeginUI = CBeginUI::create();
 	m_pBeginUI->retain();
-	Director::getInstance()->runWithScene(m_pBeginScene);
+	Director::getInstance()->runWithScene(CGame::GetInstance()->GetLoadingScene());
 	return true;
 }
 
@@ -29,5 +31,8 @@ bool CGameStateBegin::init()
 
 bool CGameStateBegin::OnLeaveState()
 {
+	//release the begin scene
+	m_pBeginScene->release();
+	m_pBeginUI->release();
 	return true;
 }
