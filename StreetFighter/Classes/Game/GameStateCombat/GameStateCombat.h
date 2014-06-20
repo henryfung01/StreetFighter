@@ -10,7 +10,7 @@ public:
 	CGameStateCombat ();
 	virtual ~CGameStateCombat(){}
 	//create cocos resource
-	virtual bool OnEnterState(){ return true;}
+	virtual bool OnEnterState();
 	//destroy cocos resource
 	virtual bool OnLeaveState(){ return true;}
 	//this is the initialize of classes without cocos resource
