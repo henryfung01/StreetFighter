@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="64" height="20" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="DesertT_byLunarea" tilewidth="32" tileheight="32">
+  <image source="../LevelResource/DesertT_byLunarea.png" width="512" height="512"/>
+ </tileset>
+ <tileset firstgid="257" name="SimpleTown-byLunarea" tilewidth="32" tileheight="32">
+  <image source="../LevelResource/SimpleTown-byLunarea.png" width="512" height="512"/>
+ </tileset>
+ <layer name="desert" width="64" height="20">
+  <data encoding="base64" compression="zlib">
+   eJztwwEJAAAMBKHrX+jrrcdQcNVUVVVV1ZcPUqmTLg==
+  </data>
+ </layer>
+ <layer name="building" width="64" height="20">
+  <data encoding="base64" compression="zlib">
+   eJztzqcRgGAQBeG/KQolNEBogNAAoQFCQaxAYREn2G9mzYmbl6eUCiqpSv9TU0MtdcFbIvQ00EhT8JYIMy200ha8JcJOB510ffyVPb1vkiRJkiQp1g0O4g6S
+  </data>
+ </layer>
+ <layer name="plant" width="64" height="20">
+  <data encoding="base64" compression="zlib">
+   eJztljtSwzAQhq3CR4DkAjwuQJKbcAu4AXQcwaSFwklL0oQSaKDkUUAJJLkAkJrfM97Jslk9IGacyeib+cda6V9JK2sSJ8nybECbUANqKrGPoQlf6xHeJ49/gvGpw/Ob9Ygz5Jxb8ragbWgH2lXiglPkdlk+n+8mYD/38DxA79DY4//C+Kz0aOfF10tL+bhAzsCy7h60X6qjxAU95PbN/Oxd8xF87694vkEf0CfLGzrqLLCdF+WlFmXm59lcIb521H8CtVn9rbKvI7x09tp8sgbaO717zUfzkVfefTov2U95I+hSeeZm3iZscVFvJmLZJ/PlXLwGuXd69zYf9/K7z7H130J3yjNlbemVcWYWx7U+W1vW4CPUF8Iz9KI8E9F2xblZHNf6XHPXRchv339wAB3WtPYqcAQd172JyJ+J9zfs/oZ8r64zId+r60yV/9WRSCQSiVTFN7OriJw=
+  </data>
+ </layer>
+ <objectgroup name="对象层 1" width="64" height="20">
+  <object name="moveArea" x="1" y="225" width="2040" height="413"/>
+  <object name="spawnLine1" x="479" y="14">
+   <polyline points="0,0 1,561"/>
+  </object>
+  <object name="spawnLine2" x="1248" y="32">
+   <polyline points="0,0 0,601"/>
+  </object>
+  <object name="block1" x="460" y="351" width="40" height="35"/>
+  <object name="block2" x="971" y="256" width="40" height="33"/>
+  <object name="block3" x="767" y="405" width="63" height="43"/>
+ </objectgroup>
+</map>

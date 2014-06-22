@@ -14,6 +14,7 @@ using namespace ui;
 // on "init" you need to initialize your instance
 bool CCombatUI::init()
 {
+	CreateUILayer();
 	return true;
 }
 
@@ -46,8 +47,7 @@ void CCombatUI::CreateUILayer()
 {
 	//因为在addchild内部会retain，所以m_pUILayer不用管引用计数
 	m_pUILayer = Layer::create();
-	Scene* ownerScene = getScene();
-	ownerScene->addChild(m_pUILayer);
+	_GetCombatState()->GetScene()->addChild(m_pUILayer);
     Size visibleSize = Director::getInstance()->getVisibleSize();
     Point origin = Director::getInstance()->getVisibleOrigin();
 	Layout*  _widget = dynamic_cast<Layout*>(cocostudio::GUIReader::getInstance()->widgetFromJsonFile("UI/CombatUI/CombatUI_1.ExportJson"));

@@ -3,6 +3,9 @@ USING_NS_CC;
 #include "Common/CommonDef.h"
 #include "2d/CCLayer.h"
 #include "ccUTF8.h"
+#include "Game/Game.h"
+#include "Game/GameStateManager.h"
+#include "Game/GameStateBase.h"
 bool CLoadingScene::init()
 {
 	auto layercolor = LayerColor::create(Color4B(0,255,0,255));
@@ -31,4 +34,16 @@ bool CLoadingScene::init()
 	layercolor->addChild(label4);
 	layercolor->addChild(label5);
 	return true;
+}
+
+void CLoadingScene::OnLoadingComplete(float dt)
+{
+	CGame::GetInstance()->GetGameStateManager()->GetCurrentState()->OnLoadingComplete();
+}
+
+void CLoadingScene::onEnterTransitionDidFinish()
+{
+	Scene::onEnterTransitionDidFinish();
+	//这个地方是模拟加载，不是真的加载
+	schedule(schedule_selector(CLoadingScene::OnLoadingComplete),0.5f,0,1.0f);
 }

@@ -20,6 +20,7 @@ public:
 	CCombatController* GetController() { return m_pCombatController;}
 	CCombatUI* GetUI() { return m_pCombatUI;}
 	CCombatScene* GetScene() { return m_pCombatScene;}
+	virtual void OnLoadingComplete();
 private:
 	CCombatController* m_pCombatController;
 	CCombatUI* m_pCombatUI;

@@ -11,6 +11,7 @@ public:
 	int GetType() {return m_iType;}
 	virtual bool OnEnterState(){ return true;};
 	virtual bool OnLeaveState(){ return true;};
+	virtual void OnLoadingComplete(){}
 protected:
 	int m_iType;
 };
