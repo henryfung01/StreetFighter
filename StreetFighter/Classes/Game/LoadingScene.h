@@ -9,6 +9,8 @@ class CLoadingScene : public cocos2d::Scene
 public:
     virtual bool init();
     CREATE_FUNC(CLoadingScene);
+	virtual void OnLoadingComplete(float dt);
+	virtual void onEnterTransitionDidFinish();
 };
 
 #endif // __LOADING_SCENE_H__

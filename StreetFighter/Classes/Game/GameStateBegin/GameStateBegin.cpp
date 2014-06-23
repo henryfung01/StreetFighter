@@ -18,7 +18,7 @@ bool CGameStateBegin::OnEnterState()
 	//begin ui init function will add the object to the scene
 	m_pBeginUI = CBeginUI::create();
 	m_pBeginUI->retain();
-	Director::getInstance()->runWithScene(CGame::GetInstance()->GetLoadingScene());
+	Director::getInstance()->runWithScene(m_pBeginScene);
 	return true;
 }
 

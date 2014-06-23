@@ -1,6 +1,7 @@
 #include "BeginUI.h"
 #include "Common/CommonDef.h"
 #include "Game/Game.h"
+#include "Game/GameStateManager.h"
 #include "../GameStateBegin.h"
 #include "CCLabel.h"
 USING_NS_CC;
@@ -50,6 +51,7 @@ void CBeginUI::OnNameFadeIn()
 bool CBeginUI::onTouchHappen( Touch *touch, Event *unused_event )
 {
 	//do nothing
+	CGame::GetInstance()->GetGameStateManager()->GotoGameState(GameStateType_Combat);
 	return true;
 }
 

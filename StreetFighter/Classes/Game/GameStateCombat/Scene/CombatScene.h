@@ -8,7 +8,7 @@ class CCombatScene : public cocos2d::Scene
 {
 public:
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
-	static cocos2d::Scene* create(bool usePhysics); 
+	static CCombatScene* create(bool usePhysics); 
     // implement the "static create()" method manually
     CREATE_FUNC(CCombatScene);
 private:

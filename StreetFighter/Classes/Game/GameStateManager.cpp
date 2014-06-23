@@ -79,3 +79,8 @@ CGameStateBase* CGameStateManager::GetGameState( int gameState )
 	}
 	return nullptr;
 }
+
+CGameStateBase* CGameStateManager::GetCurrentState()
+{
+	return m_allGameStates[m_iCurrentType];
+}

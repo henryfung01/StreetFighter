@@ -5,13 +5,14 @@
 #include "ui/CocosGUI.h"
 #include "SpecialTouchHandler.h"
 class CGameStateCombat;
-class CCombatController
+class CCombatController: public cocos2d::Ref
 {
 public:
 	CCombatController();
 	virtual ~CCombatController();
    void OnSpecialTouchEvent(cocos2d::Ref *pSender, cocos2d::ui::TouchEventType type);
-   bool init();
+   virtual bool init();
+   CREATE_FUNC(CCombatController);
    void OnSpecialInput(const char* input);
    const DollarRecognizer::Path2D* GetGesturePath(int gestureType) { return m_SpTouchHandler.GetGesturePath(gestureType);}
 private:

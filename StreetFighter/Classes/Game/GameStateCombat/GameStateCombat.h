@@ -10,7 +10,7 @@ public:
 	CGameStateCombat ();
 	virtual ~CGameStateCombat(){}
 	//create cocos resource
-	virtual bool OnEnterState(){ return true;}
+	virtual bool OnEnterState();
 	//destroy cocos resource
 	virtual bool OnLeaveState(){ return true;}
 	//this is the initialize of classes without cocos resource
@@ -20,6 +20,7 @@ public:
 	CCombatController* GetController() { return m_pCombatController;}
 	CCombatUI* GetUI() { return m_pCombatUI;}
 	CCombatScene* GetScene() { return m_pCombatScene;}
+	virtual void OnLoadingComplete();
 private:
 	CCombatController* m_pCombatController;
 	CCombatUI* m_pCombatUI;
