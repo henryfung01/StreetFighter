@@ -3,6 +3,7 @@
 #include "../Controller/CombatController.h"
 USING_NS_CC;
 #include "Common/CommonDef.h"
+#include "CCTMXTiledMap.h"
 CCombatScene* CCombatScene::create(bool usePhysics)
 {
 	CCombatScene* combatScene = NULL;
@@ -11,7 +12,6 @@ CCombatScene* CCombatScene::create(bool usePhysics)
 		combatScene = new CCombatScene();
 		if (combatScene && combatScene->initWithPhysics())
 		{
-			 combatScene->autorelease();
 		}
 		else
 		{
@@ -26,6 +26,7 @@ CCombatScene* CCombatScene::create(bool usePhysics)
 	if(combatScene)
 	{
 		combatScene->_InitCombatScene();
+		combatScene->autorelease();
 		return combatScene;
 	}
 	return NULL;
@@ -33,4 +34,12 @@ CCombatScene* CCombatScene::create(bool usePhysics)
 void CCombatScene::_InitCombatScene()
 {
 	setTag(SceneType_Combat);
+	m_map = TMXTiledMap::create("Levels/Level1/level1.tmx");
+	m_map->retain();
+	addChild(m_map);
+}
+
+CCombatScene::CCombatScene()
+{
+	m_map = nullptr;
 }
