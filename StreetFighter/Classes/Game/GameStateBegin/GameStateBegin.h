@@ -1,6 +1,6 @@
 #ifndef __GAME_STATE_BEGIN_H__
 #define __GAME_STATE_BEGIN_H__
-#include "../GameStateBase.h"
+#include "../BaseClass/GameStateBase.h"
 #include "2d/CCScene.h"
 class CBeginUI;
 class CGameStateBegin:public CGameStateBase

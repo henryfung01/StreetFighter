@@ -1,6 +1,6 @@
 #include "GameStateManager.h"
 #include "../Common/CommonDef.h"
-#include "GameStateBase.h"
+#include "BaseClass/GameStateBase.h"
 CGameStateManager::CGameStateManager()
 {
 	m_iCurrentType = GameStateType_None;

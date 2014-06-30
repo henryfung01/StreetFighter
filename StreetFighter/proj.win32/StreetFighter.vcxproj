@@ -135,8 +135,11 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\Common\CommonView.cpp" />
+    <ClCompile Include="..\Classes\Game\BaseClass\Component.cpp" />
+    <ClCompile Include="..\Classes\Game\BaseClass\Entity.cpp" />
+    <ClCompile Include="..\Classes\Game\BaseClass\GameStateBase.cpp" />
+    <ClCompile Include="..\Classes\Game\components\Movement.cpp" />
     <ClCompile Include="..\Classes\Game\Game.cpp" />
-    <ClCompile Include="..\Classes\Game\GameStateBase.cpp" />
     <ClCompile Include="..\Classes\Game\GameStateBegin\GameStateBegin.cpp" />
     <ClCompile Include="..\Classes\Game\GameStateBegin\UI\BeginUI.cpp" />
     <ClCompile Include="..\Classes\Game\GameStateCombat\Controller\CombatController.cpp" />
@@ -156,8 +159,11 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\Common\CommonDef.h" />
     <ClInclude Include="..\Classes\Common\CommonView.h" />
+    <ClInclude Include="..\Classes\Game\BaseClass\Component.h" />
+    <ClInclude Include="..\Classes\Game\BaseClass\Entity.h" />
+    <ClInclude Include="..\Classes\Game\BaseClass\GameStateBase.h" />
+    <ClInclude Include="..\Classes\Game\components\Movement.h" />
     <ClInclude Include="..\Classes\Game\Game.h" />
-    <ClInclude Include="..\Classes\Game\GameStateBase.h" />
     <ClInclude Include="..\Classes\Game\GameStateBegin\GameStateBegin.h" />
     <ClInclude Include="..\Classes\Game\GameStateBegin\UI\BeginUI.h" />
     <ClInclude Include="..\Classes\Game\GameStateCombat\CombatCommonDefine.h" />

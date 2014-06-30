@@ -1,6 +1,6 @@
 #ifndef __GAME_STATE_COMBAT_H__
 #define __GAME_STATE_COMBAT_H__
-#include "../GameStateBase.h"
+#include "../BaseClass/GameStateBase.h"
 class CCombatController;
 class CCombatUI;
 class CCombatScene;

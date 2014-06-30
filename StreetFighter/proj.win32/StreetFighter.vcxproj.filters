@@ -37,6 +37,15 @@
     <Filter Include="Classes\Game\GameStateBegin\UI">
       <UniqueIdentifier>{abc0656d-f1a1-41f7-bea8-e8f715ef3f09}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Game\Components">
+      <UniqueIdentifier>{c94d16b9-df9d-42b6-9dcc-3dd39d5634d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Game\Actors">
+      <UniqueIdentifier>{93a2a853-d572-4253-80a1-ee4861c2e74c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Game\BaseClass">
+      <UniqueIdentifier>{15c410f6-45d9-4bfb-ab86-d01b8c33ecd3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -52,9 +61,6 @@
       <Filter>Classes\Common</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Game\Game.cpp">
-      <Filter>Classes\Game</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Game\GameStateBase.cpp">
       <Filter>Classes\Game</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Game\GameStateManager.cpp">
@@ -93,6 +99,18 @@
     <ClCompile Include="..\Classes\Game\LoadingScene.cpp">
       <Filter>Classes\Game</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\Game\components\Movement.cpp">
+      <Filter>Classes\Game\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Game\BaseClass\GameStateBase.cpp">
+      <Filter>Classes\Game\BaseClass</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Game\BaseClass\Component.cpp">
+      <Filter>Classes\Game\BaseClass</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Game\BaseClass\Entity.cpp">
+      <Filter>Classes\Game\BaseClass</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -111,9 +129,6 @@
       <Filter>Classes\Common</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Game\Game.h">
-      <Filter>Classes\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Game\GameStateBase.h">
       <Filter>Classes\Game</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Game\GameStateManager.h">
@@ -169,6 +184,18 @@
     </ClInclude>
     <ClInclude Include="..\Classes\Game\LoadingScene.h">
       <Filter>Classes\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\components\Movement.h">
+      <Filter>Classes\Game\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\BaseClass\GameStateBase.h">
+      <Filter>Classes\Game\BaseClass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\BaseClass\Component.h">
+      <Filter>Classes\Game\BaseClass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\BaseClass\Entity.h">
+      <Filter>Classes\Game\BaseClass</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -17,4 +17,11 @@ enum GameStateType
 	GameStateType_Combat,
 	GameStateType_Count,
 };
+
+enum ComponentType
+{
+	CComponentType_None = -1,
+	CComponentType_Move,
+	CComponentType_Rotate,
+};
 #endif

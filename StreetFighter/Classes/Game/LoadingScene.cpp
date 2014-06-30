@@ -5,7 +5,7 @@ USING_NS_CC;
 #include "ccUTF8.h"
 #include "Game/Game.h"
 #include "Game/GameStateManager.h"
-#include "Game/GameStateBase.h"
+#include "Game/BaseClass/GameStateBase.h"
 bool CLoadingScene::init()
 {
 	auto layercolor = LayerColor::create(Color4B(0,255,0,255));
