@@ -1,25 +1,17 @@
 #ifndef __ACTOR_H__
 #define __ACTOR_H__
+#include "../BaseClass/Entity.h"
 #include "cocostudio/CCArmature.h"
-class CActor:public cocostudio::Armature
+class cocostudio::Armature;
+class CActor:public CEntity
 {    
 public:
-	CActor ();
+	CActor();
 	virtual ~CActor(){}
 	//create cocos resource
 	virtual bool init();
-	CREATE_FUNC(CActor);
-public: 
-	CCombatController* GetController() { return m_pCombatController;}
-	CCombatUI* GetUI() { return m_pCombatUI;}
-	CCombatScene* GetScene() { return m_pCombatScene;}
-	virtual void OnLoadingComplete();
 private:
-	CCombatController* m_pCombatController;
-	CCombatUI* m_pCombatUI;
-	float m_fMoveSpeedX;  //X
-	float m_fMoveSpeedY;  //Y
-	float m_fMoveSpeedH;  //height,simple additive Y
+	cocostudio::Armature* m_pArmature;
 };
 
 #endif // __ACTOR_H__

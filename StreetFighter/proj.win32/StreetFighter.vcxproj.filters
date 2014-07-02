@@ -46,6 +46,12 @@
     <Filter Include="Classes\Game\BaseClass">
       <UniqueIdentifier>{15c410f6-45d9-4bfb-ab86-d01b8c33ecd3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Classes\Game\FSM">
+      <UniqueIdentifier>{a9cfc259-885d-4c32-8073-3915dcf105d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Classes\Game\SkillSystem">
+      <UniqueIdentifier>{716daa4e-b387-4431-8ae2-cd097defcc98}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -110,6 +116,27 @@
     </ClCompile>
     <ClCompile Include="..\Classes\Game\BaseClass\Entity.cpp">
       <Filter>Classes\Game\BaseClass</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Game\BaseClass\FSMState.cpp">
+      <Filter>Classes\Game\BaseClass</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Game\Actor\Actor.cpp">
+      <Filter>Classes\Game\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Game\Actor\Player.cpp">
+      <Filter>Classes\Game\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Game\FSM\FSM.cpp">
+      <Filter>Classes\Game\FSM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Game\SkillSystem\SkillSystem.cpp">
+      <Filter>Classes\Game\SkillSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Game\SkillSystem\SkillInfo.cpp">
+      <Filter>Classes\Game\SkillSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Game\SkillSystem\SkillInfoManager.cpp">
+      <Filter>Classes\Game\SkillSystem</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -196,6 +223,27 @@
     </ClInclude>
     <ClInclude Include="..\Classes\Game\BaseClass\Entity.h">
       <Filter>Classes\Game\BaseClass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\BaseClass\FSMState.h">
+      <Filter>Classes\Game\BaseClass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\Actor\Actor.h">
+      <Filter>Classes\Game\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\Actor\Player.h">
+      <Filter>Classes\Game\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\FSM\FSM.h">
+      <Filter>Classes\Game\FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\SkillSystem\SkillSystem.h">
+      <Filter>Classes\Game\SkillSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\SkillSystem\SkillInfo.h">
+      <Filter>Classes\Game\SkillSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\SkillSystem\SkillInfoManager.h">
+      <Filter>Classes\Game\SkillSystem</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

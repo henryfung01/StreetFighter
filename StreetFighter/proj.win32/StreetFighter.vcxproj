@@ -135,10 +135,14 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\Common\CommonView.cpp" />
+    <ClCompile Include="..\Classes\Game\Actor\Actor.cpp" />
+    <ClCompile Include="..\Classes\Game\Actor\Player.cpp" />
     <ClCompile Include="..\Classes\Game\BaseClass\Component.cpp" />
     <ClCompile Include="..\Classes\Game\BaseClass\Entity.cpp" />
+    <ClCompile Include="..\Classes\Game\BaseClass\FSMState.cpp" />
     <ClCompile Include="..\Classes\Game\BaseClass\GameStateBase.cpp" />
     <ClCompile Include="..\Classes\Game\components\Movement.cpp" />
+    <ClCompile Include="..\Classes\Game\FSM\FSM.cpp" />
     <ClCompile Include="..\Classes\Game\Game.cpp" />
     <ClCompile Include="..\Classes\Game\GameStateBegin\GameStateBegin.cpp" />
     <ClCompile Include="..\Classes\Game\GameStateBegin\UI\BeginUI.cpp" />
@@ -152,6 +156,9 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\Game\GameStateCombat\UI\SuperAttackDisplayer.cpp" />
     <ClCompile Include="..\Classes\Game\GameStateManager.cpp" />
     <ClCompile Include="..\Classes\Game\LoadingScene.cpp" />
+    <ClCompile Include="..\Classes\Game\SkillSystem\SkillInfo.cpp" />
+    <ClCompile Include="..\Classes\Game\SkillSystem\SkillInfoManager.cpp" />
+    <ClCompile Include="..\Classes\Game\SkillSystem\SkillSystem.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -159,10 +166,14 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\Common\CommonDef.h" />
     <ClInclude Include="..\Classes\Common\CommonView.h" />
+    <ClInclude Include="..\Classes\Game\Actor\Actor.h" />
+    <ClInclude Include="..\Classes\Game\Actor\Player.h" />
     <ClInclude Include="..\Classes\Game\BaseClass\Component.h" />
     <ClInclude Include="..\Classes\Game\BaseClass\Entity.h" />
+    <ClInclude Include="..\Classes\Game\BaseClass\FSMState.h" />
     <ClInclude Include="..\Classes\Game\BaseClass\GameStateBase.h" />
     <ClInclude Include="..\Classes\Game\components\Movement.h" />
+    <ClInclude Include="..\Classes\Game\FSM\FSM.h" />
     <ClInclude Include="..\Classes\Game\Game.h" />
     <ClInclude Include="..\Classes\Game\GameStateBegin\GameStateBegin.h" />
     <ClInclude Include="..\Classes\Game\GameStateBegin\UI\BeginUI.h" />
@@ -182,6 +193,9 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\Game\GameStateCombat\UI\SuperAttackDisplayer.h" />
     <ClInclude Include="..\Classes\Game\GameStateManager.h" />
     <ClInclude Include="..\Classes\Game\LoadingScene.h" />
+    <ClInclude Include="..\Classes\Game\SkillSystem\SkillInfo.h" />
+    <ClInclude Include="..\Classes\Game\SkillSystem\SkillInfoManager.h" />
+    <ClInclude Include="..\Classes\Game\SkillSystem\SkillSystem.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
