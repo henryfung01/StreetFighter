@@ -13,7 +13,9 @@ public:
 	virtual ~CSkillInfoManager();
 	bool init();
 	void ClearAll();
+	
 private:
+	bool _AddSkillInfo(SkillInfo* pSkill);
 	SkillInfoMap m_allSkillInfos;
 };
 
