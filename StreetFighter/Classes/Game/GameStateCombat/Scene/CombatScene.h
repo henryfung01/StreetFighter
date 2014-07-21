@@ -13,9 +13,11 @@ public:
 	static CCombatScene* create(bool usePhysics); 
     // implement the "static create()" method manually
     CREATE_FUNC(CCombatScene);
+	const cocos2d::Rect& GetMoveRect() { return m_moveRect;}
 private:
 	void _InitCombatScene();
 	cocos2d::TMXTiledMap* m_map;
+	cocos2d::Rect m_moveRect;
 };
 
 #endif // __COMBAT_SCENE_H__

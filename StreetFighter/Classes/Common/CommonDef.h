@@ -23,5 +23,6 @@ enum ComponentType
 	CComponentType_None = -1,
 	CComponentType_Move,
 	CComponentType_Rotate,
+	CComponentType_BaseCount,
 };
 #endif

@@ -5,6 +5,7 @@
 #include "CCRef.h"
 #include "CCVector.h"
 #include "CCGeometry.h"
+#include "../../Common/CommonDef.h"
 class CComponent;
 typedef cocos2d::Vector<CComponent*> ComponentVec;
 class CEntity:public cocos2d::Ref
@@ -14,8 +15,10 @@ public:
 	virtual ~CEntity();
 	bool init();
 	void ClearAll();
+	bool AddComponent(CComponent* pComponent);
 private:
-	ComponentVec m_allComponents;
+	CComponent* m_BaseComponents[CComponentType_BaseCount];
+	ComponentVec m_ExtendedComponents;
 	cocos2d::Point m_vPosition;
 	float m_fHeight;
 };
