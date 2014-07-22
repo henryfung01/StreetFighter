@@ -5,6 +5,7 @@
 class CCombatUI;
 class CCombatController;
 class cocos2d::TMXTiledMap;
+class CPlayer;
 class CCombatScene : public cocos2d::Scene
 {
 public:
@@ -18,6 +19,7 @@ private:
 	void _InitCombatScene();
 	cocos2d::TMXTiledMap* m_map;
 	cocos2d::Rect m_moveRect;
+	CPlayer* m_pPlayer;
 };
 
 #endif // __COMBAT_SCENE_H__

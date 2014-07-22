@@ -5,8 +5,7 @@ USING_NS_CC;
 using namespace cocostudio;
 #include "Common/CommonDef.h"
 #include "CCTMXTiledMap.h"
-#include "cocostudio/CCArmature.h"
-#include "cocostudio/CCArmatureDataManager.h"
+#include "Game/Actor/Player.h"
 CCombatScene* CCombatScene::create(bool usePhysics)
 {
 	CCombatScene* combatScene = NULL;
@@ -40,17 +39,19 @@ void CCombatScene::_InitCombatScene()
 	m_map = TMXTiledMap::create("Levels/Level1/level1.tmx");
 	m_map->retain();
 	addChild(m_map);
-	//spawn player
-	ArmatureDataManager::getInstance()->addArmatureFileInfo("animData/Player/Player.ExportJson");
-	Armature *armature = nullptr;
-	armature = Armature::create("Player");
-	armature->getAnimation()->playWithIndex(0);
-	//armature->setPosition(Point(VisibleRect::center().x, VisibleRect::center().y/*-100*/));
-	addChild(armature);
 
+	//spawn player
+	m_pPlayer = CPlayer::create();
+	m_pPlayer->retain();
+	Node* pRenderObj = m_pPlayer->GetenderNode();
+	if(pRenderObj)
+	{
+		m_map->addChild(pRenderObj);
+	}
 }
 
 CCombatScene::CCombatScene()
 {
 	m_map = nullptr;
+	m_pPlayer = nullptr;
 }

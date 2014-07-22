@@ -8,6 +8,7 @@ public:
 	virtual ~CPlayer(){}
 	//create cocos resource
 	virtual bool init();
+	CREATE_FUNC(CPlayer);
 };
 
 #endif // __PLAYER_H__

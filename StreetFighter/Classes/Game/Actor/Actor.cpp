@@ -8,6 +8,10 @@ m_pArmature(nullptr)
 
 bool CActor::init()
 {
-	AddComponent(CMovement::create(this));
-	return true;
+	if(CEntity::init())
+	{
+		AddComponent(CMovement::create(this));
+		return true;
+	}
+	return false;
 }

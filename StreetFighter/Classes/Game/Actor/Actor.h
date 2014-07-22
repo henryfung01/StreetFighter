@@ -3,6 +3,7 @@
 #include "../BaseClass/Entity.h"
 #include "cocostudio/CCArmature.h"
 class cocostudio::Armature;
+class cocos2d::Node;
 class CActor:public CEntity
 {    
 public:
@@ -10,7 +11,8 @@ public:
 	virtual ~CActor(){}
 	//create cocos resource
 	virtual bool init();
-private:
+	cocos2d::Node* GetenderNode() { return m_pArmature;}
+protected:
 	cocostudio::Armature* m_pArmature;
 };
 
