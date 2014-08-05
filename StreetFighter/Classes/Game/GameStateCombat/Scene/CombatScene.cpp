@@ -6,6 +6,7 @@ using namespace cocostudio;
 #include "Common/CommonDef.h"
 #include "CCTMXTiledMap.h"
 #include "Game/Actor/Player.h"
+#include "SceneTouchLayer.h"
 CCombatScene* CCombatScene::create(bool usePhysics)
 {
 	CCombatScene* combatScene = NULL;
@@ -48,6 +49,7 @@ void CCombatScene::_InitCombatScene()
 	{
 		m_map->addChild(pRenderObj);
 	}
+	addChild(CSceneInputLayer::create());
 }
 
 CCombatScene::CCombatScene()
