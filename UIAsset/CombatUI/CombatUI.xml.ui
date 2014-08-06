@@ -19,7 +19,9 @@
   <imageFileList>
     <string>CombatUI0.plist</string>
   </imageFileList>
-  <imagePngList />
+  <imagePngList>
+    <string>CombatUI0.png</string>
+  </imagePngList>
   <JsonSuffix>.json</JsonSuffix>
   <CurrentUIJson>CombatUI_1.json</CurrentUIJson>
 </UIProject>

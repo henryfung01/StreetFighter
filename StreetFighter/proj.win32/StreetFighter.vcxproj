@@ -152,6 +152,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\Game\GameStateCombat\Controller\TemplateRecorder.cpp" />
     <ClCompile Include="..\Classes\Game\GameStateCombat\GameStateCombat.cpp" />
     <ClCompile Include="..\Classes\Game\GameStateCombat\Scene\CombatScene.cpp" />
+    <ClCompile Include="..\Classes\Game\GameStateCombat\Scene\SceneTouchLayer.cpp" />
     <ClCompile Include="..\Classes\Game\GameStateCombat\UI\CombatUI.cpp" />
     <ClCompile Include="..\Classes\Game\GameStateCombat\UI\SuperAttackDisplayer.cpp" />
     <ClCompile Include="..\Classes\Game\GameStateManager.cpp" />
@@ -188,6 +189,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\Game\GameStateCombat\Controller\TemplateRecorder.h" />
     <ClInclude Include="..\Classes\Game\GameStateCombat\GameStateCombat.h" />
     <ClInclude Include="..\Classes\Game\GameStateCombat\Scene\CombatScene.h" />
+    <ClInclude Include="..\Classes\Game\GameStateCombat\Scene\SceneTouchLayer.h" />
     <ClInclude Include="..\Classes\Game\GameStateCombat\UI\CombatUI.h" />
     <ClInclude Include="..\Classes\Game\GameStateCombat\UI\CombatUINames.h" />
     <ClInclude Include="..\Classes\Game\GameStateCombat\UI\SuperAttackDisplayer.h" />

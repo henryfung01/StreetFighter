@@ -138,6 +138,9 @@
     <ClCompile Include="..\Classes\Game\SkillSystem\SkillInfoManager.cpp">
       <Filter>Classes\Game\SkillSystem</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\Game\GameStateCombat\Scene\SceneTouchLayer.cpp">
+      <Filter>Classes\Game\GameStateCombat\Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -244,6 +247,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\Game\SkillSystem\SkillInfoManager.h">
       <Filter>Classes\Game\SkillSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\GameStateCombat\Scene\SceneTouchLayer.h">
+      <Filter>Classes\Game\GameStateCombat\Scene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
