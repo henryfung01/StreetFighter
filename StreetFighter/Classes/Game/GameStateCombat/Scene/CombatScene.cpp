@@ -37,7 +37,7 @@ CCombatScene* CCombatScene::create(bool usePhysics)
 void CCombatScene::_InitCombatScene()
 {
 	setTag(SceneType_Combat);
-	m_map = TMXTiledMap::create("Levels/Level1/level1.tmx");
+	m_map = TMXTiledMap::create("Levels/Level02/OceanCity.tmx");
 	m_map->retain();
 	addChild(m_map);
 
@@ -48,6 +48,7 @@ void CCombatScene::_InitCombatScene()
 	if(pRenderObj)
 	{
 		m_map->addChild(pRenderObj);
+		pRenderObj->setLocalZOrder(1);
 	}
 	addChild(CSceneInputLayer::create());
 }

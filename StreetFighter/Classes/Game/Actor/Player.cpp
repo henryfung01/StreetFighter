@@ -17,7 +17,7 @@ bool CPlayer::init()
 	{
 		m_pArmature = armature;
 		m_pArmature->retain();
-		m_pArmature->getAnimation()->play("attack");
+		m_pArmature->getAnimation()->play("idle");
 		return true;
 	}
 	return false;
