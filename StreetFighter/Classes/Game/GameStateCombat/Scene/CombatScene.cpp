@@ -7,6 +7,7 @@ using namespace cocostudio;
 #include "CCTMXTiledMap.h"
 #include "Game/Actor/Player.h"
 #include "SceneTouchLayer.h"
+#include "CombatArea.h"
 CCombatScene* CCombatScene::create(bool usePhysics)
 {
 	CCombatScene* combatScene = NULL;
@@ -44,6 +45,7 @@ void CCombatScene::_InitCombatScene()
 	//spawn player
 	m_pPlayer = CPlayer::create();
 	m_pPlayer->retain();
+	m_pCombatArea = new CCombatArea();
 	Node* pRenderObj = m_pPlayer->GetenderNode();
 	if(pRenderObj)
 	{
@@ -57,4 +59,10 @@ CCombatScene::CCombatScene()
 {
 	m_map = nullptr;
 	m_pPlayer = nullptr;
+	m_pCombatArea = nullptr;
+}
+
+CCombatScene::~CCombatScene()
+{
+
 }

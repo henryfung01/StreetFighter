@@ -25,4 +25,7 @@ enum ComponentType
 	CComponentType_Rotate,
 	CComponentType_BaseCount,
 };
+
+#define MAPGRIDSIZE 32  //one actor will stand on a grid 64*64,but when move ,can use 32 as a element
+#define MAXMAPSIZE 50   //1600*1600 pixel
 #endif

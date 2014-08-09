@@ -6,6 +6,7 @@
 #include "CCVector.h"
 #include "CCGeometry.h"
 #include "../../Common/CommonDef.h"
+#include "Common/GamePos.h"
 class CComponent;
 typedef cocos2d::Vector<CComponent*> ComponentVec;
 class CEntity:public cocos2d::Ref
@@ -19,8 +20,12 @@ public:
 private:
 	CComponent* m_BaseComponents[CComponentType_BaseCount];
 	ComponentVec m_ExtendedComponents;
-	cocos2d::Point m_vPosition;
-	float m_fHeight;
+	//entity 所在的格子
+	EntityPos m_vPosition;
+	//竖直水平方向占用的格子
+	EntityPos m_vSize;
+	//用来记录高度的，比如手榴弹的飞行轨迹，要把高度转换为Y轴的偏移
+	float m_fHeight; 
 };
 
 #endif // __ENTITY_H__

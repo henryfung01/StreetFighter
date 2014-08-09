@@ -16,4 +16,8 @@
    eJzt0MkOgjAUhWHe/w1BBBlFFBmUQXThv3DRBTQlkpCQe5IvaZpz26aWJZFIJMtiw8EBLo7w4OOEACEixCv2E6Q4I8MF+Z/7c2u1P7V3xQ2FZs6ko5vVnXdHicrw/iX9tc8z7W9xp/zz/v/5hRoNHniiRYcew68zzqxNZ9/4KG/8AqnNLU0=
   </data>
  </layer>
+ <objectgroup name="Objects" width="30" height="20">
+  <object name="LeftBottom" x="7" y="584" width="15" height="16"/>
+  <object name="RightTop" x="935" y="325" width="20" height="19"/>
+ </objectgroup>
 </map>

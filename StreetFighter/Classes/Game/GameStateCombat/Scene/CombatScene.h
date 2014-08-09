@@ -6,10 +6,12 @@ class CCombatUI;
 class CCombatController;
 class cocos2d::TMXTiledMap;
 class CPlayer;
+class CCombatArea;
 class CCombatScene : public cocos2d::Scene
 {
 public:
 	CCombatScene();
+	~CCombatScene();
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
 	static CCombatScene* create(bool usePhysics); 
     // implement the "static create()" method manually
@@ -20,6 +22,7 @@ private:
 	cocos2d::TMXTiledMap* m_map;
 	cocos2d::Rect m_moveRect;
 	CPlayer* m_pPlayer;
+	CCombatArea* m_pCombatArea;
 };
 
 #endif // __COMBAT_SCENE_H__

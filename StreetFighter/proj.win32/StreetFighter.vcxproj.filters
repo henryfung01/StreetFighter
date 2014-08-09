@@ -141,6 +141,9 @@
     <ClCompile Include="..\Classes\Game\GameStateCombat\Scene\SceneTouchLayer.cpp">
       <Filter>Classes\Game\GameStateCombat\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\Game\GameStateCombat\Scene\CombatArea.cpp">
+      <Filter>Classes\Game\GameStateCombat\Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -250,6 +253,12 @@
     </ClInclude>
     <ClInclude Include="..\Classes\Game\GameStateCombat\Scene\SceneTouchLayer.h">
       <Filter>Classes\Game\GameStateCombat\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\GameStateCombat\Scene\CombatArea.h">
+      <Filter>Classes\Game\GameStateCombat\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Common\GamePos.h">
+      <Filter>Classes\Common</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
