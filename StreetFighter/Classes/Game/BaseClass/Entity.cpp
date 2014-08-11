@@ -65,3 +65,13 @@ bool CEntity::AddComponent( CComponent* pComponent )
 	}
 	return sucess;
 }
+
+void CEntity::SetGridPos( const EntityPos& pos,CPosConverter* pConverter )
+{
+	m_vPosition = pos;
+}
+
+void CEntity::SetSize( const EntityPos& size )
+{
+	m_vSize = size;
+}

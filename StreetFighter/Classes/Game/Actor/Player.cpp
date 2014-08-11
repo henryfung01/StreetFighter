@@ -17,7 +17,9 @@ bool CPlayer::init()
 	{
 		m_pArmature = armature;
 		m_pArmature->retain();
-		m_pArmature->getAnimation()->play("attack");
+		m_pArmature->getAnimation()->play("idle");
+		//通过设置这个参数可以让左右互换
+		m_pArmature->setRotationSkewY(180.0f);
 		return true;
 	}
 	return false;

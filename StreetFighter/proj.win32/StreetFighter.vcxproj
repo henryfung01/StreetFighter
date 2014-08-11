@@ -151,6 +151,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\Game\GameStateCombat\Controller\SpecialTouchHandler.cpp" />
     <ClCompile Include="..\Classes\Game\GameStateCombat\Controller\TemplateRecorder.cpp" />
     <ClCompile Include="..\Classes\Game\GameStateCombat\GameStateCombat.cpp" />
+    <ClCompile Include="..\Classes\Game\GameStateCombat\Scene\CombatArea.cpp" />
     <ClCompile Include="..\Classes\Game\GameStateCombat\Scene\CombatScene.cpp" />
     <ClCompile Include="..\Classes\Game\GameStateCombat\Scene\SceneTouchLayer.cpp" />
     <ClCompile Include="..\Classes\Game\GameStateCombat\UI\CombatUI.cpp" />
@@ -167,12 +168,14 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\Common\CommonDef.h" />
     <ClInclude Include="..\Classes\Common\CommonView.h" />
+    <ClInclude Include="..\Classes\Common\GamePos.h" />
     <ClInclude Include="..\Classes\Game\Actor\Actor.h" />
     <ClInclude Include="..\Classes\Game\Actor\Player.h" />
     <ClInclude Include="..\Classes\Game\BaseClass\Component.h" />
     <ClInclude Include="..\Classes\Game\BaseClass\Entity.h" />
     <ClInclude Include="..\Classes\Game\BaseClass\FSMState.h" />
     <ClInclude Include="..\Classes\Game\BaseClass\GameStateBase.h" />
+    <ClInclude Include="..\Classes\Game\BaseClass\PosConverter.h" />
     <ClInclude Include="..\Classes\Game\components\Movement.h" />
     <ClInclude Include="..\Classes\Game\FSM\FSM.h" />
     <ClInclude Include="..\Classes\Game\Game.h" />
@@ -188,6 +191,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\Game\GameStateCombat\Controller\SpecialTouchHandler.h" />
     <ClInclude Include="..\Classes\Game\GameStateCombat\Controller\TemplateRecorder.h" />
     <ClInclude Include="..\Classes\Game\GameStateCombat\GameStateCombat.h" />
+    <ClInclude Include="..\Classes\Game\GameStateCombat\Scene\CombatArea.h" />
     <ClInclude Include="..\Classes\Game\GameStateCombat\Scene\CombatScene.h" />
     <ClInclude Include="..\Classes\Game\GameStateCombat\Scene\SceneTouchLayer.h" />
     <ClInclude Include="..\Classes\Game\GameStateCombat\UI\CombatUI.h" />

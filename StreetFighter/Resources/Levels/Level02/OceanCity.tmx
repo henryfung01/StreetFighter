@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="30" height="20" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="ocean" tilewidth="32" tileheight="32">
+  <image source="ocean.png" width="768" height="224"/>
+ </tileset>
+ <tileset firstgid="169" name="land" tilewidth="32" tileheight="32">
+  <image source="land.png" width="384" height="224"/>
+ </tileset>
+ <layer name="ocean" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJztz9dPVEEUB+Bde+8u9q4oVuy994oNsK2iooioWLAXFAUbiopd7KJ/pt/DvcnNBB95MNmTfJlfMpNz5qRTqVQH0tGZIY8hibMb3ekR3PehL/3oz4DgPtkjE+TwXXtr6x/xzh3pRGe60DXYuSe96P2PnQcyiMFt7BnnGcxkFkMZxnBGMJJRjGYMYxnHeCYwkUnkM5kpFDCVaUwP+ifzejawkUJmM4e5zGM+C1jIIhazhKUsYzkrWMkqVrOGtawL+ifzJjZzJJG3sJVtbGcHRexkF7vZw16KKaGUfeznAAc5RJbDUf9sYkYZR6M/xPkYxynnBCep4BSVnKaKM5zlHNWc5wIXuUQNl7nC1WjfeMY1rkf/ifMNbnKL29yhlrvco477PKCeBh7yiMc84SmNPOM5TdG+8YwXvIzOOL+imde84S3veM8HPvKJFj7zha984zs/+MkvWvnNn6B3cm57zgz75ypXucrV/1J/AdJwW8I=
+  </data>
+ </layer>
+ <layer name="land" width="30" height="20">
+  <data encoding="base64" compression="zlib">
+   eJzt0MkOgjAUhWHe/w1BBBlFFBmUQXThv3DRBTQlkpCQe5IvaZpz26aWJZFIJMtiw8EBLo7w4OOEACEixCv2E6Q4I8MF+Z/7c2u1P7V3xQ2FZs6ko5vVnXdHicrw/iX9tc8z7W9xp/zz/v/5hRoNHniiRYcew68zzqxNZ9/4KG/8AqnNLU0=
+  </data>
+ </layer>
+ <objectgroup name="Objects" width="30" height="20">
+  <object name="LeftBottom" x="7" y="584" width="15" height="16"/>
+  <object name="RightTop" x="935" y="325" width="20" height="19"/>
+ </objectgroup>
+</map>

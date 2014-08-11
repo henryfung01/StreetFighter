@@ -7,6 +7,7 @@ using namespace cocostudio;
 #include "CCTMXTiledMap.h"
 #include "Game/Actor/Player.h"
 #include "SceneTouchLayer.h"
+#include "CombatArea.h"
 CCombatScene* CCombatScene::create(bool usePhysics)
 {
 	CCombatScene* combatScene = NULL;
@@ -37,18 +38,23 @@ CCombatScene* CCombatScene::create(bool usePhysics)
 void CCombatScene::_InitCombatScene()
 {
 	setTag(SceneType_Combat);
-	m_map = TMXTiledMap::create("Levels/Level1/level1.tmx");
+	m_map = TMXTiledMap::create("Levels/Level02/OceanCity.tmx");
 	m_map->retain();
 	addChild(m_map);
 
 	//spawn player
 	m_pPlayer = CPlayer::create();
 	m_pPlayer->retain();
-	Node* pRenderObj = m_pPlayer->GetenderNode();
+	m_pCombatArea = new CCombatArea();
+	m_pCombatArea->Init(m_map);
+	Node* pRenderObj = m_pPlayer->GetRenderNode();
 	if(pRenderObj)
 	{
 		m_map->addChild(pRenderObj);
+		pRenderObj->setLocalZOrder(1);
 	}
+	m_pPlayer->SetSize(EntityPos(2,1));
+	m_pPlayer->SetGridPos(EntityPos(10,2),m_pCombatArea);
 	addChild(CSceneInputLayer::create());
 }
 
@@ -56,4 +62,10 @@ CCombatScene::CCombatScene()
 {
 	m_map = nullptr;
 	m_pPlayer = nullptr;
+	m_pCombatArea = nullptr;
+}
+
+CCombatScene::~CCombatScene()
+{
+
 }
