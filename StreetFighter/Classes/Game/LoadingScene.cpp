@@ -1,8 +1,12 @@
-﻿#include "LoadingScene.h"
-USING_NS_CC;
-#include "Common/CommonDef.h"
-#include "2d/CCLayer.h"
+﻿
+//cocos include
+#include "CCLayer.h"
+#include "CCLabel.h"
 #include "ccUTF8.h"
+USING_NS_CC;
+//game include
+#include "LoadingScene.h"
+#include "Common/CommonDef.h"
 #include "Game/Game.h"
 #include "Game/GameStateManager.h"
 #include "Game/BaseClass/GameStateBase.h"

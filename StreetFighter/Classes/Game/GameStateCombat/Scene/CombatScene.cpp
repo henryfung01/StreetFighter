@@ -27,13 +27,7 @@ CCombatScene* CCombatScene::create(bool usePhysics)
 	{
 		combatScene = CCombatScene::create();
 	}
-	if(combatScene)
-	{
-		combatScene->_InitCombatScene();
-		combatScene->autorelease();
-		return combatScene;
-	}
-	return NULL;
+	return combatScene;
 }
 void CCombatScene::_InitCombatScene()
 {
@@ -41,18 +35,17 @@ void CCombatScene::_InitCombatScene()
 	m_map = TMXTiledMap::create("Levels/Level02/OceanCity.tmx");
 	m_map->retain();
 	addChild(m_map);
+	//create entity layer
+	m_EntityLayer = Layer::create();
+	m_EntityLayer->retain();
+	m_map->addChild(m_EntityLayer);
+	m_EntityLayer->setLocalZOrder(1);
 
 	//spawn player
 	m_pPlayer = CPlayer::create();
 	m_pPlayer->retain();
 	m_pCombatArea = new CCombatArea();
 	m_pCombatArea->Init(m_map);
-	Node* pRenderObj = m_pPlayer->GetRenderNode();
-	if(pRenderObj)
-	{
-		m_map->addChild(pRenderObj);
-		pRenderObj->setLocalZOrder(1);
-	}
 	m_pPlayer->SetSize(EntityPos(2,1));
 	m_pPlayer->SetGridPos(EntityPos(10,2),m_pCombatArea);
 	addChild(CSceneInputLayer::create());
@@ -68,4 +61,14 @@ CCombatScene::CCombatScene()
 CCombatScene::~CCombatScene()
 {
 
+}
+
+CPosConverter* CCombatScene::GetPosConverter()
+{
+	return m_pCombatArea;
+}
+
+void CCombatScene::PostInit()
+{
+	_InitCombatScene();
 }

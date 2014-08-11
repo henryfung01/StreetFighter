@@ -34,8 +34,14 @@ void CGameStateCombat::OnLoadingComplete()
 {
 	m_pCombatScene = CCombatScene::create(false);
 	m_pCombatScene->retain();
+	m_pCombatScene->PostInit();
 	m_pCombatUI = CCombatUI::create();
 	m_pCombatUI->retain();
 	Director::getInstance()->setDepthTest(true);
 	Director::getInstance()->replaceScene(TransitionPageTurn::create(1.5f, m_pCombatScene, false));
+}
+
+CGameScene* CGameStateCombat::GetGameScene()
+{
+	return m_pCombatScene;
 }
