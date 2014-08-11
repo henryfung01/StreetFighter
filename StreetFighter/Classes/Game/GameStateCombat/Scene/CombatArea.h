@@ -2,6 +2,9 @@
 #define __COMBAT_AREA_H__
 //whitebai 2014.8.9
 #include "CCGeometry.h"
+#include "CCTMXTiledMap.h"
+#include "CCValue.h"
+#include "Game/BaseClass/PosConverter.h"
 struct EntityPos;
 enum GridMulNumber
 {
@@ -16,15 +19,17 @@ struct GridInfo
 		bUsed = false;
 	}
 };
-class CCombatArea
+class CCombatArea:public CPosConverter
 {
 public:
     CCombatArea();
 	virtual ~CCombatArea();
-	void SetAreaRect(const cocos2d::Rect& BottomLeft,const cocos2d::Rect& TopRight);
+	bool Init(cocos2d::TMXTiledMap* map);
+	void SetAreaRect(const cocos2d::Rect& LeftBottom,const cocos2d::Rect& RightTop);
 	cocos2d::Point TransToRenderPos( const EntityPos& pos,const EntityPos& entitySize );
 	bool ParseRect();
 private:
+	cocos2d::Rect _ReadRectFromValueMap(const cocos2d::ValueMap& map);
 	GridInfo* m_AreaGridInfo;
 	//最大支持255*255个格子
 	byte m_GridXCount;

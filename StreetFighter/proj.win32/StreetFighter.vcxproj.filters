@@ -260,6 +260,9 @@
     <ClInclude Include="..\Classes\Common\GamePos.h">
       <Filter>Classes\Common</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\Game\BaseClass\PosConverter.h">
+      <Filter>Classes\Game\BaseClass</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="game.rc">

@@ -175,6 +175,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\Game\BaseClass\Entity.h" />
     <ClInclude Include="..\Classes\Game\BaseClass\FSMState.h" />
     <ClInclude Include="..\Classes\Game\BaseClass\GameStateBase.h" />
+    <ClInclude Include="..\Classes\Game\BaseClass\PosConverter.h" />
     <ClInclude Include="..\Classes\Game\components\Movement.h" />
     <ClInclude Include="..\Classes\Game\FSM\FSM.h" />
     <ClInclude Include="..\Classes\Game\Game.h" />

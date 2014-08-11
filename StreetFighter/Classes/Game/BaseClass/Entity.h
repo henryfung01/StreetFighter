@@ -8,6 +8,7 @@
 #include "../../Common/CommonDef.h"
 #include "Common/GamePos.h"
 class CComponent;
+class CPosConverter;
 typedef cocos2d::Vector<CComponent*> ComponentVec;
 class CEntity:public cocos2d::Ref
 {    
@@ -17,7 +18,10 @@ public:
 	bool init();
 	void ClearAll();
 	bool AddComponent(CComponent* pComponent);
-private:
+	virtual cocos2d::Node* GetRenderNode() { return nullptr;}
+	virtual void SetGridPos(const EntityPos& pos,CPosConverter* pConverter);
+	virtual void SetSize(const EntityPos& size);
+protected:
 	CComponent* m_BaseComponents[CComponentType_BaseCount];
 	ComponentVec m_ExtendedComponents;
 	//entity 所在的格子

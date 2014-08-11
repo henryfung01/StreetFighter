@@ -18,25 +18,44 @@ bool CSceneInputLayer::init()
 
 bool CSceneInputLayer::onTouchBegan( Touch* touch, Event* event )
 {
+	_ClearRecords();
+	m_bRecording = true;
 	return true;
 }
 
 void CSceneInputLayer::onTouchEnded( Touch* touch, Event* event )
 {
-
+	//小于3认为是一次触摸，取最后的点作为触摸点，防止手抖专用
+	if(m_iRecordCount < 3)
+	{
+		
+	}
+	_ClearRecords();
+	m_bRecording = false;
 }
 
 void CSceneInputLayer::onTouchCancelled( Touch* touch, Event* event )
 {
-
+	m_bRecording = false;
+	_ClearRecords();
 }
 
 void CSceneInputLayer::onTouchMoved( Touch* touch, Event* event )
 {
-
+	if(m_bRecording)
+	{
+		m_RecordPoints[m_iRecordCount] = touch->getLocation();
+		m_iRecordCount ++;
+	}
 }
 
 CSceneInputLayer::CSceneInputLayer()
 {
 
+}
+
+void CSceneInputLayer::_ClearRecords()
+{
+	m_iRecordCount = 0;
+	memset(m_RecordPoints,0,sizeof(Point)*MAXRECORDPOINT);
 }

@@ -46,12 +46,15 @@ void CCombatScene::_InitCombatScene()
 	m_pPlayer = CPlayer::create();
 	m_pPlayer->retain();
 	m_pCombatArea = new CCombatArea();
-	Node* pRenderObj = m_pPlayer->GetenderNode();
+	m_pCombatArea->Init(m_map);
+	Node* pRenderObj = m_pPlayer->GetRenderNode();
 	if(pRenderObj)
 	{
 		m_map->addChild(pRenderObj);
 		pRenderObj->setLocalZOrder(1);
 	}
+	m_pPlayer->SetSize(EntityPos(2,1));
+	m_pPlayer->SetGridPos(EntityPos(10,2),m_pCombatArea);
 	addChild(CSceneInputLayer::create());
 }
 

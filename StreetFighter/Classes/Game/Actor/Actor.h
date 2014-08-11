@@ -11,7 +11,8 @@ public:
 	virtual ~CActor(){}
 	//create cocos resource
 	virtual bool init();
-	cocos2d::Node* GetenderNode() { return m_pArmature;}
+	cocos2d::Node* GetRenderNode() { return m_pArmature;}
+	virtual void SetGridPos(const EntityPos& pos,CPosConverter* pConverter);
 protected:
 	cocostudio::Armature* m_pArmature;
 };
