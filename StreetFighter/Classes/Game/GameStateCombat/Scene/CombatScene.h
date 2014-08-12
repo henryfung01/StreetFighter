@@ -12,7 +12,7 @@ class CCombatUI;
 class CCombatController;
 class CPlayer;
 class CCombatArea;
-class CPosConverter;
+class CGridArea;
 class CCombatScene : public CGameScene
 {
 public:
@@ -24,7 +24,7 @@ public:
     CREATE_FUNC(CCombatScene);
 	const cocos2d::Rect& GetMoveRect() { return m_moveRect;}
 	cocos2d::Node* GetEntityContainer() { return m_EntityLayer;}
-	CPosConverter* GetPosConverter();
+	CGridArea* GetGridArea();
 	void PostInit();
 private:
 	void _InitCombatScene();

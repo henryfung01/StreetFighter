@@ -1,15 +1,15 @@
-#ifndef __POS_CONVERTER_H__
-#define __POS_CONVERTER_H__
+#ifndef __GRID_AREA_H__
+#define __GRID_AREA_H__
 //whitebai 2014.8.10
 //convert the grid position to render position
 struct EntityPos;
 #include "CCGeometry.h"
-class CPosConverter
+class CGridArea
 {
 public:
-	CPosConverter(){}
-	virtual ~CPosConverter(){}
+	CGridArea(){}
+	virtual ~CGridArea(){}
 	//should implement the interface
 	virtual cocos2d::Point TransToRenderPos( const EntityPos& pos,const EntityPos& entitySize ) = 0;
 };
-#endif // __POS_CONVERTER_H__
+#endif // __GRID_AREA_H__

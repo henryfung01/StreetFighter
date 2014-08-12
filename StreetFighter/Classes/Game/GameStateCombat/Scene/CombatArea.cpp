@@ -1,8 +1,9 @@
-﻿#include "CombatArea.h"
+﻿#include "CCTMXTiledMap.h"
+#include "CCStdC.h"
 USING_NS_CC;
+#include "CombatArea.h"
 #include "Common/CommonDef.h"
 #include "Common/GamePos.h"
-#include "CCTMXTiledMap.h"
 #define  OBJGROUPNAME "Objects"
 #define  LEFTBOTTOMRECTNAME "LeftBottom"
 #define  RIGHTTOPRECTNAME "RightTop"
@@ -85,4 +86,11 @@ cocos2d::Rect CCombatArea::_ReadRectFromValueMap(const ValueMap& map)
 	it = map.find(RECTHEIGHT);
 	float height = it->second.asFloat();
 	return Rect(rectX,recty,width,height);
+}
+
+const GridInfo& CCombatArea::GetGridInfo( int row,int column )
+{
+	row = MAX(row,m_GridXCount-1);
+	column = MAX(column,m_GridYCount-1);
+	return m_AreaGridInfo[row*m_GridYCount+column];
 }

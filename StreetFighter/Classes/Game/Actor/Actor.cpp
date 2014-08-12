@@ -1,6 +1,10 @@
 #include "Actor.h"
 #include "../components/Movement.h"
-#include "Game/BaseClass/PosConverter.h"
+#include "Game/BaseClass/GameScene.h"
+#include "Game/BaseClass/GridArea.h"
+#include "Game/BaseClass/GameStateBase.h"
+#include "Game/Game.h"
+#include "Game/GameStateManager.h"
 CActor::CActor():
 m_pArmature(nullptr)
 {
@@ -17,12 +21,14 @@ bool CActor::init()
 	return false;
 }
 
-void CActor::SetGridPos( const EntityPos& pos,CPosConverter* pConverter )
+void CActor::SetGridPos( const EntityPos& pos)
 {
-	CEntity::SetGridPos(pos,pConverter);
-	if(pConverter)
+	CEntity::SetGridPos(pos);
+	CGameStateBase * pSate = CGame::GetInstance()->GetGameStateManager()->GetCurrentState();
+	CGridArea* pGridArea = pSate->GetGameScene()->GetGridArea();
+	if(pGridArea)
 	{
-		cocos2d::Point renderPos = pConverter->TransToRenderPos(m_vPosition,m_vSize);
+		cocos2d::Point renderPos = pGridArea->TransToRenderPos(m_vPosition,m_vSize);
 		m_pArmature->setPosition(renderPos.x,renderPos.y);
 	}
 }

@@ -3,7 +3,7 @@
 //whitebai 2014.8.10
 //convert the grid position to render position
 #include "CCScene.h"
-class CPosConverter;
+class CGridArea;
 class CGameScene:public cocos2d::Scene
 {
 public:
@@ -13,7 +13,7 @@ public:
 	//all the player,enemy,item will add to this node
 	virtual cocos2d::Node* GetEntityContainer() = 0;
 	//return the converter from logic to render
-	virtual CPosConverter* GetPosConverter() = 0;
+	virtual CGridArea* GetGridArea() = 0;
 	//this function will be called outside create function,so
 	//you can do this when create a object in the object's init function
 	/*

@@ -47,7 +47,7 @@ void CCombatScene::_InitCombatScene()
 	m_pCombatArea = new CCombatArea();
 	m_pCombatArea->Init(m_map);
 	m_pPlayer->SetSize(EntityPos(2,1));
-	m_pPlayer->SetGridPos(EntityPos(10,2),m_pCombatArea);
+	m_pPlayer->SetGridPos(EntityPos(10,2));
 	addChild(CSceneInputLayer::create());
 }
 
@@ -60,15 +60,17 @@ CCombatScene::CCombatScene()
 
 CCombatScene::~CCombatScene()
 {
-
-}
-
-CPosConverter* CCombatScene::GetPosConverter()
-{
-	return m_pCombatArea;
+	SAFE_RELEASE(m_map);
+	SAFE_RELEASE(m_EntityLayer);
+	SAFE_RELEASE(m_pPlayer);
 }
 
 void CCombatScene::PostInit()
 {
 	_InitCombatScene();
+}
+
+CGridArea* CCombatScene::GetGridArea()
+{
+	return m_pCombatArea;
 }

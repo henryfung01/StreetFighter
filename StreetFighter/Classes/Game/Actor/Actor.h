@@ -12,7 +12,7 @@ public:
 	//create cocos resource
 	virtual bool init();
 	cocos2d::Node* GetRenderNode() { return m_pArmature;}
-	virtual void SetGridPos(const EntityPos& pos,CPosConverter* pConverter);
+	virtual void SetGridPos(const EntityPos& pos);
 protected:
 	cocostudio::Armature* m_pArmature;
 };

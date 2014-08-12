@@ -4,7 +4,7 @@
 #include "CCGeometry.h"
 #include "CCTMXTiledMap.h"
 #include "CCValue.h"
-#include "Game/BaseClass/PosConverter.h"
+#include "Game/BaseClass/GridArea.h"
 struct EntityPos;
 enum GridMulNumber
 {
@@ -19,7 +19,7 @@ struct GridInfo
 		bUsed = false;
 	}
 };
-class CCombatArea:public CPosConverter
+class CCombatArea:public CGridArea
 {
 public:
     CCombatArea();
@@ -28,6 +28,7 @@ public:
 	void SetAreaRect(const cocos2d::Rect& LeftBottom,const cocos2d::Rect& RightTop);
 	cocos2d::Point TransToRenderPos( const EntityPos& pos,const EntityPos& entitySize );
 	bool ParseRect();
+	inline const GridInfo& GetGridInfo(int row,int column);
 private:
 	cocos2d::Rect _ReadRectFromValueMap(const cocos2d::ValueMap& map);
 	GridInfo* m_AreaGridInfo;

@@ -19,7 +19,7 @@ public:
 	void ClearAll();
 	bool AddComponent(CComponent* pComponent);
 	virtual cocos2d::Node* GetRenderNode() { return nullptr;}
-	virtual void SetGridPos(const EntityPos& pos,CPosConverter* pConverter);
+	virtual void SetGridPos(const EntityPos& pos);
 	virtual void SetSize(const EntityPos& size);
 protected:
 	CComponent* m_BaseComponents[CComponentType_BaseCount];
