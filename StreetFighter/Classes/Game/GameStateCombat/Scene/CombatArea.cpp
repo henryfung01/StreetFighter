@@ -88,9 +88,34 @@ cocos2d::Rect CCombatArea::_ReadRectFromValueMap(const ValueMap& map)
 	return Rect(rectX,recty,width,height);
 }
 
-const GridInfo& CCombatArea::GetGridInfo( int row,int column )
+const GridInfo& CCombatArea::GetConstGridInfo( int row,int column )
+{
+	return _GetGridInfo(row,column);
+}
+//采用传说的广度优先算法，把所有可能走到的位置的路径计算出来
+bool CCombatArea::ProcessMoveInfo( const MoveProcessReq& req )
+{
+	//store the req
+	memcpy(&m_lastReq,&req,sizeof(MoveProcessReq));
+	GridInfo& info = _GetGridInfo(req.pos.x,req.pos.y);
+	if(!info.pMoveInfo)
+	{
+		info.pMoveInfo = new GridMoveInfo();
+		info.pMoveInfo->cost = 0;
+		info.pMoveInfo->parent = EntityPos(-1,-1);
+		info.pMoveInfo->processed = true;
+	}
+	return true;
+}
+
+GridInfo& CCombatArea::_GetGridInfo( int row,int column )
 {
 	row = MAX(row,m_GridXCount-1);
 	column = MAX(column,m_GridYCount-1);
 	return m_AreaGridInfo[row*m_GridYCount+column];
+}
+
+bool CCombatArea::_GetValidGridInfo( GridInfo& gridInfo,const EntityPos& pos,int deltaRow,int deltaColumn )
+{
+	return true;
 }
