@@ -31,7 +31,7 @@ struct MoveProcessReq
 {
 	EntityPos pos;
 	EntityPos size;
-	byte move;
+	byte stepCount;
 };
 struct GridInfo
 {
@@ -46,18 +46,21 @@ struct GridInfo
 class CCombatArea:public CGridArea
 {
 public:
+	typedef std::vector<EntityPos> PosVector;
     CCombatArea();
 	virtual ~CCombatArea();
 	bool Init(cocos2d::TMXTiledMap* map);
 	void SetAreaRect(const cocos2d::Rect& LeftBottom,const cocos2d::Rect& RightTop);
 	cocos2d::Point TransToRenderPos( const EntityPos& pos,const EntityPos& entitySize );
 	bool ParseRect();
-	inline const GridInfo& GetConstGridInfo(int row,int column);
+	inline const GridInfo& GetConstGridInfo(byte row,byte column);
 	
 	bool ProcessMoveInfo(const MoveProcessReq& req);
 private:
-	inline GridInfo& _GetGridInfo(int row,int column);
-	bool _GetValidGridInfo(GridInfo& gridInfo,const EntityPos& pos,int deltaRow,int deltaColumn);
+	void _UpdateOpenList(const EntityPos& possiableParent, const EntityPos& checkPos,const EntityPos& size,bool checkAxisX,PosVector& openlist);
+	inline bool _CheckValid(byte row,byte column);
+	inline GridInfo& _GetGridInfo(byte row,byte column);
+	bool _CheckPosValid(const EntityPos& pos,const EntityPos& size);
 	cocos2d::Rect _ReadRectFromValueMap(const cocos2d::ValueMap& map);
 	GridInfo* m_AreaGridInfo;
 	//最大支持255*255个格子

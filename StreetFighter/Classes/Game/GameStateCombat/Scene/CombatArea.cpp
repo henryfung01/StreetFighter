@@ -88,13 +88,17 @@ cocos2d::Rect CCombatArea::_ReadRectFromValueMap(const ValueMap& map)
 	return Rect(rectX,recty,width,height);
 }
 
-const GridInfo& CCombatArea::GetConstGridInfo( int row,int column )
+const GridInfo& CCombatArea::GetConstGridInfo( byte row,byte column )
 {
 	return _GetGridInfo(row,column);
 }
 //采用传说的广度优先算法，把所有可能走到的位置的路径计算出来
 bool CCombatArea::ProcessMoveInfo( const MoveProcessReq& req )
 {
+	PosVector buffer;
+	PosVector buffer2;
+	PosVector& LastOpenList = buffer;
+	PosVector& CurOpenList = buffer2;
 	//store the req
 	memcpy(&m_lastReq,&req,sizeof(MoveProcessReq));
 	GridInfo& info = _GetGridInfo(req.pos.x,req.pos.y);
@@ -104,18 +108,121 @@ bool CCombatArea::ProcessMoveInfo( const MoveProcessReq& req )
 		info.pMoveInfo->cost = 0;
 		info.pMoveInfo->parent = EntityPos(-1,-1);
 		info.pMoveInfo->processed = true;
+		LastOpenList.push_back(EntityPos(req.pos.x,req.pos.y));
+	}
+	for(int i = 0;i<req.stepCount;++i)
+	{
+		PosVector::const_iterator it = LastOpenList.begin();
+		for(;it!=LastOpenList.end();++it)
+		{
+			//process up
+			EntityPos upPos(it->x,it->y+1);
+			_UpdateOpenList(*it,upPos,req.size,false,CurOpenList);
+			//process right
+			EntityPos rightPos(it->x+1,it->y);
+			_UpdateOpenList(*it,rightPos,req.size,true,CurOpenList);
+			//process down
+			EntityPos downPos(it->x,it->y-1);
+			_UpdateOpenList(*it,downPos,req.size,false,CurOpenList);
+			//process left
+			EntityPos leftPos(it->x-1,it->y);
+			_UpdateOpenList(*it,leftPos,req.size,true,CurOpenList);
+
+			//after update all the dir,set the point processed
+			GridInfo& info = _GetGridInfo(it->x,it->y);
+			info.pMoveInfo->processed = true;
+		}
+		//after update ,swap the open list
+		PosVector& temVec = CurOpenList;
+		CurOpenList = LastOpenList;
+		LastOpenList = temVec;
+		CurOpenList.resize(0);
 	}
 	return true;
 }
 
-GridInfo& CCombatArea::_GetGridInfo( int row,int column )
+GridInfo& CCombatArea::_GetGridInfo( byte row,byte column )
 {
 	row = MAX(row,m_GridXCount-1);
 	column = MAX(column,m_GridYCount-1);
 	return m_AreaGridInfo[row*m_GridYCount+column];
 }
 
-bool CCombatArea::_GetValidGridInfo( GridInfo& gridInfo,const EntityPos& pos,int deltaRow,int deltaColumn )
+bool CCombatArea::_CheckValid( byte row,byte column )
 {
+	if(row >= 0 && row <m_GridXCount && column >=0 && column < m_GridYCount)
+	{
+		GridInfo& info = _GetGridInfo(row,column);
+		if(!info.bUsed)
+		{
+			return true;	
+		}
+	}
+	return false;
+}
+
+bool CCombatArea::_CheckPosValid( const EntityPos& pos,const EntityPos& size)
+{
+	int destX = pos.x ;
+	int destY = pos.y ;
+	for(int i = 0;i<size.x;++i)
+	{
+		for(int j=0;j<size.y;++j)
+		{
+			if(!_CheckValid(destX+i,destY+j))
+				return false;
+		}
+	}
 	return true;
+}
+
+void CCombatArea::_UpdateOpenList( const EntityPos& possiableParent, const EntityPos& checkPos,const EntityPos& size,bool checkAxisX,PosVector& openlist )
+{
+	//first check this position can stand the entity
+	if(_CheckPosValid(checkPos,size))
+	{
+		//get possible parent gird info
+		const GridInfo& parentInfo = GetConstGridInfo(possiableParent.x,possiableParent.y);
+		int cost = parentInfo.pMoveInfo->cost + 100;
+		//one corner will increase 1
+		if(checkAxisX)
+		{
+			if(parentInfo.pMoveInfo->parent.x != possiableParent.x) 
+			{
+				cost += 1;
+			}
+		}
+		else
+		{
+			if(parentInfo.pMoveInfo->parent.y != possiableParent.y) 
+			{
+				cost += 1;
+			}
+		}
+		GridInfo& info = _GetGridInfo(checkPos.x,checkPos.y);
+		//certainly not processed
+		if(!info.pMoveInfo)
+		{
+			//push up pos in open list
+			openlist.push_back(checkPos);
+			info.pMoveInfo = new GridMoveInfo();
+			//set parent
+			info.pMoveInfo->parent = possiableParent;
+			//one step will cost 100
+			info.pMoveInfo->cost = cost;
+		}
+		//only not processed grid can update the info
+		else if(!info.pMoveInfo->processed)
+		{
+			//current cost smaller than last one
+			if(cost < info.pMoveInfo->cost)
+			{
+				//will not push to open list ,the pMoveInfo is not null means it already be pushed
+				//set parent
+				info.pMoveInfo->parent = possiableParent;
+				//one step will cost 100
+				info.pMoveInfo->cost = cost;
+			}
+		}
+	}
 }
