@@ -5,6 +5,7 @@
 namespace cocos2d
 {
 	class SpriteBatchNode;
+	class DrawNode;
 }
 #include "CCTMXTiledMap.h"
 #include "CCValue.h"
@@ -27,12 +28,6 @@ struct GridMoveInfo
 	{
 	}
 };
-struct MoveProcessReq
-{
-	EntityPos pos;
-	EntityPos size;
-	byte stepCount;
-};
 struct GridInfo
 {
 	byte bUsed;
@@ -52,11 +47,15 @@ public:
 	bool Init(cocos2d::TMXTiledMap* map);
 	void SetAreaRect(const cocos2d::Rect& LeftBottom,const cocos2d::Rect& RightTop);
 	cocos2d::Point TransToRenderPos( const EntityPos& pos,const EntityPos& entitySize );
+	const EntityPos TransToGridPos(cocos2d::Point& RenderPos);
+	virtual int GetDirByPos(const EntityPos& targetPos,EntityPos* posArray,int arraySize);
 	bool ParseRect();
 	inline const GridInfo& GetConstGridInfo(byte row,byte column);
 	
 	bool ProcessMoveInfo(const MoveProcessReq& req);
 private:
+	void DrawMoveInfo(float dt);
+	void _DrawGrid(byte row,byte column,float alpha);
 	void _UpdateOpenList(const EntityPos& possiableParent, const EntityPos& checkPos,const EntityPos& size,bool checkAxisX,PosVector& openlist);
 	inline bool _CheckValid(byte row,byte column);
 	inline GridInfo& _GetGridInfo(byte row,byte column);
@@ -70,8 +69,9 @@ private:
 	char m_GridXMulNum;
 	char m_GridYMulNum;
 	cocos2d::Point m_BeginPoint;
-	cocos2d::SpriteBatchNode* m_pMoveArea;
+	cocos2d::DrawNode* m_pDrawNode;
 	MoveProcessReq m_lastReq;
+	float m_curAlpha;
 };
 
 #endif // __LOADING_SCENE_H__

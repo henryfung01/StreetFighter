@@ -32,3 +32,13 @@ void CActor::SetGridPos( const EntityPos& pos)
 		m_pArmature->setPosition(renderPos.x,renderPos.y);
 	}
 }
+
+void CActor::GotoPos( const EntityPos& pos )
+{
+	CGameStateBase * pSate = CGame::GetInstance()->GetGameStateManager()->GetCurrentState();
+	CGridArea* pGridArea = pSate->GetGameScene()->GetGridArea();
+	if(pGridArea)
+	{
+		
+	}
+}

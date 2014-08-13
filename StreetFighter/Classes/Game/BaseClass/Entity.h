@@ -21,6 +21,8 @@ public:
 	virtual cocos2d::Node* GetRenderNode() { return nullptr;}
 	virtual void SetGridPos(const EntityPos& pos);
 	virtual void SetSize(const EntityPos& size);
+	virtual const EntityPos& GetSize() { return m_vSize;}
+	virtual const EntityPos& GetGridPos() {return m_vPosition;}
 protected:
 	CComponent* m_BaseComponents[CComponentType_BaseCount];
 	ComponentVec m_ExtendedComponents;

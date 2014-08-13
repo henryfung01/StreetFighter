@@ -40,14 +40,18 @@ void CCombatScene::_InitCombatScene()
 	m_EntityLayer->retain();
 	m_map->addChild(m_EntityLayer);
 	m_EntityLayer->setLocalZOrder(1);
-
+	//init combat area
+	m_pCombatArea = new CCombatArea();
+	m_pCombatArea->Init(m_map);
 	//spawn player
 	m_pPlayer = CPlayer::create();
 	m_pPlayer->retain();
-	m_pCombatArea = new CCombatArea();
-	m_pCombatArea->Init(m_map);
-	m_pPlayer->SetSize(EntityPos(2,1));
 	m_pPlayer->SetGridPos(EntityPos(10,2));
+	MoveProcessReq req;
+	req.pos = m_pPlayer->GetGridPos();
+	req.size = m_pPlayer->GetSize();
+	req.stepCount = 8;
+	m_pCombatArea->ProcessMoveInfo(req);
 	addChild(CSceneInputLayer::create());
 }
 
@@ -63,6 +67,7 @@ CCombatScene::~CCombatScene()
 	SAFE_RELEASE(m_map);
 	SAFE_RELEASE(m_EntityLayer);
 	SAFE_RELEASE(m_pPlayer);
+	SAFE_RELEASE(m_pCombatArea);
 }
 
 void CCombatScene::PostInit()

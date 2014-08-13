@@ -19,6 +19,7 @@ bool CPlayer::init()
 	ArmatureDataManager::getInstance()->addArmatureFileInfo("animData/Player_Cat/Player_Cat.ExportJson");
 	Armature *armature = nullptr;
 	armature = Armature::create("Player_Cat");
+	SetSize(EntityPos(2,1));
 	if(armature)
 	{
 		m_pArmature = armature;

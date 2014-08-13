@@ -13,6 +13,7 @@ public:
 	virtual bool init();
 	cocos2d::Node* GetRenderNode() { return m_pArmature;}
 	virtual void SetGridPos(const EntityPos& pos);
+	virtual void GotoPos(const EntityPos& pos);
 protected:
 	cocostudio::Armature* m_pArmature;
 };
