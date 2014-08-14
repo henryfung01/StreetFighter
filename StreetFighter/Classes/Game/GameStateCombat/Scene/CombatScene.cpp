@@ -79,3 +79,8 @@ CGridArea* CCombatScene::GetGridArea()
 {
 	return m_pCombatArea;
 }
+
+void CCombatScene::OnTouchGrid( const EntityPos& pos )
+{
+	m_pCombatArea->SetCurTarget(pos);
+}

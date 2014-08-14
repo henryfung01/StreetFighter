@@ -51,11 +51,14 @@ public:
 	virtual int GetDirByPos(const EntityPos& targetPos,EntityPos* posArray,int arraySize);
 	bool ParseRect();
 	inline const GridInfo& GetConstGridInfo(byte row,byte column);
+	void SetCurTarget(const EntityPos& target) { m_curTarget = target;}
 	
 	bool ProcessMoveInfo(const MoveProcessReq& req);
 private:
 	void DrawMoveInfo(float dt);
+	void _DrawCost(byte row,byte column,float cost);
 	void _DrawGrid(byte row,byte column,float alpha);
+	void _DrawDir(byte row,byte column,float alpha);
 	void _UpdateOpenList(const EntityPos& possiableParent, const EntityPos& checkPos,const EntityPos& size,bool checkAxisX,PosVector& openlist);
 	inline bool _CheckValid(byte row,byte column);
 	inline GridInfo& _GetGridInfo(byte row,byte column);
@@ -72,6 +75,7 @@ private:
 	cocos2d::DrawNode* m_pDrawNode;
 	MoveProcessReq m_lastReq;
 	float m_curAlpha;
+	EntityPos m_curTarget;
 };
 
 #endif // __LOADING_SCENE_H__

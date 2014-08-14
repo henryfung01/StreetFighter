@@ -3,6 +3,7 @@
 #include "CCDrawNode.h"
 #include "CCDirector.h"
 #include "CCScheduler.h"
+#include "CCLabel.h"
 USING_NS_CC;
 #include "Common/GamePos.h"
 #include "CombatArea.h"
@@ -44,7 +45,8 @@ bool CCombatArea::ParseRect()
 
 CCombatArea::CCombatArea():
 m_AreaGridInfo(nullptr),
-m_curAlpha(0.0f)
+m_curAlpha(0.0f),
+m_curTarget(-1,-1)
 {
 
 }
@@ -81,6 +83,7 @@ bool CCombatArea::Init( TMXTiledMap* map )
 			CGameStateBase* gameState = CGame::GetInstance()->GetGameStateManager()->GetCurrentState();
 			CGameScene* pGameScene = gameState->GetGameScene();
 			pGameScene->GetEntityContainer()->addChild(m_pDrawNode);
+			m_pDrawNode->setLocalZOrder(2);
 			return true;
 		}
 	}
@@ -129,17 +132,23 @@ bool CCombatArea::ProcessMoveInfo( const MoveProcessReq& req )
 		{
 			//process up
 			EntityPos upPos(it->x,it->y+1);
-			_UpdateOpenList(*it,upPos,req.size,false,*CurOpenList);
+			_UpdateOpenList(*it,upPos,req.size,true,*CurOpenList);
 			//process right
 			EntityPos rightPos(it->x+1,it->y);
-			_UpdateOpenList(*it,rightPos,req.size,true,*CurOpenList);
+			_UpdateOpenList(*it,rightPos,req.size,false,*CurOpenList);
 			//process down
 			EntityPos downPos(it->x,it->y-1);
-			_UpdateOpenList(*it,downPos,req.size,false,*CurOpenList);
+			_UpdateOpenList(*it,downPos,req.size,true,*CurOpenList);
 			//process left
 			EntityPos leftPos(it->x-1,it->y);
-			_UpdateOpenList(*it,leftPos,req.size,true,*CurOpenList);
+			_UpdateOpenList(*it,leftPos,req.size,false,*CurOpenList);
 
+			//after update all the dir,set the point processed
+		//	GridInfo& info = _GetGridInfo(it->x,it->y);
+		//	info.pMoveInfo->processed = true;
+		}
+		for(it = LastOpenList->begin();it!=LastOpenList->end();++it)
+		{
 			//after update all the dir,set the point processed
 			GridInfo& info = _GetGridInfo(it->x,it->y);
 			info.pMoveInfo->processed = true;
@@ -198,20 +207,24 @@ void CCombatArea::_UpdateOpenList( const EntityPos& possiableParent, const Entit
 		const GridInfo& parentInfo = GetConstGridInfo(possiableParent.x,possiableParent.y);
 		int cost = parentInfo.pMoveInfo->cost + 100;
 		//one corner will increase 1
-		if(checkAxisX)
+		if(parentInfo.pMoveInfo->parent.x != 255)  //起始点不加cost
 		{
-			if(parentInfo.pMoveInfo->parent.x != possiableParent.x) 
+			if(checkAxisX)
 			{
-				cost += 1;
+				if(parentInfo.pMoveInfo->parent.x != possiableParent.x) 
+				{
+					cost += 1;
+				}
+			}
+			else
+			{
+				if(parentInfo.pMoveInfo->parent.y != possiableParent.y) 
+				{
+					cost += 1;
+				}
 			}
 		}
-		else
-		{
-			if(parentInfo.pMoveInfo->parent.y != possiableParent.y) 
-			{
-				cost += 1;
-			}
-		}
+		
 		GridInfo& info = _GetGridInfo(checkPos.x,checkPos.y);
 		//certainly not processed
 		if(!info.pMoveInfo)
@@ -276,7 +289,17 @@ void CCombatArea::DrawMoveInfo(float dt)
 			if(gridInfo.pMoveInfo && gridInfo.pMoveInfo->processed)
 			{
 				_DrawGrid(row,column,m_curAlpha);
+				_DrawCost(row,column,gridInfo.pMoveInfo->cost);
 			}
+		}
+	}
+	if(m_curTarget.x != -1)
+	{
+		EntityPos dir[100];
+		int step = GetDirByPos(m_curTarget,dir,100);
+		for(int i=0;i<step;++i)
+		{
+			_DrawDir(dir[i].x,dir[i].y,m_curAlpha);
 		}
 	}
 }
@@ -303,7 +326,47 @@ const EntityPos CCombatArea::TransToGridPos( Point& RenderPos )
 {
 	EntityPos pos;
 	Point deltaP = RenderPos - m_BeginPoint;
-	pos.x = deltaP.x / m_GridXMulNum*MAPGRIDSIZE;
-	pos.y = deltaP.y / m_GridYMulNum*MAPGRIDSIZE;
+	pos.x = deltaP.x / (m_GridXMulNum*MAPGRIDSIZE);
+	pos.y = deltaP.y / (m_GridYMulNum*MAPGRIDSIZE);
 	return pos;
+}
+
+void CCombatArea::_DrawDir( byte row,byte column,float alpha )
+{
+	Point rectangle[4];
+	float beginX = m_BeginPoint.x +row*MAPGRIDSIZE*m_GridXMulNum;
+	float beginY = m_BeginPoint.y +column*MAPGRIDSIZE*m_GridYMulNum;
+	rectangle[0] = Point(beginX+3,beginY+3);  //left bottom
+	rectangle[1] = Point(beginX+MAPGRIDSIZE-3,beginY+3 );  //right bottom
+	rectangle[2] = Point(beginX+MAPGRIDSIZE-3,beginY+MAPGRIDSIZE-3);  //right top
+	rectangle[3] = Point(beginX+3,beginY+MAPGRIDSIZE-3);  //left top
+	Color4F blue(0,0,1,alpha);
+	m_pDrawNode->drawPolygon(rectangle, 4, blue, 0, blue);
+}
+
+void CCombatArea::_DrawCost( byte row,byte column,float cost )
+{
+	static Label** labelArray = new Label*[m_GridXCount*m_GridYCount];
+	static bool bInit = false;
+	if(!bInit)
+	{
+		bInit = true;
+		memset(labelArray,0,sizeof(Label*)*m_GridXCount*m_GridYCount);
+	}
+	float beginX = m_BeginPoint.x +row*MAPGRIDSIZE*m_GridXMulNum;
+	float beginY = m_BeginPoint.y +column*MAPGRIDSIZE*m_GridYMulNum;
+	char buffer[256];
+	int temp = cost;
+	sprintf_s(buffer,"%i",temp);
+	if(labelArray[row*m_GridYCount+column] == nullptr)
+	{
+		auto label1 = Label::createWithTTF(buffer,"fonts/arial.ttf",16);
+		m_pDrawNode->addChild(label1);
+		label1->setPosition(beginX+MAPGRIDSIZE*0.5f,beginY+MAPGRIDSIZE*0.5f);
+		labelArray[row*m_GridYCount+column] = label1;
+	}
+	else
+	{
+		labelArray[row*m_GridYCount+column]->setString(buffer);
+	}
 }

@@ -3,6 +3,7 @@
 //whitebai 2014.8.5
 #include "cclayer.h"
 #define MAXRECORDPOINT 64
+class CCombatScene;
 class CSceneInputLayer : public cocos2d::Layer
 {
 public:

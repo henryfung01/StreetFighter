@@ -13,6 +13,7 @@ class CCombatController;
 class CPlayer;
 class CCombatArea;
 class CGridArea;
+struct EntityPos;
 class CCombatScene : public CGameScene
 {
 public:
@@ -26,6 +27,7 @@ public:
 	cocos2d::Node* GetEntityContainer() { return m_EntityLayer;}
 	CGridArea* GetGridArea();
 	void PostInit();
+	void OnTouchGrid(const EntityPos& pos);
 private:
 	void _InitCombatScene();
 	cocos2d::TMXTiledMap* m_map;
