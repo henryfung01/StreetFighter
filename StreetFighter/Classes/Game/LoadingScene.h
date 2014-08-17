@@ -10,11 +10,10 @@ public:
     CREATE_FUNC(CLoadingScene);
 	virtual void OnLoadingComplete(float dt);
 	virtual void onEnterTransitionDidFinish();
-	//will not give the entity container temporary
-	cocos2d::Node* GetEntityContainer() { return nullptr;}
 	//loading scene will not give the converter
 	CGridArea* GetGridArea() { return nullptr;}
 	void PostInit(){}
+	virtual void AddRenderNode(cocos2d::Node* pNode){}
 };
 
 #endif // __LOADING_SCENE_H__

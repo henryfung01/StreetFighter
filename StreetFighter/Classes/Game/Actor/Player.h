@@ -8,7 +8,7 @@ public:
 	virtual ~CPlayer(){}
 	//create cocos resource
 	virtual bool init();
-	CREATE_FUNC(CPlayer);
+	EntityType GetType() { return EntityType_Player;}
 };
 
 #endif // __PLAYER_H__

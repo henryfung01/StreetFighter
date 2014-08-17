@@ -5,6 +5,7 @@
 #include "Game/BaseClass/GameStateBase.h"
 #include "Game/Game.h"
 #include "Game/GameStateManager.h"
+#include "Game/Actor/ActorManager.h"
 CActor::CActor():
 m_pArmature(nullptr)
 {
@@ -13,8 +14,9 @@ m_pArmature(nullptr)
 
 bool CActor::init()
 {
-	if(CEntity::init())
+	if(CEntity::init())////entity has already been add to entity system
 	{
+		CGame::GetInstance()->GetActorManager()->AddActor(m_iID);
 		AddComponent(CMovement::create(this));
 		return true;
 	}
@@ -41,4 +43,9 @@ void CActor::GotoPos( const EntityPos& pos )
 	{
 		
 	}
+}
+
+CActor::~CActor()
+{
+	CGame::GetInstance()->GetActorManager()->RemoveActor(m_iID);
 }

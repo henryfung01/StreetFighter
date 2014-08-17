@@ -8,6 +8,7 @@ namespace cocos2d
 #include "CCNode.h"
 #include "CCLayer.h"
 #include "Game/BaseClass/GameScene.h"
+#include "Common/CommonDef.h"
 class CCombatUI;
 class CCombatController;
 class CPlayer;
@@ -24,7 +25,7 @@ public:
     // implement the "static create()" method manually
     CREATE_FUNC(CCombatScene);
 	const cocos2d::Rect& GetMoveRect() { return m_moveRect;}
-	cocos2d::Node* GetEntityContainer() { return m_EntityLayer;}
+	virtual void AddRenderNode(cocos2d::Node* pNode);
 	CGridArea* GetGridArea();
 	void PostInit();
 	void OnTouchGrid(const EntityPos& pos);
@@ -33,7 +34,7 @@ private:
 	cocos2d::TMXTiledMap* m_map;
 	cocos2d::Layer* m_EntityLayer;
 	cocos2d::Rect m_moveRect;
-	CPlayer* m_pPlayer;
+	EntityId m_iPlayerId;
 	CCombatArea* m_pCombatArea;
 };
 

@@ -1,8 +1,11 @@
 #include "Entity.h"
 #include "Component.h"
+#include "Game/Game.h"
+#include "Game/BaseClass/EntitySystem.h"
 CEntity::CEntity():
 m_vPosition(0.0f,0.0f),
-m_fHeight(0.0f)
+m_fHeight(0.0f),
+m_iID(Invalid_Id)
 {
 
 }

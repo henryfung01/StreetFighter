@@ -10,13 +10,17 @@
 class CComponent;
 class CPosConverter;
 typedef cocos2d::Vector<CComponent*> ComponentVec;
+//继承自ref是为了合适的时候可以使用lua的基本功能
 class CEntity:public cocos2d::Ref
 {    
 public:
 	CEntity();
 	virtual ~CEntity();
-	bool init();
+	virtual bool init();
 	void ClearAll();
+	virtual EntityType GetType() { return EntityType_None;}
+	virtual EntityId GetId() { return m_iID;}
+	virtual void SetId(EntityId id) { m_iID = id;}
 	bool AddComponent(CComponent* pComponent);
 	virtual cocos2d::Node* GetRenderNode() { return nullptr;}
 	virtual void SetGridPos(const EntityPos& pos);
@@ -32,6 +36,7 @@ protected:
 	EntityPos m_vSize;
 	//用来记录高度的，比如手榴弹的飞行轨迹，要把高度转换为Y轴的偏移
 	float m_fHeight; 
+	EntityId m_iID;
 };
 
 #endif // __ENTITY_H__

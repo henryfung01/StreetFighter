@@ -144,6 +144,12 @@
     <ClCompile Include="..\Classes\Game\GameStateCombat\Scene\CombatArea.cpp">
       <Filter>Classes\Game\GameStateCombat\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\Game\Actor\ActorManager.cpp">
+      <Filter>Classes\Game\Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Game\BaseClass\EntitySystem.cpp">
+      <Filter>Classes\Game\BaseClass</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -261,6 +267,18 @@
       <Filter>Classes\Common</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Game\BaseClass\PosConverter.h">
+      <Filter>Classes\Game\BaseClass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\Actor\ActorManager.h">
+      <Filter>Classes\Game\Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\BaseClass\EntitySystem.h">
+      <Filter>Classes\Game\BaseClass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\BaseClass\SaltBufferArray.h">
+      <Filter>Classes\Game\BaseClass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\BaseClass\SaltHandle.h">
       <Filter>Classes\Game\BaseClass</Filter>
     </ClInclude>
   </ItemGroup>

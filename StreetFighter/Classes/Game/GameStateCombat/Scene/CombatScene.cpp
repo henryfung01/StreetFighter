@@ -3,11 +3,12 @@
 #include "../Controller/CombatController.h"
 USING_NS_CC;
 using namespace cocostudio;
-#include "Common/CommonDef.h"
 #include "CCTMXTiledMap.h"
 #include "Game/Actor/Player.h"
 #include "SceneTouchLayer.h"
 #include "CombatArea.h"
+#include "Game/Game.h"
+#include "Game/BaseClass/EntitySystem.h"
 CCombatScene* CCombatScene::create(bool usePhysics)
 {
 	CCombatScene* combatScene = NULL;
@@ -44,12 +45,12 @@ void CCombatScene::_InitCombatScene()
 	m_pCombatArea = new CCombatArea();
 	m_pCombatArea->Init(m_map);
 	//spawn player
-	m_pPlayer = CPlayer::create();
-	m_pPlayer->retain();
-	m_pPlayer->SetGridPos(EntityPos(10,2));
+	CEntity* pEntity = CGame::GetInstance()->GetEntitySystem()->CreateEntity(EntityType_Player);
+
+	pEntity->SetGridPos(EntityPos(10,2));
 	MoveProcessReq req;
-	req.pos = m_pPlayer->GetGridPos();
-	req.size = m_pPlayer->GetSize();
+	req.pos = pEntity->GetGridPos();
+	req.size = pEntity->GetSize();
 	req.stepCount = 8;
 	m_pCombatArea->ProcessMoveInfo(req);
 	addChild(CSceneInputLayer::create());
@@ -58,7 +59,7 @@ void CCombatScene::_InitCombatScene()
 CCombatScene::CCombatScene()
 {
 	m_map = nullptr;
-	m_pPlayer = nullptr;
+	m_iPlayerId = Invalid_Id;
 	m_pCombatArea = nullptr;
 }
 
@@ -66,7 +67,6 @@ CCombatScene::~CCombatScene()
 {
 	SAFE_RELEASE(m_map);
 	SAFE_RELEASE(m_EntityLayer);
-	SAFE_RELEASE(m_pPlayer);
 	SAFE_RELEASE(m_pCombatArea);
 }
 
@@ -83,4 +83,12 @@ CGridArea* CCombatScene::GetGridArea()
 void CCombatScene::OnTouchGrid( const EntityPos& pos )
 {
 	m_pCombatArea->SetCurTarget(pos);
+}
+
+void CCombatScene::AddRenderNode( cocos2d::Node* pNode )
+{
+	if(m_EntityLayer)
+	{
+		m_EntityLayer->addChild(pNode);
+	}
 }

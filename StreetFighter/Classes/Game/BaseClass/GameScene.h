@@ -9,11 +9,11 @@ class CGameScene:public cocos2d::Scene
 public:
 	CGameScene(){}
 	virtual ~CGameScene(){}
-	//should implement the interface
-	//all the player,enemy,item will add to this node
-	virtual cocos2d::Node* GetEntityContainer() = 0;
 	//return the converter from logic to render
 	virtual CGridArea* GetGridArea() = 0;
+	virtual void PostInit() = 0;
+	//a logic entity will hold a cocos node for rendering,
+	//every scene should give a interface to add render node
 	//this function will be called outside create function,so
 	//you can do this when create a object in the object's init function
 	/*
@@ -23,6 +23,6 @@ public:
 	*/
 	//use composite to reuse cocos class,can reduce the function call between all game objects
 	//and easy to upgrade the cocos version
-	virtual void PostInit() = 0;
+	virtual void AddRenderNode(cocos2d::Node* pNode) = 0;
 };
 #endif // __GAME_SCENE_H__

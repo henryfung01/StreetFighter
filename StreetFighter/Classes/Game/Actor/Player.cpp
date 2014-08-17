@@ -8,6 +8,7 @@ using namespace cocostudio;
 #include "Game/GameStateManager.h"
 #include "Game/BaseClass/GameStateBase.h"
 #include "Game/BaseClass/GameScene.h"
+#include "Game/Actor/ActorManager.h"
 CPlayer::CPlayer()
 {
 
@@ -29,7 +30,7 @@ bool CPlayer::init()
 		m_pArmature->setRotationSkewY(180.0f);
 		CGameStateBase* gameState = CGame::GetInstance()->GetGameStateManager()->GetCurrentState();
 		CGameScene* pGameScene = gameState->GetGameScene();
-		pGameScene->GetEntityContainer()->addChild(m_pArmature);
+		pGameScene->AddRenderNode(m_pArmature);
 		return true;
 	}
 	return false;

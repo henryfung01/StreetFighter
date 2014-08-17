@@ -8,9 +8,10 @@ class CActor:public CEntity
 {    
 public:
 	CActor();
-	virtual ~CActor(){}
+	virtual ~CActor();
 	//create cocos resource
 	virtual bool init();
+	EntityType GetType() { return EntityType_Actor;}
 	cocos2d::Node* GetRenderNode() { return m_pArmature;}
 	virtual void SetGridPos(const EntityPos& pos);
 	virtual void GotoPos(const EntityPos& pos);
