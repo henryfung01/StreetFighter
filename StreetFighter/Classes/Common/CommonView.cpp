@@ -34,7 +34,7 @@ Widget* CCommonView::_GetChildByName(Node*pNode,const char* name,int childDepth)
 			Widget* widgetChild = _CastToWidget(child);
 			if (widgetChild)
 			{
-				if (strcmp(widgetChild->getName(), name) == 0)
+				if (strcmp(widgetChild->getName().c_str(), name) == 0)
 				{
 					return widgetChild;
 				}
@@ -67,7 +67,7 @@ Widget* CCommonView::_GetChildByName(Node*pNode,const char* name,int childDepth)
 Widget* CCommonView::_CastToWidget( cocos2d::Node* pNode )
 {
 	CCASSERT(pNode,"node can't be null");
-	if(pNode->getNodeType() == NodeType_Widget)
+//	if(pNode->getNodeType() == NodeType_Widget)
 	{
 		return static_cast<Widget*>(pNode);
 	}

@@ -2,7 +2,7 @@
 //skill system, relative to animation system
 #ifndef __SKILLSYSTEM_H__
 #define __SKILLSYSTEM_H__
-#include "CCRef.h"
+#include "base/CCRef.h"
 class CSkillSystem:public cocos2d::Ref
 {    
 public:

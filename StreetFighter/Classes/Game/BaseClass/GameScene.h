@@ -2,7 +2,7 @@
 #define __GAME_SCENE_H__
 //whitebai 2014.8.10
 //convert the grid position to render position
-#include "CCScene.h"
+#include "2d/CCScene.h"
 class CGridArea;
 class CGameScene:public cocos2d::Scene
 {

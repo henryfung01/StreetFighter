@@ -2,8 +2,8 @@
 //×´Ì¬»úÊµÏÖ
 #ifndef __FSM_H__
 #define __FSM_H__
-#include "CCRef.h"
-#include "CCVector.h"
+#include "base/CCRef.h"
+#include "base/CCVector.h"
 #include <map>
 class CFSMState;
 typedef std::map<std::string,CFSMState*> FSMStateMap;

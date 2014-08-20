@@ -1,7 +1,7 @@
 /*add by whitebai 2014.6.29*/
 #ifndef __COMPONENT_H__
 #define __COMPONENT_H__
-#include "CCRef.h"
+#include "base/CCRef.h"
 class CEntity;
 #define CREATE_FUNC_EX(type) static CComponent*create( CEntity* pEntity )\
 {\

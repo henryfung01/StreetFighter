@@ -85,7 +85,7 @@ DollarRecognizer::Path2D CTemplateRecorder::OutputCircle()
 {
 	Path2D path;
 	path.resize(64);
-	kmVec2 vec;
+/*	kmVec2 vec;
 	kmVec2Fill(&vec,0.0f,50.0f);
 	kmVec2 center;
 	kmVec2Fill(&center,100.0f,100.0f);
@@ -97,7 +97,7 @@ DollarRecognizer::Path2D CTemplateRecorder::OutputCircle()
 		path[index].x = currentPoint.x;
 		path[index].y = currentPoint.y;
 		index++;
-	}
+	} */
 	return path;
 }
 
@@ -105,7 +105,7 @@ DollarRecognizer::Path2D CTemplateRecorder::OutputCircleCC()
 {
 	Path2D path;
 	path.resize(64);
-	kmVec2 vec;
+/*	kmVec2 vec;
 	kmVec2Fill(&vec,0.0f,50.0f);
 	kmVec2 center;
 	kmVec2Fill(&center,100.0f,100.0f);
@@ -117,7 +117,7 @@ DollarRecognizer::Path2D CTemplateRecorder::OutputCircleCC()
 		path[index].x = currentPoint.x;
 		path[index].y = currentPoint.y;
 		index++;
-	}
+	}  */
 	return path;
 }
 //use 32 points
@@ -125,7 +125,7 @@ DollarRecognizer::Path2D CTemplateRecorder::OutputTriangle()
 {
 	Path2D path;
 	path.resize(32);
-	//设置3个关键点，每条边长度为100，左下角在(0,0)
+/*	//设置3个关键点，每条边长度为100，左下角在(0,0)
 	path[0].x = 0.0f;
 	path[0].y = 0.0f;
 	//右下角则为 (100,0)
@@ -167,7 +167,7 @@ DollarRecognizer::Path2D CTemplateRecorder::OutputTriangle()
 		int j = i - 22;
 		path[i].x = path[22].x + j*dir.x;
 		path[i].y = path[22].y + j*dir.y;
-	}
+	}  */
 	return path;
 }
 
@@ -176,7 +176,7 @@ DollarRecognizer::Path2D CTemplateRecorder::OutputTriangleCC()
 	Path2D path;
 	path.resize(32);
 	//设置3个关键点，每条边长度为100，左下角在(0,0)
-	path[0].x = 0.0f;
+/*	path[0].x = 0.0f;
 	path[0].y = 0.0f;
 	//右下角则为 (100,0)
 	path[10].x = 100.0f;
@@ -219,6 +219,6 @@ DollarRecognizer::Path2D CTemplateRecorder::OutputTriangleCC()
 		int j = i - 21;
 		path[i].x = path[21].x + j*dir.x;
 		path[i].y = path[21].y + j*dir.y;
-	}
+	}   */
 	return path;
 }

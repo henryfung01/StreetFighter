@@ -1,10 +1,12 @@
+#include "2d/CCDrawNode.h"
+
 #include "SuperAttackDisplayer.h"
 #include "ui\UIButton.h"
 #include "Common/CommonDef.h"
 #include "../Controller/CombatController.h"
 #include "../Scene/CombatScene.h"
 #include "editor-support/cocostudio/CCSGUIReader.h"
-#include "CCDrawNode.h"
+
 USING_NS_CC;
 using namespace ui;
 

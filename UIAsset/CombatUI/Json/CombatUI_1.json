@@ -4,7 +4,102 @@
   "animation": {
     "classname": null,
     "name": "AnimationManager",
-    "actionlist": []
+    "actionlist": [
+      {
+        "classname": null,
+        "name": "Animation0",
+        "actionnodelist": [
+          {
+            "classname": null,
+            "name": "InputTest",
+            "ActionTag": 7,
+            "actionframelist": [
+              {
+                "classname": null,
+                "name": null,
+                "colorb": 255,
+                "colorg": 255,
+                "colorr": 255,
+                "frameid": 0,
+                "opacity": 255,
+                "positionx": 480,
+                "positiony": 320,
+                "rotation": 0,
+                "scalex": 1,
+                "scaley": 1,
+                "starttime": 0,
+                "tweenParameter": [],
+                "tweenType": 0,
+                "visible": false
+              },
+              {
+                "classname": null,
+                "name": null,
+                "colorb": 255,
+                "colorg": 255,
+                "colorr": 255,
+                "frameid": 10,
+                "opacity": 255,
+                "positionx": 290,
+                "positiony": 185,
+                "rotation": 0,
+                "scalex": 1,
+                "scaley": 1,
+                "starttime": 0,
+                "tweenParameter": [],
+                "tweenType": 0,
+                "visible": false
+              }
+            ]
+          },
+          {
+            "classname": null,
+            "name": "TouchArea",
+            "ActionTag": 8,
+            "actionframelist": [
+              {
+                "classname": null,
+                "name": null,
+                "colorb": 255,
+                "colorg": 255,
+                "colorr": 255,
+                "frameid": 0,
+                "opacity": 255,
+                "positionx": 62,
+                "positiony": 63,
+                "rotation": 0,
+                "scalex": 1,
+                "scaley": 1,
+                "starttime": 0,
+                "tweenParameter": [],
+                "tweenType": 0,
+                "visible": false
+              },
+              {
+                "classname": null,
+                "name": null,
+                "colorb": 255,
+                "colorg": 255,
+                "colorr": 255,
+                "frameid": 10,
+                "opacity": 255,
+                "positionx": 212,
+                "positiony": 63,
+                "rotation": 0,
+                "scalex": 1,
+                "scaley": 1,
+                "starttime": 0,
+                "tweenParameter": [],
+                "tweenType": 0,
+                "visible": false
+              }
+            ]
+          }
+        ],
+        "loop": false,
+        "unittime": 0.1
+      }
+    ]
   },
   "dataScale": 1,
   "designHeight": 640,
@@ -12,9 +107,7 @@
   "textures": [
     "CombatUI0.plist"
   ],
-  "texturesPng": [
-    "CombatUI0.png"
-  ],
+  "texturesPng": [],
   "version": "1.4.0.0",
   "widgetTree": {
     "classname": "Panel",
@@ -231,8 +324,8 @@
             "layoutNormalVertical": 0,
             "layoutParentHorizontal": 0,
             "layoutParentVertical": 0,
-            "marginDown": 0,
-            "marginLeft": 0,
+            "marginDown": 295,
+            "marginLeft": 380,
             "marginRight": 0,
             "marginTop": 0,
             "relativeName": "InputTest",
@@ -298,8 +391,8 @@
             "layoutNormalVertical": 0,
             "layoutParentHorizontal": 0,
             "layoutParentVertical": 0,
-            "marginDown": 0,
-            "marginLeft": 0,
+            "marginDown": -1,
+            "marginLeft": -2,
             "marginRight": 0,
             "marginTop": 0,
             "relativeName": "TouchArea",
@@ -307,8 +400,8 @@
             "type": 2
           },
           "opacity": 255,
-          "positionPercentX": 0.06666667,
-          "positionPercentY": 0.1,
+          "positionPercentX": 0.06458333,
+          "positionPercentY": 0.0984375,
           "positionType": 0,
           "rotation": 0,
           "scaleX": 1,
@@ -321,8 +414,8 @@
           "useMergedTexture": false,
           "visible": true,
           "width": 128,
-          "x": 64,
-          "y": 64,
+          "x": 62,
+          "y": 63,
           "capInsetsHeight": 1,
           "capInsetsWidth": 1,
           "capInsetsX": 0,
@@ -344,7 +437,7 @@
       "classname": "Panel",
       "name": "Panel_5",
       "ZOrder": 0,
-      "actiontag": -1,
+      "actiontag": 2,
       "anchorPointX": 0,
       "anchorPointY": 0,
       "classType": "Panel",

@@ -1,10 +1,11 @@
+#include "2d/CCTransition.h"
+
 #include "GameStateCombat.h"
 #include "Common/CommonDef.h"
 #include "Controller/CombatController.h"
 #include "Scene/CombatScene.h"
 #include "UI/CombatUI.h"
 #include "Game/Game.h"
-#include "CCTransition.h"
 #include "Game/LoadingScene.h"
 USING_NS_CC;
 CGameStateCombat::CGameStateCombat():

@@ -3,7 +3,7 @@
 
 #include "cocos2d.h"
 #include "ui/CocosGUI.h"
-#include "CCSpriteBatchNode.h"
+#include "2d/CCSpriteBatchNode.h"
 #include "../Controller/Recognizer/GeometricRecognizerTypes.h"
 class cocos2d::DrawNode;
 //继承batchnode用来批量绘制旋转亮点

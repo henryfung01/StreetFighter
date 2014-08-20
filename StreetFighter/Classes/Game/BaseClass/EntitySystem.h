@@ -3,7 +3,7 @@
 #ifndef __ENTITY_SYSTEM_H__
 #define __ENTITY_SYSTEM_H__
 #include "Entity.h"
-#include "CCRef.h"
+#include "base/CCRef.h"
 #include "SaltBufferArray.h"
 #include "Common/CommonDef.h"
 template<typename T>

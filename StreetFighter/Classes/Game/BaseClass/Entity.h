@@ -2,9 +2,9 @@
 //基础的逻辑实体，其他逻辑从这个派生，这个有基础逻辑，可以组合各种component
 #ifndef __ENTITY_H__
 #define __ENTITY_H__
-#include "CCRef.h"
-#include "CCVector.h"
-#include "CCGeometry.h"
+#include "base/CCRef.h"
+#include "base/CCVector.h"
+#include "math/CCGeometry.h"
 #include "../../Common/CommonDef.h"
 #include "Common/GamePos.h"
 class CComponent;

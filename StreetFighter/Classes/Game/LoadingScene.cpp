@@ -1,8 +1,8 @@
 ﻿
 //cocos include
-#include "CCLayer.h"
-#include "CCLabel.h"
-#include "ccUTF8.h"
+#include "2d/CCLayer.h"
+#include "2d/CCLabel.h"
+#include "base/ccUTF8.h"
 USING_NS_CC;
 //game include
 #include "LoadingScene.h"

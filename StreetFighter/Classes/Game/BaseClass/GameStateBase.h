@@ -2,7 +2,7 @@
 跟game play 相关的逻辑都可以在内部创建实例*/
 #ifndef __GAME_STATE_BASE_H__
 #define __GAME_STATE_BASE_H__
-#include "CCRef.h"
+#include "base/CCRef.h"
 class CGameScene;
 class CGameStateBase:public cocos2d::Ref
 {    

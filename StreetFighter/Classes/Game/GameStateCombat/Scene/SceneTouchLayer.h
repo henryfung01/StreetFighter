@@ -1,7 +1,7 @@
 #ifndef __COMBAT_SCENE_INPUT_LAYER_H__
 #define __COMBAT_SCENE_INPUT_LAYER_H__
 //whitebai 2014.8.5
-#include "cclayer.h"
+#include "2d/cclayer.h"
 #define MAXRECORDPOINT 64
 class CCombatScene;
 class CSceneInputLayer : public cocos2d::Layer

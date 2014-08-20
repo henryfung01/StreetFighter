@@ -5,8 +5,8 @@ namespace cocos2d
 {
 	class TMXTiledMap;
 }
-#include "CCNode.h"
-#include "CCLayer.h"
+#include "2d/CCNode.h"
+#include "2d/CCLayer.h"
 #include "Game/BaseClass/GameScene.h"
 #include "Common/CommonDef.h"
 class CCombatUI;

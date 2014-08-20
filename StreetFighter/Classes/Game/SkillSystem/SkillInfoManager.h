@@ -4,7 +4,7 @@
 #define __SKILL_INFO_MANAGER_H__
 #include "SkillInfo.h"
 #include <map>
-#include "CCRef.h"
+#include "base/CCRef.h"
 typedef std::map<int,SkillInfo*> SkillInfoMap;
 class CSkillInfoManager:public cocos2d::Ref
 {    

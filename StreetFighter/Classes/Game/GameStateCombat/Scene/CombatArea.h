@@ -1,14 +1,14 @@
 #ifndef __COMBAT_AREA_H__
 #define __COMBAT_AREA_H__
 //whitebai 2014.8.9
-#include "CCGeometry.h"
+#include "math/CCGeometry.h"
 namespace cocos2d
 {
 	class SpriteBatchNode;
 	class DrawNode;
 }
-#include "CCTMXTiledMap.h"
-#include "CCValue.h"
+#include "2d/CCTMXTiledMap.h"
+#include "base/CCValue.h"
 #include "Game/BaseClass/GridArea.h"
 #include "Common/GamePos.h"
 enum GridMulNumber

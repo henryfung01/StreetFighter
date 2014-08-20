@@ -1,5 +1,6 @@
+#include "base/CCEventListenerTouch.h"
+
 #include "SceneTouchLayer.h"
-#include "CCEventListenerTouch.h"
 #include "Game/Game.h"
 #include "Game/GameStateManager.h"
 #include "Common/GamePos.h"

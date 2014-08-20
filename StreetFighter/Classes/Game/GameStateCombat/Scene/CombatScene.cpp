@@ -1,9 +1,10 @@
+#include "2d/CCTMXTiledMap.h"
 #include "CombatScene.h"
 #include "../UI/CombatUI.h"
 #include "../Controller/CombatController.h"
 USING_NS_CC;
-using namespace cocostudio;
-#include "CCTMXTiledMap.h"
+//using namespace cocostudio;
+
 #include "Game/Actor/Player.h"
 #include "SceneTouchLayer.h"
 #include "CombatArea.h"

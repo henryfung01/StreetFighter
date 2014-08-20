@@ -3,7 +3,7 @@
 #include "Game/Game.h"
 #include "Game/GameStateManager.h"
 #include "../GameStateBegin.h"
-#include "CCLabel.h"
+#include "2d/CCLabel.h"
 USING_NS_CC;
 using namespace ui;
 

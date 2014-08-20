@@ -3,7 +3,7 @@
 //whitebai 2014.8.10
 //convert the grid position to render position
 struct EntityPos;
-#include "CCGeometry.h"
+#include "math/CCGeometry.h"
 struct MoveProcessReq
 {
 	EntityPos pos;
