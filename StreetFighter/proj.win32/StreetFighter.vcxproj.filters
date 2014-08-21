@@ -150,6 +150,12 @@
     <ClCompile Include="..\Classes\Game\BaseClass\EntitySystem.cpp">
       <Filter>Classes\Game\BaseClass</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\Game\GameStateCombat\UI\CombatMenu.cpp">
+      <Filter>Classes\Game\GameStateCombat\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Game\StringInfoManager.cpp">
+      <Filter>Classes\Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -280,6 +286,12 @@
     </ClInclude>
     <ClInclude Include="..\Classes\Game\BaseClass\SaltHandle.h">
       <Filter>Classes\Game\BaseClass</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\GameStateCombat\UI\CombatMenu.h">
+      <Filter>Classes\Game\GameStateCombat\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\StringInfoManager.h">
+      <Filter>Classes\Game</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

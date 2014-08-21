@@ -7,6 +7,7 @@ class CGameStateBase;
 class CLoadingScene;
 class CEntitySystem;
 class CActorManager;
+class CStringInfoManager;
 class CGame
 {    
 public:
@@ -16,6 +17,7 @@ public:
 	CLoadingScene* GetLoadingScene() { return m_pLoadingScene;}
 	CEntitySystem* GetEntitySystem() { return m_pEntitySystem;}
 	CActorManager* GetActorManager() { return m_pActorManager;}
+	CStringInfoManager* GetStringManager(){ return m_pStringInfoManager;}
 protected:
 	virtual ~CGame(){}
 	virtual bool Init();
@@ -26,6 +28,7 @@ private:
 	CLoadingScene* m_pLoadingScene;
 	CEntitySystem* m_pEntitySystem;
 	CActorManager* m_pActorManager;
+	CStringInfoManager* m_pStringInfoManager;
 };
 
 #endif // __GAME_H__

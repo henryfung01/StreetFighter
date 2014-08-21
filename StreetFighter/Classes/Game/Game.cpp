@@ -6,6 +6,7 @@
 #include "LoadingScene.h"
 #include "BaseClass/EntitySystem.h"
 #include "Actor/ActorManager.h"
+#include "StringInfoManager.h"
 CGame* CGame::pStaticGame = nullptr;
 CGame* CGame::GetInstance()
 {
@@ -26,6 +27,8 @@ bool CGame::Init()
 	m_pEntitySystem->retain();
 	m_pActorManager = CActorManager::create();
 	m_pActorManager->retain();
+	m_pStringInfoManager = CStringInfoManager::create();
+	m_pStringInfoManager->retain();
 	m_pGameStateManager = CGameStateManager::Create();
 	if(m_pGameStateManager)
 	{

@@ -156,6 +156,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\Game\GameStateCombat\Scene\CombatArea.cpp" />
     <ClCompile Include="..\Classes\Game\GameStateCombat\Scene\CombatScene.cpp" />
     <ClCompile Include="..\Classes\Game\GameStateCombat\Scene\SceneTouchLayer.cpp" />
+    <ClCompile Include="..\Classes\Game\GameStateCombat\UI\CombatMenu.cpp" />
     <ClCompile Include="..\Classes\Game\GameStateCombat\UI\CombatUI.cpp" />
     <ClCompile Include="..\Classes\Game\GameStateCombat\UI\SuperAttackDisplayer.cpp" />
     <ClCompile Include="..\Classes\Game\GameStateManager.cpp" />
@@ -163,6 +164,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\Game\SkillSystem\SkillInfo.cpp" />
     <ClCompile Include="..\Classes\Game\SkillSystem\SkillInfoManager.cpp" />
     <ClCompile Include="..\Classes\Game\SkillSystem\SkillSystem.cpp" />
+    <ClCompile Include="..\Classes\Game\StringInfoManager.cpp" />
     <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -200,6 +202,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\Game\GameStateCombat\Scene\CombatArea.h" />
     <ClInclude Include="..\Classes\Game\GameStateCombat\Scene\CombatScene.h" />
     <ClInclude Include="..\Classes\Game\GameStateCombat\Scene\SceneTouchLayer.h" />
+    <ClInclude Include="..\Classes\Game\GameStateCombat\UI\CombatMenu.h" />
     <ClInclude Include="..\Classes\Game\GameStateCombat\UI\CombatUI.h" />
     <ClInclude Include="..\Classes\Game\GameStateCombat\UI\CombatUINames.h" />
     <ClInclude Include="..\Classes\Game\GameStateCombat\UI\SuperAttackDisplayer.h" />
@@ -208,6 +211,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\Game\SkillSystem\SkillInfo.h" />
     <ClInclude Include="..\Classes\Game\SkillSystem\SkillInfoManager.h" />
     <ClInclude Include="..\Classes\Game\SkillSystem\SkillSystem.h" />
+    <ClInclude Include="..\Classes\Game\StringInfoManager.h" />
     <ClInclude Include="..\Classes\HelloWorldScene.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
