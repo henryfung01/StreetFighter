@@ -82,7 +82,7 @@ bool CCombatArea::Init( TMXTiledMap* map )
 			m_pDrawNode = DrawNode::create();
 			CGameStateBase* gameState = CGame::GetInstance()->GetGameStateManager()->GetCurrentState();
 			CGameScene* pGameScene = gameState->GetGameScene();
-			pGameScene->AddRenderNode(m_pDrawNode);
+			pGameScene->AddEntityNode(m_pDrawNode);
 			m_pDrawNode->setLocalZOrder(2);
 			return true;
 		}

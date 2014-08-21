@@ -1,11 +1,17 @@
 #include "2d/CCMenuItem.h"
 #include "2d/CCMenu.h"
+#include "2d/CCActionInterval.h"
 #include "base/CCEventListenerTouch.h"
 #include "base/CCTouch.h"
 #include "base/CCEvent.h"
+#include "base/CCDirector.h"
+#include "base/CCRef.h"
 USING_NS_CC;
 #include "CombatMenu.h"
-
+#include "Common/CommonDef.h"
+#include "Game/Game.h"
+#include "Game/StringInfoManager.h"
+#include "Game/ConstStrings.h"
 bool CCombatMenu::init()
 {
 	EventListenerTouchOneByOne* _touchListener = EventListenerTouchOneByOne::create();
@@ -15,57 +21,34 @@ bool CCombatMenu::init()
 	_touchListener->onTouchEnded = CC_CALLBACK_2(CCombatMenu::onTouchEnded, this);
 	_touchListener->onTouchCancelled = CC_CALLBACK_2(CCombatMenu::onTouchCancelled, this);
 
-	_eventDispatcher->addEventListenerWithFixedPriority(_touchListener, 1);
+	_eventDispatcher->addEventListenerWithSceneGraphPriority(_touchListener, this);
 
-	
+	const std::string& strMove = CGame::GetInstance()->GetStringManager()->GetString(combatMenu_move);
+	m_pMenuItemMove = MenuItemFont::create(strMove, CC_CALLBACK_1(CCombatMenu::OnMenuMove, this));
 
-/*	m_pMenuItemMove = MenuItemFont::create("ÒÆ¶¯", CC_CALLBACK_1(MenuLayerMainMenu::menuCallbackBugsTest, this));
+	const std::string& strAttack = CGame::GetInstance()->GetStringManager()->GetString(combatMenu_attack);
+	m_pMenuItemAttack = MenuItemFont::create(strAttack, CC_CALLBACK_1(CCombatMenu::OnMenuAttack, this));
 
-	// Font Item
-	auto item7= MenuItemFont::create("Quit", CC_CALLBACK_1(MenuLayerMainMenu::onQuit, this));
+	const std::string& strEnd = CGame::GetInstance()->GetStringManager()->GetString(combatMenu_end);
+	m_pMenuItemEnd = MenuItemFont::create(strEnd, CC_CALLBACK_1(CCombatMenu::OnMenuMove, this));
 
-	auto item8 = MenuItemFont::create("Remove menu item when moving", CC_CALLBACK_1(MenuLayerMainMenu::menuMovingCallback, this));
-
-	auto color_action = TintBy::create(0.5f, 0, -255, -255);
-	auto color_back = color_action->reverse();
-	auto seq = Sequence::create(color_action, color_back, nullptr);
-	item7->runAction(RepeatForever::create(seq));
-
-	auto menu = Menu::create( item1, item2, item3, item4, item5, item6, item7, item8,  nullptr);
-	menu->alignItemsVertically();
+	auto pMenu = Menu::create( m_pMenuItemMove, m_pMenuItemAttack, m_pMenuItemEnd,nullptr);
+	pMenu->alignItemsVertically();
 
 
 	// elastic effect
 	auto s = Director::getInstance()->getWinSize();
-
-	int i=0;
-	for(const auto &child : menu->getChildren()) {
-		auto dstPoint = child->getPosition();
-		int offset = (int) (s.width/2 + 50);
-		if( i % 2 == 0)
-			offset = -offset;
-
-		child->setPosition( Vec2( dstPoint.x + offset, dstPoint.y) );
-		child->runAction(
-			EaseElasticOut::create(MoveBy::create(2, Vec2(dstPoint.x - offset,0)), 0.35f)
-			);
-		i++;
-	}
-
-	_disabledItem = item3; item3->retain();
-	_disabledItem->setEnabled( false );
-
-	addChild(menu);
-	menu->setPosition(Vec2(s.width/2, s.height/2));
-	menu->setScale(0);
-	menu->runAction(ScaleTo::create(1,1)); */
+	addChild(pMenu);
+	pMenu->setPosition(Vec2(30.0f, s.height/2));
+	pMenu->setScale(0);
+	pMenu->runAction(ScaleTo::create(1,1));
 	return true;
 }
 
 
 bool CCombatMenu::onTouchBegan(Touch *touch, Event * event)
 {
-	return true;
+	return m_bEnableTouch;
 }
 
 void CCombatMenu::onTouchEnded(Touch *touch, Event * event)
@@ -78,4 +61,31 @@ void CCombatMenu::onTouchCancelled(Touch *touch, Event * event)
 
 void CCombatMenu::onTouchMoved(Touch *touch, Event * event)
 {
+}
+
+void CCombatMenu::OnMenuMove(Ref* sender)
+{
+	this->setVisible(false);
+	m_bEnableTouch = false;
+}
+
+void CCombatMenu::OnMenuAttack(Ref* sender)
+{
+
+}
+
+CCombatMenu::~CCombatMenu()
+{
+}
+
+CCombatMenu::CCombatMenu():
+m_bEnableTouch(true)
+{
+
+}
+
+void CCombatMenu::EnableMenu( bool bEnable )
+{
+	this->setVisible(bEnable);
+	m_bEnableTouch = bEnable;
 }

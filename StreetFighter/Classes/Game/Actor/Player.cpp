@@ -30,7 +30,7 @@ bool CPlayer::init()
 		m_pArmature->setRotationSkewY(180.0f);
 		CGameStateBase* gameState = CGame::GetInstance()->GetGameStateManager()->GetCurrentState();
 		CGameScene* pGameScene = gameState->GetGameScene();
-		pGameScene->AddRenderNode(m_pArmature);
+		pGameScene->AddEntityNode(m_pArmature);
 		return true;
 	}
 	return false;

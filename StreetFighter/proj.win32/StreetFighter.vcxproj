@@ -144,6 +144,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\Game\BaseClass\FSMState.cpp" />
     <ClCompile Include="..\Classes\Game\BaseClass\GameStateBase.cpp" />
     <ClCompile Include="..\Classes\Game\components\Movement.cpp" />
+    <ClCompile Include="..\Classes\Game\ConstStrings.cpp" />
     <ClCompile Include="..\Classes\Game\FSM\FSM.cpp" />
     <ClCompile Include="..\Classes\Game\Game.cpp" />
     <ClCompile Include="..\Classes\Game\GameStateBegin\GameStateBegin.cpp" />
@@ -185,6 +186,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\Game\BaseClass\SaltBufferArray.h" />
     <ClInclude Include="..\Classes\Game\BaseClass\SaltHandle.h" />
     <ClInclude Include="..\Classes\Game\components\Movement.h" />
+    <ClInclude Include="..\Classes\Game\ConstStrings.h" />
     <ClInclude Include="..\Classes\Game\FSM\FSM.h" />
     <ClInclude Include="..\Classes\Game\Game.h" />
     <ClInclude Include="..\Classes\Game\GameStateBegin\GameStateBegin.h" />

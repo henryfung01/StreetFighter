@@ -23,6 +23,7 @@ public:
 	*/
 	//use composite to reuse cocos class,can reduce the function call between all game objects
 	//and easy to upgrade the cocos version
-	virtual void AddRenderNode(cocos2d::Node* pNode) = 0;
+	virtual void AddEntityNode(cocos2d::Node* pNode) = 0;
+	virtual void AddUINode(cocos2d::Node* pNode) = 0;
 };
 #endif // __GAME_SCENE_H__

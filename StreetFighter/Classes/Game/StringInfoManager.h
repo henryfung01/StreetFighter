@@ -13,6 +13,7 @@ public:
 	virtual bool init();
 	void ClearAll();
 	CREATE_FUNC(CStringInfoManager);
+	const std::string& GetString(const std::string& key);
 private:
 	StringInfoMap m_allStrings;
 };

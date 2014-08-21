@@ -25,7 +25,8 @@ public:
     // implement the "static create()" method manually
     CREATE_FUNC(CCombatScene);
 	const cocos2d::Rect& GetMoveRect() { return m_moveRect;}
-	virtual void AddRenderNode(cocos2d::Node* pNode);
+	virtual void AddEntityNode(cocos2d::Node* pNode);
+	virtual void AddUINode(cocos2d::Node* pNode);
 	CGridArea* GetGridArea();
 	void PostInit();
 	void OnTouchGrid(const EntityPos& pos);
@@ -33,6 +34,7 @@ private:
 	void _InitCombatScene();
 	cocos2d::TMXTiledMap* m_map;
 	cocos2d::Layer* m_EntityLayer;
+	cocos2d::Layer* m_UILayer;
 	cocos2d::Rect m_moveRect;
 	EntityId m_iPlayerId;
 	CCombatArea* m_pCombatArea;

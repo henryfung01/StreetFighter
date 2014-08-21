@@ -7,14 +7,16 @@
 #include "SuperAttackDisplayer.h"
 #include "../CombatCommonDefine.h"
 #include "Game/Game.h"
+#include "Game/GameStateManager.h"
 #include "../GameStateCombat.h"
+#include "CombatMenu.h"
 USING_NS_CC;
 using namespace ui;
 
 // on "init" you need to initialize your instance
 bool CCombatUI::init()
 {
-	CreateUILayer();
+	_CreateUI();
 	return true;
 }
 
@@ -43,17 +45,16 @@ void CCombatUI::OnTouchEvent(Ref *pSender, TouchEventType type)
 	pCombatController->OnSpecialTouchEvent(pSender,type);
 }
 
-void CCombatUI::CreateUILayer()
+void CCombatUI::_CreateUI()
 {
-	//因为在addchild内部会retain，所以m_pUILayer不用管引用计数
-	m_pUILayer = Layer::create();
-	_GetCombatState()->GetScene()->addChild(m_pUILayer);
+	//add ui to ui layer
+	_GetGameScene()->AddUINode(this);
     Size visibleSize = Director::getInstance()->getVisibleSize();
     Point origin = Director::getInstance()->getVisibleOrigin();
 	Layout*  _widget = dynamic_cast<Layout*>(cocostudio::GUIReader::getInstance()->widgetFromJsonFile("UI/CombatUI/CombatUI_1.ExportJson"));
 	if(_widget)
 	{
-		m_pUILayer->addChild(_widget);
+		addChild(_widget);
 	}
 	//获得这些控件然后注册事件回调等操作
 	Widget* pWidget = GetChildByNameRecursive(SpecialTouchArea,3);
@@ -74,8 +75,12 @@ void CCombatUI::CreateUILayer()
     m_pSuperAttackDisplayer = CSuperAttackDisplayer::create();
 	const Size& winSize = Director::getInstance()->getWinSize();
 	m_pSuperAttackDisplayer->setPosition(winSize.width/2,winSize.height/2);
-	m_pUILayer->addChild(m_pSuperAttackDisplayer);
+	addChild(m_pSuperAttackDisplayer);
 	m_pSuperAttackDisplayer->PostInit();
+	m_pCombatMenu = CCombatMenu::create();
+	m_pCombatMenu->retain();
+	addChild(m_pCombatMenu);
+	
 }
 
 void CCombatUI::SetStatusLabel( const char* status )
@@ -98,4 +103,19 @@ void CCombatUI::SetDrawGestureType( int gestureType )
 		m_pSuperAttackDisplayer->setVisible(true);
 		m_pSuperAttackDisplayer->SetDrawPath(_GetCombatState()->GetController()->GetGesturePath(m_iGestureType));
 	}
+}
+
+CCombatUI::CCombatUI():
+m_pStatusLabel(nullptr),
+m_pCombatMenu(nullptr),
+m_pSuperAttackDisplayer(nullptr)
+{
+
+}
+
+CGameScene* CCombatUI::_GetGameScene()
+{
+	CGameStateBase* gameState = CGame::GetInstance()->GetGameStateManager()->GetCurrentState();
+	CGameScene* pGameScene = gameState->GetGameScene();
+	return pGameScene;
 }

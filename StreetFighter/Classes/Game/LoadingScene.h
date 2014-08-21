@@ -13,7 +13,9 @@ public:
 	//loading scene will not give the converter
 	CGridArea* GetGridArea() { return nullptr;}
 	void PostInit(){}
-	virtual void AddRenderNode(cocos2d::Node* pNode){}
+	virtual void AddEntityNode(cocos2d::Node* pNode){}
+
+	virtual void AddUINode(cocos2d::Node* pNode){}
 };
 
 #endif // __LOADING_SCENE_H__

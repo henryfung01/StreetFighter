@@ -7,16 +7,10 @@ using namespace ui;
 
 Widget* CCommonView::GetChildByNameRecursive( const char* childName,int childDepth )
 {
-	if(m_pUILayer)
-	{
-		return _GetChildByName(m_pUILayer,childName,childDepth);
-	}
-	return nullptr;
-	
+	return _GetChildByName(this,childName,childDepth);
 }
 
-CCommonView::CCommonView():
-m_pUILayer(NULL)
+CCommonView::CCommonView()
 {
 
 }

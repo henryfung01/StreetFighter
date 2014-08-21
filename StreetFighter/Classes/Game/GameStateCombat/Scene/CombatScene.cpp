@@ -34,9 +34,14 @@ CCombatScene* CCombatScene::create(bool usePhysics)
 void CCombatScene::_InitCombatScene()
 {
 	setTag(SceneType_Combat);
+	//
 	m_map = TMXTiledMap::create("Levels/Level02/OceanCity.tmx");
 	m_map->retain();
 	addChild(m_map);
+	//then the ui layer will always render before map
+	m_UILayer = Layer::create();
+	m_UILayer->retain();
+	addChild(m_UILayer);
 	//create entity layer
 	m_EntityLayer = Layer::create();
 	m_EntityLayer->retain();
@@ -54,7 +59,7 @@ void CCombatScene::_InitCombatScene()
 	req.size = pEntity->GetSize();
 	req.stepCount = 8;
 	m_pCombatArea->ProcessMoveInfo(req);
-	addChild(CSceneInputLayer::create());
+	m_map->addChild(CSceneInputLayer::create());
 }
 
 CCombatScene::CCombatScene()
@@ -68,6 +73,7 @@ CCombatScene::~CCombatScene()
 {
 	SAFE_RELEASE(m_map);
 	SAFE_RELEASE(m_EntityLayer);
+	SAFE_RELEASE(m_UILayer);
 	SAFE_RELEASE(m_pCombatArea);
 }
 
@@ -86,10 +92,18 @@ void CCombatScene::OnTouchGrid( const EntityPos& pos )
 	m_pCombatArea->SetCurTarget(pos);
 }
 
-void CCombatScene::AddRenderNode( cocos2d::Node* pNode )
+void CCombatScene::AddEntityNode( cocos2d::Node* pNode )
 {
 	if(m_EntityLayer)
 	{
 		m_EntityLayer->addChild(pNode);
+	}
+}
+
+void CCombatScene::AddUINode( cocos2d::Node* pNode )
+{
+	if(m_UILayer)
+	{
+		m_UILayer->addChild(pNode);
 	}
 }

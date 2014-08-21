@@ -6,7 +6,6 @@ class CCommonView : public cocos2d::Node
 {    
 protected:
 	CCommonView();
-	cocos2d::Layer* m_pUILayer;
 	cocos2d::ui::Widget* GetChildByNameRecursive(const char* childName,int childDepth);
 private:
 	//递归通过名字寻找控件的函数，可以设置递归层数，一般控件到一定层级就会很复杂，寻找效率低，而程序关注的往往是比较高层级的控件

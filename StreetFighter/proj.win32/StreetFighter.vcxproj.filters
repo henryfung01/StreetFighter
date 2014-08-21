@@ -156,6 +156,9 @@
     <ClCompile Include="..\Classes\Game\StringInfoManager.cpp">
       <Filter>Classes\Game</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\Game\ConstStrings.cpp">
+      <Filter>Classes\Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -291,6 +294,9 @@
       <Filter>Classes\Game\GameStateCombat\UI</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Game\StringInfoManager.h">
+      <Filter>Classes\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Game\ConstStrings.h">
       <Filter>Classes\Game</Filter>
     </ClInclude>
   </ItemGroup>

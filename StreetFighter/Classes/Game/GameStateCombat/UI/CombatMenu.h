@@ -6,24 +6,28 @@ namespace cocos2d
 	MenuItemFont;
 	Touch;
 	Event;
+	Ref;
 };
 class CCombatMenu : public cocos2d::Layer
 {
 public:
-    virtual bool init(); 
+    virtual bool init();
+	CCombatMenu();
+	virtual ~CCombatMenu();
     // implement the "static create()" method manually
     CREATE_FUNC(CCombatMenu);
 	bool onTouchBegan(cocos2d::Touch *touch, cocos2d::Event * event);
 	void onTouchEnded(cocos2d::Touch *touch, cocos2d::Event * event);
 	void onTouchCancelled(cocos2d::Touch *touch, cocos2d::Event * event);
 	void onTouchMoved(cocos2d::Touch *touch, cocos2d::Event * event);
+	void OnMenuMove(cocos2d::Ref* sender);
+	void OnMenuAttack(cocos2d::Ref* sender);
+	virtual void EnableMenu(bool bEnable);
 private:
-	MenuItemFont* m_pMenuItemMove;
-	MenuItemFont* m_pMenuItemAttack;
-	MenuItemFont* m_pMenuItemSkill;
-	MenuItemFont* m_pMenuItemMagic;
-	MenuItemFont* m_pMenuItemItem;
-	MenuItemFont* m_pMenuItemEnd;
+	cocos2d::MenuItemFont* m_pMenuItemMove;
+	cocos2d::MenuItemFont* m_pMenuItemAttack;
+	cocos2d::MenuItemFont* m_pMenuItemEnd;
+	bool m_bEnableTouch;
 };
 
 #endif // __COMBAT_MENU_H__

@@ -42,3 +42,14 @@ void CStringInfoManager::ClearAll()
 	m_allStrings.clear();
 }
 
+const std::string& CStringInfoManager::GetString( const std::string& key )
+{
+	static const std::string defalut = "";
+	StringInfoMap::const_iterator it = m_allStrings.find(key);
+	if(it!=m_allStrings.end())
+	{
+		return it->second;
+	}
+	return defalut;
+}
+
